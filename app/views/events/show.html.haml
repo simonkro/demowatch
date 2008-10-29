@@ -1,0 +1,14 @@
+
+%h1= @event.title
+%p= @event.description
+%p
+  <b>Organisation:</b>
+  = link_to @event.organisation.title, @event.organisation 
+%p 
+  <b>Tags:</b>
+  - @event.tags.each do |tag|
+    = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
+
+= link_to 'Edit', edit_event_path(@event) 
+|
+= link_to 'Demonstrationen', events_path

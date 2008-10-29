@@ -1,0 +1,19 @@
+login: &login
+  adapter: mysql
+  username: demo
+  password: demo
+  host: localhost
+  encoding: utf8
+
+development:
+  <<: *login
+  database: demo_dev
+
+test:
+  <<: *login
+  database: demo_test
+
+production:
+  <<: *login
+  database: demo_dev
+

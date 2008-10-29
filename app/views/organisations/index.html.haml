@@ -1,0 +1,12 @@
+%h1 Organisationen
+
+%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  - @organisations.each_with_index do |organisation, index|
+    %tr{:class => "#{'even' if index.even?}"}
+      %td= link_to organisation.title, organisation 
+      %td= link_to 'Bearbeiten', edit_organisation_path(organisation)
+      %td= link_to 'Löschen', organisation, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'Neue Organisation', new_organisation_path

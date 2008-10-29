@@ -1,0 +1,79 @@
+
+body {
+  background: #c8dbf1 url(/images/gradient.png) repeat-x;
+  font-family: Arial,Helvetica,sans-serif; 
+}
+
+a {
+	color: black;
+}
+
+#header {
+	padding: 10px;
+}
+
+#header a {
+	color: white;
+}
+
+#header img, #footer img {
+	display: block;
+	margin: auto;
+	border: none;
+}
+
+#header ul {
+	text-align: center;
+	list-style-type: none;
+	margin: 20px 0;
+	padding: 0;
+	font-size:small;
+	font-weight:bold;	
+}
+#header ul li {
+	display: inline;
+	border-right: solid white 1px;
+	padding: 0 10px;
+}
+
+#header ul li.last {
+	border-right: none;
+}
+	
+.cloud  {
+	width: 650px;
+	background: transparent;
+	margin: auto;
+}
+
+.cloud .title {
+	padding: 0px 31px 0px 31px;
+	background: transparent url(/images/top.png) no-repeat top left;
+	height: 31px;
+}
+
+.cloud .body {
+	padding: 1px 31px 15px 31px;
+	background: transparent url(/images/bottom.png) no-repeat bottom left;
+	min-height: 40px;
+}
+
+form label {
+	display: block;
+}
+
+form input {
+	margin-bottom: 5px;
+}
+
+table tr td {
+	padding: 5px;
+}
+table tr.even {
+	background: #c8dbf1;
+}
+
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }

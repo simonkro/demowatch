@@ -1,0 +1,13 @@
+
+%h1= @tag.name
+
+%h2 Demonstrationen
+- @events.each do |e|
+  %ul
+    %li= link_to e.title, e
+
+%h2 Organisationen
+- @organisations.each do |o|
+  %ul
+    %li= link_to o.title, o
+

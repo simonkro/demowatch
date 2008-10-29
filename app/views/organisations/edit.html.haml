@@ -1,0 +1,19 @@
+%h1 Organisation bearbeiten
+
+- form_for(@organisation) do |f| 
+  = f.error_messages 
+
+  = f.label :title, 'Name'
+  = f.text_field :title, :size=>70
+
+  = f.label :description, 'Beschreibung' 
+  = f.text_area :description, :cols=>80 
+  
+  = f.label :tag_list, 'Tags'
+  = f.text_field :tag_list, :size=>70
+
+  %p= f.submit "Speichern"
+
+= link_to 'Anzeigen', @organisation  
+|
+= link_to 'Zurück', organisations_path

@@ -1,0 +1,22 @@
+%h1 Neue Demonstration
+
+- form_for(@event) do |f| 
+  = f.error_messages
+
+  = f.label :title, 'Name'
+  = f.text_field(:title, :size=>70)
+
+  = f.label :description, 'Beschreibung' 
+  = f.text_area :description, :cols=>80
+  
+  = f.label :tag_list, 'Tags'
+  = f.text_field(:tag_list, :size=>70)
+
+  = f.label :organisation, 'Organisation'
+  = select_tag 'event[organisation_id]', options_from_collection_for_select(@organisations, "id", "title")
+
+  = f.hidden_field :user_id
+
+  %p= f.submit "Erzeugen"
+
+= link_to 'Back', events_path 
