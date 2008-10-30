@@ -1,6 +1,6 @@
 login: &login
   adapter: mysql
-  username: demo
+  username: root
   password: demo
   host: localhost
   encoding: utf8

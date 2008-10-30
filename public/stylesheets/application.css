@@ -1,11 +1,36 @@
 
 body {
-  background: #c8dbf1 url(/images/gradient.png) repeat-x;
-  font-family: Arial,Helvetica,sans-serif; 
+	background: #c8dbf1 url(/images/gradient.png) repeat-x;
+	font-size: .9em;
+	font-family: Lucida Sans; 
+}
+
+p {
+	margin-left:2em;
 }
 
 a {
 	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font: bold 1.7em Courier New;
+	text-align: center;
+}
+
+h2 {
+	font: bold 1.2em Lucida Sans;
+	color: #276cba;
+}
+
+h3 {
+	font: italic 1.1em Lucida Sans;
+	margin-left: 1.7em;
 }
 
 #header {
@@ -56,6 +81,7 @@ a {
 	padding: 1px 31px 15px 31px;
 	background: transparent url(/images/bottom.png) no-repeat bottom left;
 	min-height: 40px;
+	line-height: 1.4em;
 }
 
 form label {
@@ -69,6 +95,7 @@ form input {
 table tr td {
 	padding: 5px;
 }
+
 table tr.even {
 	background: #c8dbf1;
 }
