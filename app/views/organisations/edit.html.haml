@@ -11,7 +11,7 @@
   
   = f.label :tag_list, 'Tags'
   = f.text_field :tag_list, :size=>70, :autocomplete => "off"
-  #organisation_tag_list_auto_complete.auto_complete
+  #organisation_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
   %p= f.submit "Speichern"
 
