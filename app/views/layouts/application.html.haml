@@ -4,15 +4,15 @@
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
   
-    /%title= page_title
-    /= javascript_include_tag :all
+    -#%title= page_title
+    = javascript_include_tag :all
     = stylesheet_link_tag :all
     
     - if @rss_title && @rss_url
       = auto_discovery_link_tag(:rss, @rss_url, {:title => @rss_title})
       
   %body
-    /= render :partial => "shared/messages"
+    -#= render :partial => "shared/messages"
     #header
       =link_to image_tag('demowatch.png'), :front
       %ul

@@ -4,13 +4,14 @@
   = f.error_messages
 
   = f.label :title, 'Name'
-  = f.text_field(:title, :size=>70)
+  = f.text_field :title, :size=>70
 
   = f.label :description, 'Beschreibung' 
   = f.text_area :description, :cols=>80
   
   = f.label :tag_list, 'Tags'
-  = f.text_field(:tag_list, :size=>70)
+  = f.text_field :tag_list, :size=>70, :autocomplete => "off"
+  #event_tag_list_auto_complete.auto_complete
 
   = f.label :organisation, 'Organisation'
   = select_tag 'event[organisation_id]', options_from_collection_for_select(@organisations, "id", "title")
@@ -20,3 +21,5 @@
   %p= f.submit "Erzeugen"
 
 = link_to 'Back', events_path 
+
+= auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

@@ -2,6 +2,13 @@ class OrganisationsController < ApplicationController
 
   before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
   
+  skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
+
+  def auto_complete_for_tag_name
+    @tags = Tag.find(:all, :conditions => [ 'LOWER(name) LIKE ?', params[:organisation][:tag_list] + '%' ])
+    render :inline => "<%= auto_complete_result(@tags, 'name') %>"
+  end
+    
   # GET /organisations
   # GET /organisations.xml
   def index
