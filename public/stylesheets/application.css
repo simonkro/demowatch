@@ -2,7 +2,7 @@
 body {
 	background: #c8dbf1 url(/images/gradient.png) repeat-x;
 	font-size: .9em;
-	font-family: Lucida Sans; 
+	font-family: Georgia, Helvetica, sans-serif; 
 }
 
 p {
@@ -19,18 +19,23 @@ a:hover {
 }
 
 h1 {
-	font: bold 1.7em Courier New;
+	font: italic 1.8em Georgia;
 	text-align: center;
 }
 
 h2 {
-	font: bold 1.2em Lucida Sans;
+	font: bold 1.2em Lucida Sans, Arial, Helvetica, sans-serif;
 	color: #276cba;
 }
 
 h3 {
-	font: italic 1.1em Lucida Sans;
-	margin-left: 1.7em;
+	font: italic 1.1em Georgia, Courier New;
+	margin-left: 0.9em;
+}
+
+small {
+	font-size: 0.7em;
+	color: #276cba;
 }
 
 #header {
@@ -39,6 +44,7 @@ h3 {
 
 #header a {
 	color: white;
+	font: normal 1.0em Lucida Sans, sans serif;
 }
 
 #header img, #footer img {

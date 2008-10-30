@@ -18,7 +18,7 @@
       %ul
         %li=link_to 'Was ist Demowatch?', :about
         %li=link_to 'Veranstaltungen', :controller => 'events' 
-        %li=link_to 'Organisationen', :controller => 'organisations' 
+        %li=link_to 'Veranstalter', :controller => 'organisations' 
         -if logged_in?
           %li=link_to 'Abmelden', :logout
         -else
@@ -33,3 +33,5 @@
         
     #footer
       =image_tag 'people.png'
+      %center
+        %small &copy; 2008 Patrick Hoffmann
