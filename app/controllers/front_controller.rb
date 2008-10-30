@@ -7,7 +7,7 @@ class FrontController < ApplicationController
   def impressum
   end
 
-  def what
+  def about
   end
   
   def show

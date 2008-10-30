@@ -81,6 +81,7 @@ table tr.even {
 
 .auto_complete {
 	position:absolute;
+	cursor:pointer;
 	width:250px;
 	background-color:white;
 	border:1px solid #888;
@@ -94,14 +95,14 @@ table tr.even {
 	padding:0;
 }
     
-.auto_complete ul li.selected { 
-	background-color: #c8dbf1;
-}
-
 .auto_complete ul li {
 	list-style-type: none;
 	display:block;
 	margin:0;
 	padding:2px;
 	height:16px;
+}
+
+.auto_complete ul li.selected { 
+	background-color: #c8dbf1;
 }

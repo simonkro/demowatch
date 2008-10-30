@@ -51,7 +51,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
 
   map.front '/', :controller => 'front', :action => 'index'
-  map.what '/what', :controller => 'front', :action => 'what'
+  map.about '/about', :controller => 'front', :action => 'about'
   map.impressum '/impressum', :controller => 'front', :action => 'impressum'
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil

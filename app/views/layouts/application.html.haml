@@ -5,7 +5,7 @@
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
   
     -#%title= page_title
-    = javascript_include_tag :all
+    = javascript_include_tag 'prototype', 'effects', 'controls'
     = stylesheet_link_tag :all
     
     - if @rss_title && @rss_url
@@ -16,7 +16,7 @@
     #header
       =link_to image_tag('demowatch.png'), :front
       %ul
-        %li=link_to 'Was ist Demowatch?', :what
+        %li=link_to 'Was ist Demowatch?', :about
         %li=link_to 'Veranstaltungen', :controller => 'events' 
         %li=link_to 'Organisationen', :controller => 'organisations' 
         -if logged_in?
