@@ -1,4 +1,4 @@
-
+﻿
 %h1= @organisation.title
 %p= @organisation.description
 %p 
@@ -8,6 +8,6 @@
 
 = link_to 'Edit', edit_organisation_path(@organisation) 
 |
-= link_to 'L�schen', @organisation, :confirm => 'Are you sure?', :method => :delete
+= link_to 'Löschen', @organisation, :confirm => 'Are you sure?', :method => :delete
 |
 = link_to 'Organisationen', organisations_path
