@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   acts_as_taggable  
   has_many :organizers, :dependent => :destroy
   has_many :organisations, :through => :organizers
+  has_many :bookmarks, :dependent => :destroy
   
   validates_presence_of     :login, :email
   validates_presence_of     :password,                   :if => :password_required?

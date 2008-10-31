@@ -1,0 +1,12 @@
+= f.error_messages 
+
+= f.label :title, 'Name'
+= f.text_field :title, :size=>60
+
+= f.label :description, 'Beschreibung' 
+= f.text_area :description, :cols=>60 
+
+= f.label :tag_list, 'Tags'
+= f.text_field :tag_list, :size=>60, :autocomplete => "off"
+#organisation_tag_list_auto_complete.auto_complete{:style=>'display:none'}
+= auto_complete_field 'organisation_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }

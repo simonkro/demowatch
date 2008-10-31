@@ -1,0 +1,22 @@
+%h1 Einstellungen
+
+- form_for(@user) do |f| 
+  = f.error_messages 
+
+  = f.label :login, 'Name'
+  = f.text_field :login, :size=>60
+
+  = f.label :email, 'Email'
+  = f.text_field :email, :size=>60
+
+  = f.label :tag_list, 'Tags'
+  = f.text_field :tag_list, :size=>60, :autocomplete => "off"
+  #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
+
+  = f.submit "Speichern"
+
+= link_to 'Anzeigen', @user  
+|
+= link_to 'Zurück', users_path
+
+= auto_complete_field 'user_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }

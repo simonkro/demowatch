@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :show]
   
+  skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
+
+  def auto_complete_for_tag_name
+    @tags = Tag.find(:all, :conditions => [ 'LOWER(name) LIKE ?', params[:event][:tag_list] + '%' ])
+    render :inline => "<%= auto_complete_result(@tags, 'name') %>"
+  end
 
   # render new.rhtml
   def new
