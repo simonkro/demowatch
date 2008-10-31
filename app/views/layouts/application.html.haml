@@ -19,6 +19,7 @@
         %li=link_to 'Was ist Demowatch?', :about
         -if logged_in?
           %li=link_to 'Abmelden', :logout
+          %li=link_to 'Einstellungen', current_user
         -else
           %li=link_to 'Anmelden', :login
           %li=link_to 'Registrieren', :signup
