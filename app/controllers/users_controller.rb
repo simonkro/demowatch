@@ -63,12 +63,12 @@ class UsersController < ApplicationController
   def bookmark
     if params[:event]
       event = Event.find(params[:event].to_i)
-      @user.bookmarks.build(:title => event.title)
+      @user.bookmarks.build(:title => event.title, :bookmarkable => event)
       flash[:notice] = "Bookmark wurde angelegt." if @user.save
     end
     if params[:organisation]
       organisation = Organisation.find(params[:organisation].to_i)
-      @user.bookmarks.build(:title => organisation.title)
+      @user.bookmarks.build(:title => organisation.title, :bookmarkable => organisation)
       flash[:notice] = "Bookmark wurde angelegt." if @user.save
     end
     
