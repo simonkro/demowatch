@@ -89,13 +89,13 @@ small {
 
 .balloon .title {
 	padding: 0px 31px 0px 31px;
-	background: transparent url(/images/top.png) no-repeat top left;
+	background: transparent url(/images/ballon.gif) no-repeat top left;
 	height: 31px;
 }
 
 .balloon .body {
 	padding: 1px 31px 45px 31px;
-	background: transparent url(/images/bottom.png) no-repeat bottom left;
+	background: transparent url(/images/ballon.gif) no-repeat bottom left;
 	min-height: 40px;
 	line-height: 1.4em;
 }
