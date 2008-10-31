@@ -123,6 +123,7 @@ form input {
 }
 
 table  {
+	width: 590px;
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-bottom-style: solid;
