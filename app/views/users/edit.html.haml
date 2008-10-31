@@ -14,13 +14,12 @@
   #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
   = f.label :bookmarks, 'Bookmarks'
-  - @user.bookmarks.each do |bm|
-    = bm.bookmarkable.title
+  %ul
+    - @user.bookmarks.each do |bm|
+      %li= bm.title
 
   = f.submit "Speichern"
 
 = link_to 'Anzeigen', @user  
-|
-= link_to 'Zurück', users_path
 
 = auto_complete_field 'user_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }

@@ -17,5 +17,6 @@
 = link_to 'Bearbeiten', edit_event_path(@event) 
 |
 = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
-|
-= link_to 'Bookmark', url_for(:controler => 'users',:action => 'bookmark')
+- if logged_in? 
+  |
+  = link_to 'Bookmark', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)

@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :show]
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :show, :bookmark]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
   def auto_complete_for_tag_name
-    @tags = Tag.find(:all, :conditions => [ 'LOWER(name) LIKE ?', params[:event][:tag_list] + '%' ])
+    @tags = Tag.find(:all, :conditions => [ 'LOWER(name) LIKE ?', params[:user][:tag_list] + '%' ])
     render :inline => "<%= auto_complete_result(@tags, 'name') %>"
   end
 
@@ -60,6 +60,21 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def bookmark
+    if params[:event]
+      event = Event.find(params[:event].to_i)
+      @user.bookmarks.build(:title => event.title)
+      flash[:notice] = "Bookmark wurde angelegt." if @user.save
+    end
+    if params[:organisation]
+      organisation = Organisation.find(params[:organisation].to_i)
+      @user.bookmarks.build(:title => organisation.title)
+      flash[:notice] = "Bookmark wurde angelegt." if @user.save
+    end
+    
+    redirect_to :back
+  end
+  
 protected
   def find_user
     @user = User.find(params[:id])

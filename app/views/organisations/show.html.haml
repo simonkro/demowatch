@@ -11,4 +11,6 @@
 = link_to 'Bearbeiten', edit_organisation_path(@organisation) 
 |
 = link_to 'Löschen', @organisation, :confirm => 'Diesen Veranstalter wirklich l&ouml;schen?', :method => :delete
-
+- if logged_in? 
+  |
+  = link_to 'Bookmark', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)

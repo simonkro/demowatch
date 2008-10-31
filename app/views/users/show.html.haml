@@ -1,0 +1,23 @@
+%h1= @user.login
+
+%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %tr
+    %td Name
+    %td= @user.login 
+
+  %tr
+    %td Email
+    %td= @user.email 
+
+  %tr
+    %td Tags
+    %td= @user.tag_list 
+
+  %tr
+    %td Bookmarks
+    %td
+      %ul
+        - @user.bookmarks.each do |bm|
+          %li= bm.title
+
+=link_to 'Bearbeiten', edit_user_path(@user)
