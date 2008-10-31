@@ -2,11 +2,13 @@
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %th
+    %td Ort
     %td Termin 
-    %td Teilnehmer
+    %td Popularit&auml;t
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to event.title, event
+      %td
       %td
       %td
 
