@@ -19,7 +19,7 @@
         %li=link_to 'Was ist Demowatch?', :about
         -if logged_in?
           %li=link_to 'Abmelden', :logout
-          %li=link_to 'Einstellungen', current_user
+          %li=link_to 'Einstellungen', edit_user_path(current_user)
         -else
           %li=link_to 'Anmelden', :login
           %li=link_to 'Registrieren', :signup
@@ -29,7 +29,7 @@
 
     .tabs
       %ul
-        - tabs = [['Themen', url_for(:front)], ['Demos', url_for(:controller => 'events')], ['Veranstalter', url_for(:controller => 'organisations')]]
+        - tabs = [['Themen', front_path], ['Demos', events_path], ['Veranstalter', organisations_path]]
         - tabs.each do |label, link|
           %li
             %a{:href=>link, :class=>"xmenu2 #{'selected' if link == request.request_uri}"}
