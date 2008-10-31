@@ -8,7 +8,7 @@
   %b Termin:
   = @event.startdate && @event.startdate.strftime('%d.%m.%Y %H:%m')  
 %p 
-  %b Tags:
+  %b Themen:
   - @event.tags.each do |tag|
     = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
 

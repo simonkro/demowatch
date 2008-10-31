@@ -1,8 +1,8 @@
-%h1 Neuer Veranstalter
+%h1 Neue Initiative
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
 
   =f.submit "Erzeugen" 
 
-= link_to 'Zurück', organisations_path 
+= link_to 'Zurück zur Liste der Initiativen', organisations_path 

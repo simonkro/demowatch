@@ -29,7 +29,7 @@
 
     .tabs
       %ul
-        - tabs = [['Themen', front_path], ['Demos', events_path], ['Veranstalter', organisations_path]]
+        - tabs = [['Themen', front_path], ['Demos', events_path], ['Initiativen', organisations_path]]
         - tabs.each do |label, link|
           %li
             %a{:href=>link, :class=>"xmenu2 #{'selected' if link == request.request_uri}"}

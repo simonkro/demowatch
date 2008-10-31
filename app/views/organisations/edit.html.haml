@@ -1,4 +1,4 @@
-%h1 Veranstalter bearbeiten
+%h1 Initiative bearbeiten
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
@@ -7,4 +7,4 @@
 
 = link_to 'Anzeigen', @organisation  
 |
-= link_to 'Zurück', organisations_path
+= link_to 'Zurück zu den Initiativen', organisations_path

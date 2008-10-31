@@ -2,9 +2,9 @@
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Veranstalter
-    %th Anstehende Demos
-    %th Vergangene Demos
+    %th Initiative
+    %th Letzte Demo
+    %th N&auml;chste Demo
   - @organisations.each_with_index do |organisation, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to organisation.title, organisation 
@@ -13,4 +13,4 @@
 
 %br
 
-= link_to 'Neue Organisation', new_organisation_path
+= link_to 'Neue Initiative', new_organisation_path
