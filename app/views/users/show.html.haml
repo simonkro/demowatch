@@ -1,5 +1,7 @@
 %h1= @user.login
 
+%h2 Daten
+
 %p
   %b Name:
   = @user.login 
@@ -8,12 +10,14 @@
   %b Email:
   = @user.email 
 
+%h2 Abonnements
+
 %p
-  %b Tags:
+  %b Themen:
   = @user.tag_list 
 
 %p
-  %b Bookmarks:
+  %b Demos & Inititativen:
   %ul
     - @user.bookmarks.each do |bm|
       %li= link_to bm.title, bm.bookmarkable

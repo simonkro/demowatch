@@ -1,9 +1,11 @@
 %h1 Initiative bearbeiten
 
 - form_for(@organisation) do |f| 
-  = render :partial => 'fields', :locals => {:f => f}
+  %h2 Daten
+  %p
+    = render :partial => 'fields', :locals => {:f => f}
 
-  = f.submit "Speichern"
+    = f.submit "Speichern"
 
 .contextmenu
   = link_to 'Anzeigen', @organisation  

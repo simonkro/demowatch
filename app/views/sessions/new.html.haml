@@ -7,17 +7,18 @@ registriert hast, kannst Du Dich hier anmelden und deine pers&ouml;nlichen Theme
 %h2 Anmeldedaten
 
 - form_tag session_path do 
-  
-  = label_tag :login, 'Login'
-  = text_field_tag :login
+
+  %p  
+    = label_tag :login, 'Login'
+    = text_field_tag :login
 
 
-  = label_tag :password, 'Passwort'
-  = password_field_tag :password
+    = label_tag :password, 'Passwort'
+    = password_field_tag :password
 
 
-  = label_tag :remember_me, 'Automatisch einloggen'
-  = check_box_tag :remember_me
+    = label_tag :remember_me, 'Automatisch einloggen'
+    = check_box_tag :remember_me
 
-  =submit_tag 'Anmelden'
+    =submit_tag 'Anmelden'
 

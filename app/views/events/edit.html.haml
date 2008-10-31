@@ -1,9 +1,8 @@
 %h1 Demonstration bearbeiten
 
 - form_for(@event) do |f|
-  = render :partial => 'fields', :locals => {:f => f}
-
-  = f.submit "Speichern" 
+  %p= render :partial => 'fields', :locals => {:f => f}
+  %p= f.submit "Speichern" 
 
 .contextmenu
   = link_to 'Show', @event 
