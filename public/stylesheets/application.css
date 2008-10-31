@@ -184,9 +184,15 @@ overflow: hidden;
 a.xmenu2, a.xmenu2:visited {display:block; text-decoration:none; width:100px; font-size:0.9em;}
 a.xmenu2:hover {background:transparent; cursor:pointer;}
 a.xmenu2:hover span {color:#000;}
-a.xmenu2:hover .xboxcontent {background:#fff; border-color:#fff; border-bottom:1px solid #fff;}
-a.xmenu2:hover .xb1 {background:#fff;}
-a.xmenu2:hover .xb2, a.xmenu2:hover .xb3, a.xmenu2:hover .xb4 {background:#fff; border-color:#fff;}
+a.xmenu2:hover .xboxcontent {background:#e9f1fa; border-color:#fff; border-bottom:1px solid #fff;}
+a.xmenu2:hover .xb1 {background:#e9f1fa;}
+a.xmenu2:hover .xb2, a.xmenu2:hover .xb3, a.xmenu2:hover .xb4 {background:#e9f1fa; border-color:#fff;}
+
+a.xmenu2.selected {background:transparent; cursor:pointer;}
+a.xmenu2.selected span {color:#000;}
+a.xmenu2.selected .xboxcontent {background:#fff; border-color:#fff; border-bottom:1px solid #fff;}
+a.xmenu2.selected .xb1 {background:#fff;}
+a.xmenu2.selected .xb2, a.xmenu2.selected .xb3, a.xmenu2.selected .xb4 {background:#fff; border-color:#fff;}
 
 .xboxcontentd {display:block; background:#fff; border:0 solid #fff; border-width:1px 1px 0 1px; padding-top:5px;}
 a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px solid #fff;}
