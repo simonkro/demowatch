@@ -1,15 +1,16 @@
 %h1 &Ouml;ffentliche Demonstrationen
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
-  %th
-    %td Ort
-    %td Termin 
-    %td Popularit&auml;t
+  %tr
+    %th Demo
+    %th Ort
+    %th Termin 
+    %th Popularit&auml;t
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to event.title, event
       %td
-      %td
+      %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
       %td
 
 %br
