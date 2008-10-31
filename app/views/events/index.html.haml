@@ -1,11 +1,14 @@
 %h1 Demonstrationen
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %th
+    %td Termin 
+    %td Teilnehmer
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to event.title, event
-      %td= link_to 'Bearbeiten', edit_event_path(event)
-      %td= link_to 'Löschen', event, :confirm => 'Are you sure?', :method => :delete
+      %td
+      %td
 
 %br
 

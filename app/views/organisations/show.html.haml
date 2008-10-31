@@ -6,8 +6,9 @@
   - @organisation.tags.each do |tag|
     = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
 
-= link_to 'Edit', edit_organisation_path(@organisation) 
+= link_to 'Zur&uuml;ck zu den Veranstaltern', organisations_path
 |
-= link_to 'Löschen', @organisation, :confirm => 'Are you sure?', :method => :delete
+= link_to 'Bearbeiten', edit_organisation_path(@organisation) 
 |
-= link_to 'Veranstalter', organisations_path
+= link_to 'Löschen', @organisation, :confirm => 'Diesen Veranstalter wirklich l&ouml;schen?', :method => :delete
+

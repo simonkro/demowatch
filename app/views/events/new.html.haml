@@ -7,7 +7,7 @@
   = f.text_field :title, :size=>70
 
   = f.label :description, 'Beschreibung' 
-  = f.text_area :description, :cols=>80
+  = f.text_area :description, :cols=>70
   
   = f.label :tag_list, 'Tags'
   = f.text_field :tag_list, :size=>70, :autocomplete => "off"
@@ -18,8 +18,9 @@
 
   = f.hidden_field :user_id
 
-  %p= f.submit "Erzeugen"
+  %p
+    %center= f.submit "Erzeugen"
 
-= link_to 'Back', events_path 
+  = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path 
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }
