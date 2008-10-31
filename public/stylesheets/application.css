@@ -122,12 +122,27 @@ form input {
 	margin-bottom: 5px;
 }
 
+table  {
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
 table tr th {
 	font-weight: normal;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding: 5px;
+	font-style: italic;
 }
 
 table tr td {
 	padding: 5px;
+	border-left-style: solid;
+	border-left-width: 1px;
 }
 
 table tr.even {
