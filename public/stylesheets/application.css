@@ -158,8 +158,8 @@ table tr.even {
 /* ******** see www.cssplay.co.uk ********* */
 
 .tabs ul {margin:0; padding:0; list-style-type:none; background:transparent; height:23px;}
-.tabs li {display:block; float:left; margin-left:2px}
-.tabs {display:block; position:relative; background:transparent; padding:0; margin:auto; width:306px}
+.tabs li {display:block; float:left; margin-left:6px}
+.tabs {display:block; position:relative; background:transparent; padding:0; margin:auto; width:318px}
 
 .xsnazzy {background:transparent;}
 .xsnazzy span {text-align:center; color:#000; margin:0; font-weight:normal; padding-bottom:2px;}
