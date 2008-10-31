@@ -29,7 +29,7 @@
         - tabs = [['Themen', url_for(:front)], ['Demos', url_for(:controller => 'events')], ['Veranstalter', url_for(:controller => 'organisations')]]
         - tabs.each do |label, link|
           %li
-            %a.xmenu2{:href=>link}
+            %a{:href=>link, :class=>"xmenu2 #{'selected' if link == request.request_uri}"}
               <b class="xsnazzy"><b class="xtop"><b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b></b>
               %span.xboxcontent= label
               </b>
