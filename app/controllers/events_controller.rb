@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
-    @event = Event.new(:user => current_user)
+    @event = Event.new(:user => current_user, :startdate => Time.now)
     @organisations = Organisation.find(:all)
     
 
@@ -61,6 +61,7 @@ class EventsController < ApplicationController
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
+        @organisations = Organisation.find(:all)
         format.html { render :action => "new" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
@@ -78,6 +79,7 @@ class EventsController < ApplicationController
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
       else
+        @organisations = Organisation.find(:all)
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end

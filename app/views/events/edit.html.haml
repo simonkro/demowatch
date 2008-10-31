@@ -9,6 +9,9 @@
   = f.label :description, 'Beschreibung' 
   = f.text_area :description, :cols=>80
   
+  = f.label :startdate, 'Begin'
+  = datetime_select :event, :startdate 
+  
   = f.label :tag_list, 'Tags'
   = f.text_field :tag_list, :size=>70, :autocomplete => "off"
   #event_tag_list_auto_complete.auto_complete{:style=>'display:none'}

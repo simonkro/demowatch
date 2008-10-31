@@ -8,6 +8,17 @@
 
   = f.label :description, 'Beschreibung' 
   = f.text_area :description, :cols=>70
+
+  = f.label :startdate, 'Begin'
+  = datetime_select :event, :startdate 
+
+  /
+    = f.text_field :startdate, :size=>20
+    #startcal.scal.tinyscal.googleblue
+    #scalupdate &nbsp;
+    
+    :javascript
+      var startcal = new scal('startcal', 'event_startdate', {weekdaystart: 1, updateformat:'dd.mm.yyyy'});
   
   = f.label :tag_list, 'Tags'
   = f.text_field :tag_list, :size=>70, :autocomplete => "off"
