@@ -17,14 +17,23 @@
       =link_to image_tag('demowatch.png'), :front
       %ul
         %li=link_to 'Was ist Demowatch?', :about
-        %li=link_to 'Veranstaltungen', :controller => 'events' 
-        %li=link_to 'Veranstalter', :controller => 'organisations' 
         -if logged_in?
           %li=link_to 'Abmelden', :logout
         -else
           %li=link_to 'Anmelden', :login
           %li=link_to 'Registrieren', :signup
         %li.last=link_to 'Impressum', :impressum
+
+    .views
+      %img{:src=>"/images/lh_tab.png"}
+      =link_to 'Themen', :front
+      %img{:src=>"/images/rh_tab.png"}
+      %img{:src=>"/images/l_tab.png"}
+      =link_to 'Demos', :controller => 'events'
+      %img{:src=>"/images/r_tab.png"}
+      %img{:src=>"/images/l_tab.png"}
+      =link_to 'Veranstalter', :controller => 'organisations'
+      %img{:src=>"/images/r_tab.png"}
         
     .cloud
       .title=flash[:notice]
