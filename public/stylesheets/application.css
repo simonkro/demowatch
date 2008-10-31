@@ -153,12 +153,12 @@ table tr.even {
 /* ***************** Menu ***************** */
 /* ******** see www.cssplay.co.uk ********* */
 
-.tabs ul {margin:0; padding:0; list-style-type:none; background:transparent; height:26px;}
+.tabs ul {margin:0; padding:0; list-style-type:none; background:transparent; height:22px;}
 .tabs li {display:block; float:left;}
 .tabs {display:block; position:relative; background:transparent; padding:0; margin:auto; width:300px}
 
 .xsnazzy {background:transparent;}
-.xsnazzy span {text-align:center; color:#000; margin:0; font-weight:normal; padding-bottom:0.5em;}
+.xsnazzy span {text-align:center; color:#000; margin:0; font-weight:normal; padding-bottom:2px;}
 
 .xtop {display:block; background:transparent; font-size:1px;}
 .xb1, .xb2, .xb3, .xb4 {
