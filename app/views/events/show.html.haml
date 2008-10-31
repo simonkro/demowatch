@@ -2,10 +2,13 @@
 %h1= @event.title
 %p= @event.description
 %p
-  <b>Organisation:</b>
+  %b Organisation:
   = link_to @event.organisation.title, @event.organisation 
+%p
+  %b Termin:
+  = @event.startdate && @event.startdate.strftime('%d.%m.%Y %h:%m')  
 %p 
-  <b>Tags:</b>
+  %b Tags:
   - @event.tags.each do |tag|
     = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
 
