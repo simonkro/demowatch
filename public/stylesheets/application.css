@@ -153,7 +153,7 @@ table tr.even {
 /* ***************** Menu ***************** */
 /* ******** see www.cssplay.co.uk ********* */
 
-.tabs ul {margin:0; padding:0; list-style-type:none; background:transparent; height:22px;}
+.tabs ul {margin:0; padding:0; list-style-type:none; background:transparent; height:23px;}
 .tabs li {display:block; float:left;}
 .tabs {display:block; position:relative; background:transparent; padding:0; margin:auto; width:300px}
 
