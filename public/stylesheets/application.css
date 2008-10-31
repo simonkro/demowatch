@@ -89,15 +89,21 @@ small {
 
 .balloon .title {
 	padding: 0px 31px 0px 31px;
-	background: transparent url(/images/ballon.gif) no-repeat top left;
+	background: transparent url(/images/balloon.gif) no-repeat top left;
 	height: 31px;
 }
 
 .balloon .body {
 	padding: 1px 31px 45px 31px;
-	background: transparent url(/images/ballon.gif) no-repeat bottom left;
+	background: white;
 	min-height: 40px;
 	line-height: 1.4em;
+}
+
+.balloon .bottom {
+  padding: 0px 31px 0px 31px;
+  background: transparent url(/images/balloon.gif) no-repeat bottom left;
+  height: 31px;
 }
 
 form label {
