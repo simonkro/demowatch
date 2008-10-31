@@ -114,6 +114,10 @@ form input {
 	margin-bottom: 5px;
 }
 
+table tr th {
+	font-weight: normal;
+}
+
 table tr td {
 	padding: 5px;
 }
