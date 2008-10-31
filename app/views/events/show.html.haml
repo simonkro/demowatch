@@ -6,7 +6,7 @@
   = link_to @event.organisation.title, @event.organisation 
 %p
   %b Termin:
-  = @event.startdate && @event.startdate.strftime('%d.%m.%Y %h:%m')  
+  = @event.startdate && @event.startdate.strftime('%d.%m.%Y %H:%m')  
 %p 
   %b Tags:
   - @event.tags.each do |tag|
