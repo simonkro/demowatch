@@ -66,7 +66,7 @@ small {
 #header ul {
 	text-align: center;
 	list-style-type: none;
-	margin: 20px 0;
+	margin: 20px 0 0px;
 	padding: 0;
 	font-size:small;
 	font-weight:bold;	
@@ -101,9 +101,16 @@ small {
 }
 
 .balloon .bottom {
-  padding: 0px 31px 0px 31px;
-  background: transparent url(/images/balloon.gif) no-repeat bottom left;
-  height: 31px;
+	padding: 0px 31px 0px 31px;
+	background: transparent url(/images/balloon.gif) no-repeat bottom left;
+	height: 31px;
+}
+
+.message {
+        font: bold 1.3em Lucida Sans, Arial, sans serif;
+	color: white;
+	text-align: center;
+	padding: 0px 0px 20px 0px;
 }
 
 form label {

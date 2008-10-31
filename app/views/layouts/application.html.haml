@@ -24,6 +24,8 @@
           %li=link_to 'Registrieren', :signup
         %li.last=link_to 'Impressum', :impressum
 
+    .message= flash[:notice]
+
     .tabs
       %ul
         - tabs = [['Themen', url_for(:front)], ['Demos', url_for(:controller => 'events')], ['Veranstalter', url_for(:controller => 'organisations')]]
@@ -35,7 +37,7 @@
               </b>
         
     .balloon
-      .title= flash[:notice]
+      .title
       .body= @content_for_layout
       .bottom
         
