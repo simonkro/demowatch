@@ -24,18 +24,28 @@
           %li=link_to 'Registrieren', :signup
         %li.last=link_to 'Impressum', :impressum
 
-    .views
-      %img{:src=>"/images/lh_tab.png"}
-      =link_to 'Themen', :front
-      %img{:src=>"/images/rh_tab.png"}
-      %img{:src=>"/images/l_tab.png"}
-      =link_to 'Demos', :controller => 'events'
-      %img{:src=>"/images/r_tab.png"}
-      %img{:src=>"/images/l_tab.png"}
-      =link_to 'Veranstalter', :controller => 'organisations'
-      %img{:src=>"/images/r_tab.png"}
+    .tabs
+      %ul
+        - tabs = [['Themen', url_for(:front)], ['Demos', url_for(:controller => 'events')], ['Veranstalter', url_for(:controller => 'organisations')]]
+        - tabs.each do |label, link|
+          %li
+            %a.xmenu2{:href=>link}
+              <b class="xsnazzy"><b class="xtop"><b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b></b>
+              %span.xboxcontent= label
+              </b>
+      
+      /    
+        %img{:src=>"/images/lh_tab.png"}
+        =link_to 'Themen', :front
+        %img{:src=>"/images/rh_tab.png"}
+        %img{:src=>"/images/l_tab.png"}
+        =link_to 'Demos', :controller => 'events'
+        %img{:src=>"/images/r_tab.png"}
+        %img{:src=>"/images/l_tab.png"}
+        =link_to 'Veranstalter', :controller => 'organisations'
+        %img{:src=>"/images/r_tab.png"}
         
-    .cloud
+    .balloon
       .title=flash[:notice]
       .body
         = @content_for_layout

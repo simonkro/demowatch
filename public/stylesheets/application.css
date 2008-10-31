@@ -77,19 +77,19 @@ small {
 	border-right: none;
 }
 	
-.cloud  {
+.balloon  {
 	width: 650px;
 	background: transparent;
 	margin: auto;
 }
 
-.cloud .title {
+.balloon .title {
 	padding: 0px 31px 0px 31px;
 	background: transparent url(/images/top.png) no-repeat top left;
 	height: 31px;
 }
 
-.cloud .body {
+.balloon .body {
 	padding: 1px 31px 15px 31px;
 	background: transparent url(/images/bottom.png) no-repeat bottom left;
 	min-height: 40px;
@@ -112,11 +112,15 @@ table tr.even {
 	background: #c8dbf1;
 }
 
+/* ***************** word cloud ***************** */
+
 .css0 { font-size: 0.8em; color: #888 }
 .css1 { font-size: 1.0em; color: #666 }
 .css2 { font-size: 1.2em; color: #444 }
 .css3 { font-size: 1.4em; color: #222 }
 .css4 { font-size: 1.6em; color: #000 }
+
+/* ***************** auto complete ***************** */
 
 .auto_complete {
 	position:absolute;
@@ -145,3 +149,41 @@ table tr.even {
 .auto_complete ul li.selected { 
 	background-color: #c8dbf1;
 }
+
+/* ***************** Menu ***************** */
+/* ******** see www.cssplay.co.uk ********* */
+
+.tabs ul {margin:0; padding:0; list-style-type:none; background:transparent; height:26px;}
+.tabs li {display:block; float:left;}
+.tabs {display:block; position:relative; background:transparent; padding:0; margin:auto; width:300px}
+
+.xsnazzy {background:transparent;}
+.xsnazzy span {text-align:center; color:#000; margin:0; font-weight:normal; padding-bottom:0.5em;}
+
+.xtop {display:block; background:transparent; font-size:1px;}
+.xb1, .xb2, .xb3, .xb4 {
+display:block; 
+/* hide overflow:hidden from IE5/Mac */ 
+/* \*/ 
+overflow: hidden; 
+/* */ 
+}
+.xb1, .xb2, .xb3 {height:1px;}
+.xb2, .xb3, .xb4 {background:#c8dbf1; border-left:1px solid #fff; border-right:1px solid #fff;}
+.xb1 {margin:0 5px; background:#fff;}
+.xb2 {margin:0 3px; border-width:0 2px;}
+.xb3 {margin:0 2px;}
+.xb4 {height:2px; margin:0 1px;}
+
+.xboxcontent {display:block; background:#c8dbf1; border:0 solid #fff; border-width:0 1px 1px 1px;}
+
+a.xmenu2, a.xmenu2:visited {display:block; text-decoration:none; width:7em; font-size:0.9em;}
+a.xmenu2:hover {background:transparent; cursor:pointer;}
+a.xmenu2:hover span {color:#000;}
+a.xmenu2:hover .xboxcontent {background:#fff; border-color:#888; border-bottom:1px solid #eee;}
+a.xmenu2:hover .xb1 {background:#888;}
+a.xmenu2:hover .xb2, a.xmenu2:hover .xb3, a.xmenu2:hover .xb4 {background:#fff; border-color:#888;}
+
+.xboxcontentd {display:block; background:#cc6; border:0 solid #fff; border-width:1px 1px 0 1px; padding-top:5px;}
+a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px solid #eee;}
+
