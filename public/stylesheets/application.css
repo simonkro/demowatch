@@ -113,6 +113,10 @@ small {
 	padding: 0px 0px 20px 0px;
 }
 
+.contextmenu {
+	text-align: center;
+}
+
 form label {
 	display: block;
 }
