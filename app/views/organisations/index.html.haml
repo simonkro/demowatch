@@ -1,9 +1,10 @@
 %h1 Wer veranstaltet Demos?
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
-  %th
-    %td Anstehende Demos
-    %td Vergangene Demos
+  %tr
+    %th
+    %th Anstehende Demos
+    %th Vergangene Demos
   - @organisations.each_with_index do |organisation, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to organisation.title, organisation 
