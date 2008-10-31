@@ -14,4 +14,4 @@
   = link_to 'Löschen', @organisation, :confirm => 'Diese Initiative wirklich l&ouml;schen?', :method => :delete
   - if logged_in? 
     |
-    = link_to 'Bookmark', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)
+    = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)
