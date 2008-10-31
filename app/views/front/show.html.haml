@@ -2,12 +2,29 @@
 %h1= @tag.name
 
 %h2 Demonstrationen
-- @events.each do |e|
-  %ul
-    %li= link_to e.title, e
 
-%h2 Organisationen
-- @organisations.each do |o|
-  %ul
-    %li= link_to o.title, o
+%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %tr
+    %th Demo
+    %th Ort
+    %th Termin
+    %th Popularit&auml;t
+  - @events.each_with_index do |event, index|
+    %tr{:class => "#{'even' if index.even?}"}
+      %td= link_to event.title, event
+      %td
+      %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
+      %td
 
+%h2 Veranstalter
+
+%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %tr
+    %th Veranstalter
+    %th Anstehende Demos
+    %th Vergangene Demos
+  - @organisations.each_with_index do |organisation, index|
+    %tr{:class => "#{'even' if index.even?}"}
+      %td= link_to organisation.title, organisation
+      %td
+      %td
