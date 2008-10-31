@@ -94,7 +94,7 @@ small {
 }
 
 .balloon .body {
-	padding: 1px 31px 15px 31px;
+	padding: 1px 31px 45px 31px;
 	background: transparent url(/images/bottom.png) no-repeat bottom left;
 	min-height: 40px;
 	line-height: 1.4em;
