@@ -5,8 +5,9 @@
 
   = f.submit "Speichern" 
 
-= link_to 'Show', @event 
-|
-= link_to 'Back', events_path
+.contextmenu
+  = link_to 'Show', @event 
+  |
+  = link_to 'Back', events_path
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

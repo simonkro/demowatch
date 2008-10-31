@@ -12,11 +12,12 @@
   - @event.tags.each do |tag|
     = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
 
-= link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path
-|
-= link_to 'Bearbeiten', edit_event_path(@event) 
-|
-= link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
-- if logged_in? 
+.contextmenu
+  = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path
   |
-  = link_to 'Bookmark', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
+  = link_to 'Bearbeiten', edit_event_path(@event) 
+  |
+  = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
+  - if logged_in? 
+    |
+    = link_to 'Bookmark', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)

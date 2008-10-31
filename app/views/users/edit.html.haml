@@ -20,6 +20,7 @@
 
   = f.submit "Speichern"
 
-= link_to 'Anzeigen', @user  
+.contextmenu
+  = link_to 'Anzeigen', @user  
 
 = auto_complete_field 'user_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }

@@ -20,4 +20,5 @@
         - @user.bookmarks.each do |bm|
           %li= bm.title
 
-=link_to 'Bearbeiten', edit_user_path(@user)
+.contextmenu
+  =link_to 'Bearbeiten', edit_user_path(@user)
