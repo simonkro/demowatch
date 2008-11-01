@@ -10,7 +10,7 @@ p, form {
 }
 
 form h1, form h2, form h3, form h4{
-	margin: -2em;
+	margin-left: -2em;
 }
 
 a {
