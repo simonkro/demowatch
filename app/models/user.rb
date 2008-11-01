@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  acts_as_taggable  
+  #acts_as_taggable
   has_many :organizers, :dependent => :destroy
   has_many :organisations, :through => :organizers
   has_many :bookmarks, :dependent => :destroy
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :password, :password_confirmation
+  attr_accessible :login, :email, :password, :password_confirmation, :tag_list
 
   acts_as_state_machine :initial => :pending
   state :passive

@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   
   def update
     if @user.update_attributes(params[:user])
-      flash[:notice] = 'Einstellungen wurde erfolgreich ge&auml;ndert.'
+      flash[:notice] = 'Einstellungen wurden erfolgreich ge&auml;ndert.'
       redirect_to(@user) 
     else
       render :action => "edit"
