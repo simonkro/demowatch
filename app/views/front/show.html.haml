@@ -16,11 +16,11 @@
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
       %td
 
-%h2 Veranstalter
+%h2 Initiatoren
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Veranstalter
+    %th Initiator
     %th Anstehende Demos
     %th Vergangene Demos
   - @organisations.each_with_index do |organisation, index|
