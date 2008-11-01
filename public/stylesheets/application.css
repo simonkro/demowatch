@@ -171,6 +171,12 @@ table tr.even {
 .css3 { font-size: 1.4em; color: #222 }
 .css4 { font-size: 1.6em; color: #000 }
 
+.css0.usertag { font-size: 0.8em; color: #77F }
+.css1.usertag { font-size: 1.0em; color: #55D }
+.css2.usertag { font-size: 1.2em; color: #33B }
+.css3.usertag { font-size: 1.4em; color: #119 }
+.css4.usertag { font-size: 1.6em; color: #007 }
+
 .cloud {
   text-align: center;
 }
