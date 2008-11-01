@@ -54,7 +54,7 @@ class OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.save
-        flash[:notice] = 'Initiative wurde erfolgreich eingetragen.'
+        flash[:notice] = 'Initiator wurde erfolgreich eingetragen.'
         format.html { redirect_to(@organisation) }
         format.xml  { render :xml => @organisation, :status => :created, :location => @organisation }
       else
@@ -71,7 +71,7 @@ class OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.update_attributes(params[:organisation])
-        flash[:notice] = 'Initiative wurde erfolgreich ge&auml;ndert.'
+        flash[:notice] = 'Initiator wurde erfolgreich ge&auml;ndert.'
         format.html { redirect_to(@organisation) }
         format.xml  { head :ok }
       else

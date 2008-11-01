@@ -33,7 +33,7 @@
 = f.text_field :tag_list, :size=>60, :autocomplete => "off"
 #event_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
-= f.label :organisation, 'Initiative'
+= f.label :organisation, 'Initiator'
 = select_tag 'event[organisation_id]', options_from_collection_for_select(@organisations, "id", "title", @event.organisation_id)
 
 = f.hidden_field :user_id

@@ -1,4 +1,4 @@
-%h1 Neue Initiative
+%h1 Neue Initiator
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
@@ -6,4 +6,4 @@
   =f.submit "Erzeugen" 
 
 .contextmenu
-  = link_to 'Zurück zur Liste der Initiativen', organisations_path 
+  = link_to 'Zurück zur Liste der Initiatoren', organisations_path 

@@ -1,8 +1,8 @@
-%h1 Initiativen
+%h1 Initiatoren
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Initiative
+    %th Initiator
     %th Letzte Demo
     %th N&auml;chste Demo
   - @organisations.each_with_index do |organisation, index|
@@ -14,4 +14,4 @@
 %br
 
 .contextmenu
-  = link_to 'Neue Initiative', new_organisation_path
+  = link_to 'Neue Initiator', new_organisation_path
