@@ -5,8 +5,12 @@ body {
 	font-family: Georgia, Helvetica, sans-serif; 
 }
 
-p {
+p form {
 	margin-left:2em;
+}
+
+form h1, form h2, form h3, form h4{
+	margin: -2em;
 }
 
 a {
