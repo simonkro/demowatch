@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
-  #acts_as_taggable
+  acts_as_taggable
   has_many :organizers, :dependent => :destroy
   has_many :organisations, :through => :organizers
   has_many :bookmarks, :dependent => :destroy
