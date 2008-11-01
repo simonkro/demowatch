@@ -6,8 +6,20 @@
 = f.label :description, 'Beschreibung' 
 = f.text_area :description, :cols=>60
 
+= f.label :zip, 'Plz'
+= f.text_field :zip, :size=>60
+
+= f.label :city, 'Ort'
+= f.text_field :city, :size=>60
+
+= f.label :location, 'Treffpunkt'
+= f.text_field :location, :size=>60
+
 = f.label :startdate, 'Begin'
 = datetime_select :event, :startdate 
+
+= f.label :link, 'Webseite'
+= f.text_field :link, :size=>60
 
 /
   = f.text_field :startdate, :size=>20

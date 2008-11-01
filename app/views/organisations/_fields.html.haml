@@ -6,6 +6,9 @@
 = f.label :description, 'Beschreibung' 
 = f.text_area :description, :cols=>60 
 
+= f.label :link, 'Webseite'
+= f.text_field :linl, :size=>60
+
 = f.label :tag_list, 'Themen'
 = f.text_field :tag_list, :size=>60, :autocomplete => "off"
 #organisation_tag_list_auto_complete.auto_complete{:style=>'display:none'}

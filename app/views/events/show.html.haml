@@ -7,10 +7,18 @@
 %p
   %b Termin:
   = @event.startdate && @event.startdate.strftime('%d.%m.%Y %H:%m')  
+%p
+  %b Ort:
+  = "#{@event.zip} #{@event.city}"
+  %br
+  = @event.location  
 %p 
   %b Themen:
   - @event.tags.each do |tag|
     = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
+%p
+  %b Webseite:
+  = link_to @event.link, @event.link
 
 .contextmenu
   = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path
