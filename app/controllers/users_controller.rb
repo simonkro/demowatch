@@ -86,7 +86,21 @@ class UsersController < ApplicationController
     
     redirect_to :back
   end
+
+  def unbookmark
+    if params[:event]
+      Bookmark.destroy_all ["user_id = ? and bookmarkable_id = ? and bookmarkable_type = 'Event'", params[:id], params[:event]]  
+      flash[:notice] = "Bookmark wurde entfernt." 
+    end
+    if params[:organisation]
+      Bookmark.destroy_all ["user_id = ? and bookmarkable_id = ? and bookmarkable_type = 'Organisation'", params[:id], params[:organisation]]  
+      flash[:notice] = "Bookmark wurde entfernt." 
+    end
+    
+    redirect_to :back
+  end
   
+    
 protected
   def find_user
     @user = User.find(params[:id])

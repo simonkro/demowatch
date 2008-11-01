@@ -28,4 +28,8 @@
   = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
   - if logged_in? 
     |
-    = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
+    - if @event.bookmarked_by_user? current_user
+      = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
+    - else
+      = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
+    
