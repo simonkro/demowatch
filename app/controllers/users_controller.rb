@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :show, :bookmark]
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :update, :show, :bookmark]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
@@ -31,6 +31,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+  
+  def update
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'Einstellungen wurde erfolgreich ge&auml;ndert.'
+      redirect_to(@user) 
+    else
+      render :action => "edit"
+    end
+  end
+  
   def activate
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if logged_in? && !current_user.active?
