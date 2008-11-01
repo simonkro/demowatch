@@ -5,7 +5,7 @@ body {
 	font-family: Georgia, Helvetica, sans-serif; 
 }
 
-p form {
+p, form {
 	margin-left:2em;
 }
 
