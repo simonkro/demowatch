@@ -14,7 +14,8 @@
 
 %p
   %b Themen:
-  = @user.tag_list 
+  - @user.tags.each do |tag|
+    = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
 
 %p
   %b Demos & Inititativen:
