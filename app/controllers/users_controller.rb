@@ -92,12 +92,12 @@ class UsersController < ApplicationController
     if params[:event]
       event = Event.find(params[:event].to_i)
       Bookmark.destroy_all ["user_id = ? and bookmarkable_id = ? and bookmarkable_type = 'Event'", params[:id], params[:event]]  
-      flash[:notice] = "Bookmark wurde entfernt." 
+      flash[:notice] = "Du hast erfolgreich Infos zu dieser Demonstration abonniert." 
       redirect_to event
     elsif params[:organisation]
       organisation = Organisation.find(params[:organisation].to_i)
       Bookmark.destroy_all ["user_id = ? and bookmarkable_id = ? and bookmarkable_type = 'Organisation'", params[:id], params[:organisation]]  
-      flash[:notice] = "Bookmark wurde entfernt."
+      flash[:notice] = "Du hast erfolgreich Infos zu diesem Initiator abonniert."
       redirect_to organisation 
     else
       redirect_to :front
