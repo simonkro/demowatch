@@ -10,11 +10,11 @@ p, form {
 }
 
 form .errorExplanation h1, form .errorExplanation h2, 
-form .errorExplanation h3, form .errorExplanation h4{
+form .errorExplanation h3, form .errorExplanation h4 {
 	margin-left: 0;
 }
 
-form h1, form h2, form h3, form h4{
+form h1, form h2, form h3, form h4 {
   margin-left: -2em;
 }
 
