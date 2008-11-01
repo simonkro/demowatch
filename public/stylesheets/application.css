@@ -119,6 +119,10 @@ small {
   text-align: center;
 }
 
+.cloud a {
+  whitespace: no-wrap;
+}
+
 .message {
         font: bold 1.3em Lucida Sans, Arial, sans serif;
 	color: white;
