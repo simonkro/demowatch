@@ -1,9 +1,9 @@
 %h1 Neue Initiative
 
 - form_for(@organisation) do |f| 
-  %p= render :partial => 'fields', :locals => {:f => f}
+  = render :partial => 'fields', :locals => {:f => f}
 
-  %p=f.submit "Erzeugen" 
+  =f.submit "Erzeugen" 
 
 .contextmenu
   = link_to 'Zurück zur Liste der Initiativen', organisations_path 

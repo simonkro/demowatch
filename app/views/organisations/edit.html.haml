@@ -2,10 +2,9 @@
 
 - form_for(@organisation) do |f| 
   %h2 Daten
-  %p
-    = render :partial => 'fields', :locals => {:f => f}
-
-    = f.submit "Speichern"
+  
+  = render :partial => 'fields', :locals => {:f => f}
+  = f.submit "Speichern"
 
 .contextmenu
   = link_to 'Anzeigen', @organisation  
