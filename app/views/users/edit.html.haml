@@ -5,30 +5,27 @@
 
   %h2 Daten
 
-  %p
-    = f.label :login, 'Name'
-    = f.text_field :login, :size=>60
+  = f.label :login, 'Name'
+  = f.text_field :login, :size=>60
 
-    = f.label :email, 'Email'
-    = f.text_field :email, :size=>60
+  = f.label :email, 'Email'
+  = f.text_field :email, :size=>60
 
-    = f.label :zip, 'Plz'
-    = f.text_field :zip, :size=>60
+  = f.label :zip, 'Plz'
+  = f.text_field :zip, :size=>60
 
   %h2 Abonnements
 
-  %p
-    = f.label :tag_list, 'Themen'
-    = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
-    #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
+  = f.label :tag_list, 'Themen'
+  = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
+  #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
-  %p
-    = f.label :bookmarks, 'Demos & Initiativen'
-    %ul
-      - @user.bookmarks.each do |bm|
-        %li= bm.title
+  = f.label :bookmarks, 'Demos & Initiativen'
+  %ul
+    - @user.bookmarks.each do |bm|
+      %li= bm.title
 
-    = f.submit "Speichern"
+  = f.submit "Speichern"
 
 .contextmenu
   = link_to 'Anzeigen', @user  
