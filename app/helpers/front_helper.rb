@@ -4,7 +4,7 @@ module FrontHelper
     
     max_count = tags.map(&:count).max.to_f
     
-    tags.each do |tag|
+    tags.sort_by{|tag| tag.name}.each do |tag|
       index = ((tag.count / max_count) * (classes.size - 1)).round
       yield tag, classes[index]
     end
