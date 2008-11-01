@@ -115,6 +115,10 @@ small {
 	height: 31px;
 }
 
+.cloud {
+  text-align: center;
+}
+
 .message {
         font: bold 1.3em Lucida Sans, Arial, sans serif;
 	color: white;
