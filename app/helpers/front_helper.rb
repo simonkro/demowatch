@@ -7,7 +7,7 @@ module FrontHelper
     
     tags.sort_by(&:name).each do |tag|
       index = ((tag.count / max_count) * (classes.size - 1)).round
-      yield tag, classes[index] + " #{'usertag' if user_tags.include? tag}"
+      yield tag, classes[index] + "#{' usertag' if user_tags.include? tag}"
     end
   end
 end
