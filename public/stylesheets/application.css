@@ -115,14 +115,6 @@ small {
 	height: 31px;
 }
 
-.cloud {
-  text-align: center;
-}
-
-.cloud a {
-  whitespace: no-wrap;
-}
-
 .message {
         font: bold 1.3em Lucida Sans, Arial, sans serif;
 	color: white;
@@ -178,6 +170,14 @@ table tr.even {
 .css2 { font-size: 1.2em; color: #444 }
 .css3 { font-size: 1.4em; color: #222 }
 .css4 { font-size: 1.6em; color: #000 }
+
+.cloud {
+  text-align: center;
+}
+
+.cloud a {
+  white-space: nowrap;
+}
 
 /* ***************** auto complete ***************** */
 
