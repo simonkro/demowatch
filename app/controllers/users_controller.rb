@@ -77,27 +77,31 @@ class UsersController < ApplicationController
       event = Event.find(params[:event].to_i)
       @user.bookmarks.build(:title => event.title, :bookmarkable => event)
       flash[:notice] = "Bookmark wurde angelegt." if @user.save
-    end
-    if params[:organisation]
+      redirect_to event
+    elsif params[:organisation]
       organisation = Organisation.find(params[:organisation].to_i)
       @user.bookmarks.build(:title => organisation.title, :bookmarkable => organisation)
       flash[:notice] = "Bookmark wurde angelegt." if @user.save
+      redirect_to organisation
+    else
+      redirect_to :front
     end
-    
-    redirect_to :back
   end
 
   def unbookmark
     if params[:event]
+      event = Event.find(params[:event].to_i)
       Bookmark.destroy_all ["user_id = ? and bookmarkable_id = ? and bookmarkable_type = 'Event'", params[:id], params[:event]]  
       flash[:notice] = "Bookmark wurde entfernt." 
-    end
-    if params[:organisation]
+      redirect_to event
+    elsif params[:organisation]
+      organisation = Organisation.find(params[:organisation].to_i)
       Bookmark.destroy_all ["user_id = ? and bookmarkable_id = ? and bookmarkable_type = 'Organisation'", params[:id], params[:organisation]]  
-      flash[:notice] = "Bookmark wurde entfernt." 
+      flash[:notice] = "Bookmark wurde entfernt."
+      redirect_to organisation 
+    else
+      redirect_to :front
     end
-    
-    redirect_to :back
   end
   
     
