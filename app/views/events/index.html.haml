@@ -5,13 +5,11 @@
     %th Demo
     %th Ort
     %th Termin 
-    %th Popularit&auml;t
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to event.title, event
       %td= event.city
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
-      %td
 
 %br
 
