@@ -120,14 +120,16 @@ small {
 }
 
 .message {
-        font: bold 1.3em Lucida Sans, Arial, sans serif;
+  font: bold 1.3em Lucida Sans, Arial, sans serif;
 	color: white;
 	text-align: center;
 	padding: 0px 0px 20px 0px;
 }
 
 .contextmenu {
-	text-align: center;
+  border-top: 1px dotted #c8dbf1;
+  border-bottom: 1px dotted #c8dbf1;
+  text-align: center;
 }
 
 form label {
