@@ -5,14 +5,6 @@ body {
 	font-family: Georgia, Helvetica, sans-serif; 
 }
 
-form {
-}
-
-form .errorExplanation h1, form .errorExplanation h2, 
-form .errorExplanation h3, form .errorExplanation h4 {
-	margin-left: 0;
-}
-
 form h1, form h2, form h3, form h4 {
 }
 
@@ -268,14 +260,20 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 
 /* ***************** Error ***************** */
 
-.errorExplanation {
-	border: 1px solid red;
-	background: #fee; 
-	padding: 3px;
+.errorExplanation li {
+	color: red;
+}
+
+.errorExplanation h2 {
+	color: red;
 }
 	
+.fieldWithErrors {
+	margin-left: 2em;
+}
+
 .fieldWithErrors label {
-	border: solid 1px red;
-  padding-left: 3px;
-	background: #fee; 
+	color: red;
+ 	font-weight: bold;
+  	padding-left: 3px;
 }
