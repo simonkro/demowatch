@@ -3,27 +3,33 @@
 
 %h2 Demonstrationen
 
-%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
-  %tr
-    %th Demo
-    %th Ort
-    %th Termin
-  - @events.each_with_index do |event, index|
-    %tr{:class => "#{'even' if index.even?}"}
-      %td= link_to event.title, event
-      %td= event.zip + ' ' + event.city
-      %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
+- if @events.empty? 
+  %p Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen.
+- else
+  %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+    %tr
+      %th Demo
+      %th Ort
+      %th Termin
+    - @events.each_with_index do |event, index|
+      %tr{:class => "#{'even' if index.even?}"}
+        %td= link_to event.title, event
+        %td= event.zip + ' ' + event.city
+        %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
 
 %h2 Initiatoren
 
-%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
-  %tr
-    %th Initiator
-    %th Themen
-  - @organisations.each_with_index do |organisation, index|
-    %tr{:class => "#{'even' if index.even?}"}
-      %td= link_to organisation.title, organisation
-      %td= organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
+- if @organisations.empty? 
+  %p Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema besch&auml;ftigen..
+- else
+  %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+    %tr
+      %th Initiator
+      %th Themen
+    - @organisations.each_with_index do |organisation, index|
+      %tr{:class => "#{'even' if index.even?}"}
+        %td= link_to organisation.title, organisation
+        %td= organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
 
 %br
 
