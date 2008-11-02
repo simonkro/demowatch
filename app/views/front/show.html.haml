@@ -8,14 +8,14 @@
 - else
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
+      %th Termin
       %th Demo
       %th Ort
-      %th Termin
     - @events.each_with_index do |event, index|
       %tr{:class => "#{'even' if index.even?}"}
+        %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
         %td= link_to event.title, event
         %td= event.zip + ' ' + event.city
-        %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
 
 %h2 Initiatoren
 
