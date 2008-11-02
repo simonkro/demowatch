@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081101115011) do
+ActiveRecord::Schema.define(:version => 20081102144819) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",             :limit => 50, :default => ""
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20081101115011) do
     t.string   "state",                                   :default => "passive"
     t.datetime "deleted_at"
     t.string   "zip"
+    t.integer  "role",                                    :default => 0
   end
 
 end

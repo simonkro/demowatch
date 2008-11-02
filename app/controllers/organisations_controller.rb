@@ -51,7 +51,7 @@ class OrganisationsController < ApplicationController
   # POST /organisations.xml
   def create
     @organisation = Organisation.new(params[:organisation])
-
+    @organisation.organizers.build(:user => current_user, :role => 1)
     respond_to do |format|
       if @organisation.save
         flash[:notice] = 'Initiator wurde erfolgreich eingetragen.'

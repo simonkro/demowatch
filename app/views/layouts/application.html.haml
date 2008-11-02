@@ -12,11 +12,11 @@
       = auto_discovery_link_tag(:rss, @rss_url, {:title => @rss_title})
       
   %body
-    -#= render :partial => "shared/messages"
     #header
       =link_to image_tag('demowatch_beta.gif'), :front
       %ul
         %li=link_to 'Was ist Demowatch?', :about
+        %li=link_to 'Demo eintragen', new_event_path
         -if logged_in?
           %li=link_to 'Abmelden', :logout
           %li=link_to 'Einstellungen', user_path(current_user)
