@@ -18,6 +18,10 @@ form h1, form h2, form h3, form h4 {
   margin-left: -2em;
 }
 
+textarea {
+	width:550px;
+}
+
 a {
 	color: black;
 	text-decoration: none;
