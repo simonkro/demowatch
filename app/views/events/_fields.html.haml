@@ -29,7 +29,7 @@
   :javascript
     var startcal = new scal('startcal', 'event_startdate', {weekdaystart: 1, updateformat:'dd.mm.yyyy'});
 
-= f.label :tag_list, 'Themen'
+= f.label :tag_list, 'Themen <i>(mit Komma getrennt)</i>'
 = f.text_field :tag_list, :size=>60, :autocomplete => "off"
 #event_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
