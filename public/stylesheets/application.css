@@ -157,6 +157,7 @@ table tr td {
 	padding: 5px;
 	border-left-style: solid;
 	border-left-width: 1px;
+  vertical-align: top;
 }
 
 table tr.even {
