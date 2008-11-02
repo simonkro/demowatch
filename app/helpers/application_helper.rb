@@ -5,7 +5,9 @@ module ApplicationHelper
   end
   
   def may_edit? item
+    return false if not logged_in?
     return true if is_admin?
+    
     case item 
       when Organisation
         organizer = current_user.organizers & item.organizers
