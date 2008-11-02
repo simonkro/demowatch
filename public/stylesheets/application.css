@@ -157,11 +157,20 @@ table tr td {
 	padding: 5px;
 	border-left-style: solid;
 	border-left-width: 1px;
-  vertical-align: top;
+	vertical-align: top;
 }
 
 table tr.even {
 	background: #c8dbf1;
+}
+
+table tr.old td {
+	color: gray;
+        border-left: solid 1px black
+}
+
+table tr.old td a {
+	color: gray;
 }
 
 /* ***************** word cloud ***************** */
