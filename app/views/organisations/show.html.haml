@@ -3,8 +3,7 @@
 %p= @organisation.description
 %p 
   <b>Themen:</b>
-  - @organisation.tags.each do |tag|
-    = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
+  = @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
 
 .contextmenu
   = link_to 'Zur&uuml;ck zur Liste der Initiatoren', organisations_path

@@ -14,8 +14,7 @@
   = @event.location  
 %p 
   %b Themen:
-  - @event.tags.each do |tag|
-    = link_to tag.name, :controller => "front", :action => "show", :id => tag.id
+  = @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %p
   %b Webseite:
   = link_to @event.link, @event.link
