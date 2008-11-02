@@ -25,8 +25,6 @@
           %li=link_to 'Registrieren', :signup
         %li.last=link_to 'Impressum', :impressum
 
-    .message= flash[:notice]
-
     .tabs
       %ul
         - tabs = [['Themen', front_path], ['Demos', events_path], ['Initiatoren', organisations_path]]
@@ -39,7 +37,10 @@
         
     .balloon
       .title
-      .body= @content_for_layout
+      .body
+        -if flash[:notice]
+          .message= flash[:notice]
+        =@content_for_layout
       .bottom
         
     #footer

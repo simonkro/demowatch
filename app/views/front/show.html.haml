@@ -8,26 +8,22 @@
     %th Demo
     %th Ort
     %th Termin
-    %th Popularit&auml;t
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to event.title, event
-      %td
+      %td= event.zip + ' ' + event.city
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
-      %td
 
 %h2 Initiatoren
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
     %th Initiator
-    %th Anstehende Demos
-    %th Vergangene Demos
+    %th Themen
   - @organisations.each_with_index do |organisation, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to organisation.title, organisation
-      %td
-      %td
+      %td= organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
 
 %br
 
