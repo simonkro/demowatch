@@ -6,7 +6,7 @@
     %th Ort
     %th Termin 
     %th Popularit&auml;t
-  - @events.each_with_index do |event, index|
+  - @events.sort_by(&:startdate).reverse.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to event.title, event
       %td= event.city
