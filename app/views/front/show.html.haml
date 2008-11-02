@@ -1,5 +1,5 @@
 
-%h1= @tag.name
+%h1= @tag.name 
 
 %h2 Demonstrationen
 
@@ -34,3 +34,5 @@
 .contextmenu
   - if logged_in?
     = link_to 'Thema abonnieren', ''
+  |
+  = link_to 'Was ist <i>' + @tag.name + '</i>?', 'http://de.wikipedia.org/wiki/Spezial:Search?ns0=1&search=' + @tag.name + '&fulltext=Suche', { :target=>'_new'}

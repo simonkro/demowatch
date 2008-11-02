@@ -13,7 +13,8 @@
   in
   %b
     = "#{@event.zip} #{@event.city}"
-  = '(', @event.location,  ')'
+  - if @event.location?
+    = '(', @event.location,  ')'
   = '.'
 %h2 Beschreibung
 %p= @event.description
