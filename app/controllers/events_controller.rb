@@ -35,8 +35,13 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new(:user => current_user, :startdate => Time.now)
-    @organisations = Organisation.find(:all)
+    @organisations = current_user.organizers.map{|o| o.organisation}
     
+    if @organisations.empty?
+      flash[:notice] = 'Zuerst muß ein Initiator erstellt werden.'
+      redirect_to new_organisation_path 
+      return
+    end  
 
     respond_to do |format|
       format.html # new.html.erb
