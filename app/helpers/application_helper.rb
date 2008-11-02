@@ -12,7 +12,7 @@ module ApplicationHelper
         !organizer.empty? && organizer.first.role == Organizer::RoleAdmin  
       when Event
         organizer = current_user.organizers & item.organisation.organizers
-        organizer && organizer.role == Organizer::RoleAdmin 
+        !organizer.empty? && organizer.first.role == Organizer::RoleAdmin  
       when User
         item == current_user 
     end
