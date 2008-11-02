@@ -20,11 +20,6 @@
   = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
   #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
-  = f.label :bookmarks, 'Demos & Initiatoren'
-  %ul
-    - @user.bookmarks.each do |bm|
-      %li= bm.title
-
   = f.submit "Speichern"
 
 .contextmenu
