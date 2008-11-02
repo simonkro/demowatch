@@ -5,7 +5,7 @@
     %th Initiator
     %th Letzte Demo
     %th N&auml;chste Demo
-  - @organisations.each_with_index do |organisation, index|
+  - @organisations.sort_by(&:title).each_with_index do |organisation, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to organisation.title, organisation 
       %td 
