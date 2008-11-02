@@ -5,11 +5,9 @@
 %h2 Treffpunkt
 %p
   Diese Demo beginnt am
-  %b
-    = @event.startdate && @event.startdate.strftime('%d.%m.%Y')  
+  %b= @event.startdate && @event.startdate.strftime('%A %d.%m.%Y')  
   um
-  %b
-    = @event.startdate && @event.startdate.strftime('%H:%M Uhr')  
+  %b= @event.startdate && @event.startdate.strftime('%H:%M Uhr')  
   in
   %b
     = "#{@event.zip} #{@event.city}"
@@ -29,13 +27,12 @@
   %p= link_to @event.link, @event.link
 
 .contextmenu
-  = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path
-  |
-  = link_to 'Bearbeiten', edit_event_path(@event) 
-  |
-  = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
-  - if logged_in? 
+  - if may_edit? @event
+    = link_to 'Bearbeiten', edit_event_path(@event) 
     |
+    = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
+    |
+  - if logged_in? 
     - if @event.bookmarked_by_user? current_user
       = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
     - else

@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
+  RoleUser = 0
+  RoleAdmin = 1
+  
   acts_as_taggable
   has_many :organizers, :dependent => :destroy
   has_many :organisations, :through => :organizers
