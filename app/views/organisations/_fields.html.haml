@@ -6,7 +6,7 @@
   = f.text_field :title, :size=>60
 
 %p
-  = f.label :tag_list, 'Themen <i>(mit Komma getrennt)</i>'
+  = f.label :tag_list, 'Themen <i>(mehrere durch Komma getrennt)</i>'
   = f.text_field :tag_list, :size=>60, :autocomplete => "off"
   #organisation_tag_list_auto_complete.auto_complete{:style=>'display:none'}
   = auto_complete_field 'organisation_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }
