@@ -26,13 +26,13 @@
   %h3 Weitere Informationen
   %p= link_to @event.link, @event.link
 
-.contextmenu
-  - if may_edit? @event
-    = link_to 'Bearbeiten', edit_event_path(@event) 
-    |
-    = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
-    |
-  - if logged_in? 
+- if logged_in?
+  .contextmenu
+    - if may_edit? @event
+      = link_to 'Bearbeiten', edit_event_path(@event) 
+      |
+      = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
+      |
     - if @event.bookmarked_by_user? current_user
       = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
     - else

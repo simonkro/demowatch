@@ -8,13 +8,13 @@
   %h3 Weitere Informationen
   %p= link_to @organisation.link, @organisation.link
 
-.contextmenu
-  - if may_edit? @organisation
-    = link_to 'Bearbeiten', edit_organisation_path(@organisation) 
-    |
-    = link_to 'Löschen', @organisation, :confirm => 'Diese Initiator wirklich l&ouml;schen?', :method => :delete
-    |
-  - if logged_in? 
+- if logged_in? 
+  .contextmenu
+    - if may_edit? @organisation
+      = link_to 'Bearbeiten', edit_organisation_path(@organisation) 
+      |
+      = link_to 'Löschen', @organisation, :confirm => 'Diese Initiator wirklich l&ouml;schen?', :method => :delete
+      |
     - if @organisation.bookmarked_by_user? current_user
       = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :organisation => @organisation)
     - else

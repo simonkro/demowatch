@@ -15,5 +15,6 @@
 
 %br
 
-.contextmenu
-  = link_to 'Neue Demonstration', new_event_path
+- if logged_in? 
+  .contextmenu
+    = link_to 'Neue Demonstration', new_event_path

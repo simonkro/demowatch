@@ -13,5 +13,6 @@
 
 %br
 
-.contextmenu
-  = link_to 'Neuer Initiator', new_organisation_path
+- if logged_in? 
+  .contextmenu
+    = link_to 'Neuer Initiator', new_organisation_path
