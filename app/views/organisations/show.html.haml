@@ -1,9 +1,12 @@
 ﻿
 %h1= @organisation.title
+%h2 Themen
+%p= @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
+%h2 Beschreibung
 %p= @organisation.description
-%p 
-  <b>Themen:</b>
-  = @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
+- if @organisation.link
+  %h3 Weitere Informationen
+  %p= link_to @organisation.link, @organisation.link
 
 .contextmenu
   = link_to 'Zur&uuml;ck zur Liste der Initiatoren', organisations_path

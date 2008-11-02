@@ -5,22 +5,24 @@
 
   %h2 Daten
 
-  = f.label :login, 'Name'
-  = f.text_field :login, :size=>60
+  %p
+    = f.label :login, 'Name'
+    = f.text_field :login, :size=>60
 
-  = f.label :email, 'Email'
-  = f.text_field :email, :size=>60
+    = f.label :email, 'Email'
+    = f.text_field :email, :size=>60
 
-  = f.label :zip, 'Plz'
-  = f.text_field :zip, :size=>60
+    = f.label :zip, 'Plz'
+    = f.text_field :zip, :size=>60
 
   %h2 Abonnements
 
-  = f.label :tag_list, 'Themen <i>(mit Komma getrennt)</i>'
-  = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
-  #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
+  %p
+    = f.label :tag_list, 'Themen <i>(mit Komma getrennt)</i>'
+    = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
+    #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
-  = f.submit "Speichern"
+    = f.submit "Speichern"
 
 .contextmenu
   = link_to 'Anzeigen', @user  

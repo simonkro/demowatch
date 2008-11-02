@@ -1,23 +1,31 @@
 
 %h1= @event.title
+%h2 Themen
+%p= @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
+%h2 Treffpunkt
+%p
+  Diese Demo beginnt am
+  %b
+    = @event.startdate && @event.startdate.strftime('%d.%m.%Y')  
+  um
+  %b
+    = @event.startdate && @event.startdate.strftime('%H:%M Uhr')  
+  in
+  %b
+    = "#{@event.zip} #{@event.city}"
+  = '(', @event.location,  ')'
+  = '.'
+%h2 Beschreibung
 %p= @event.description
+
+%h3 Initiator
 %p
-  %b Organisation:
+  Diese Demo wurde eingetragen von
   = link_to @event.organisation.title, @event.organisation 
-%p
-  %b Termin:
-  = @event.startdate && @event.startdate.strftime('%d.%m.%Y %H:%m')  
-%p
-  %b Ort:
-  = "#{@event.zip} #{@event.city}"
-  %br
-  = @event.location  
-%p 
-  %b Themen:
-  = @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
-%p
-  %b Webseite:
-  = link_to @event.link, @event.link
+
+- if @event.link
+  %h3 Weitere Informationen
+  %p= link_to @event.link, @event.link
 
 .contextmenu
   = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path
