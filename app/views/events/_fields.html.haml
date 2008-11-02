@@ -2,7 +2,7 @@
 %p= f.error_messages
 
 %p
-  = f.label :title, 'Name'
+  = f.label :title, 'Titel der Demonstration'
   = f.text_field :title, :size=>60
 
 %p
@@ -13,11 +13,9 @@
 %h3 Treffpunkt
 %p
   = f.label :zip, 'PLZ'
-  = f.text_field :zip, :size=>60
-
-%p
-  = f.label :city, 'Ort'
-  = f.text_field :city, :size=>60
+  = f.text_field :zip, :size=>5 
+  = f.label :zip, 'Ort'
+  = f.text_field :city, :size=>50
 
 %p
   = f.label :location, 'Treffpunktbeschreibung (z.B. Adresse)'
