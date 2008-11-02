@@ -127,8 +127,8 @@ small {
 }
 
 .contextmenu {
-  border-top: 1px dotted #c8dbf1;
-  border-bottom: 1px dotted #c8dbf1;
+  border-top: 1px solid #c8dbf1;
+  border-bottom: 1px solid #c8dbf1;
   text-align: center;
 }
 
