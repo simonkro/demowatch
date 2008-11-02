@@ -12,7 +12,6 @@ module ApplicationHelper
         !organizer.empty? && organizer.first.role == Organizer::RoleAdmin  
       when Event
         organizer = current_user.organizers & item.organisation.organizers
-        organizer = item.organizers.find{|o| o.user_id == current_user.id}
         organizer && organizer.role == Organizer::RoleAdmin 
       when User
         item == current_user 
