@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
 
-  before_filter :login_required
+  before_filter :login_required, :except => [:new, :create, :activate]
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :update, :show, :bookmark, :unbookmark]
   allow :suspend, :unsuspend, :destroy, :purge, :user => :is_admin?
   allow :show, :edit, :update, :bookmark, :unbookmark, :user => [:owns?, :is_admin?]
