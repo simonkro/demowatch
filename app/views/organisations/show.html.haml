@@ -6,7 +6,7 @@
 %p= @organisation.description
 - if @organisation.link
   %h3 Weitere Informationen
-  %p= link_to @organisation.link, @organisation.link
+  %p= link_to @organisation.link, @organisation.link, { :target=>'_new'}
 
 - if logged_in? 
   .contextmenu
