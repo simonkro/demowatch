@@ -14,12 +14,11 @@
   %b Plz:
   = @user.zip 
 
-
 - if @user.organisations.size>0
-  %h2 Von Dir verwaltete Initiatoren
+  %h2 Deine Initiatoren
   %p= @user.organisations.map{|organisation| link_to organisation.title, organisation}.join(', ')
 
-%h2 Von Euch eingetragene Demonstrationen
+%h2 Deine Demonstrationen
 %p Diese Feature fehlt noch!    
 
 %h2 Deine Abonnements
