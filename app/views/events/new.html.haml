@@ -1,5 +1,8 @@
 %h1 Neue Demonstration
 
+%p
+  Wenn Du eine Demonstration eintr&auml;gst, dann achte bitte auf Vollst&auml;ndigkeit Korrektheit Deiner Angaben!
+
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_zip);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
 

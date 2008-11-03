@@ -4,7 +4,9 @@
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
 
-  =f.submit "Erzeugen" 
+  .indent
+    %br
+    =f.submit "Erzeugen" 
 
 .contextmenu
   = link_to 'Zurück zur Liste der Initiatoren', organisations_path 
