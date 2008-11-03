@@ -284,7 +284,12 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 }
 	
 .fieldWithErrors {
-	margin-left: 2em;
+
+}
+
+.fieldWithErrors span {
+	background:#fdd;
+	margin-bottom:20px;
 }
 
 .fieldWithErrors input {
@@ -295,4 +300,8 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 	background-color: mistyrose;
  	font-weight: bold;
   	padding-left: 3px;
+}
+
+.eingerueckt {
+	padding-left:2em;
 }
