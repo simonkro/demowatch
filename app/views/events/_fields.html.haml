@@ -23,20 +23,16 @@
 .indent
   %div{:id => 'addressContainer'}
     %a{:name => 'addressAnchor'}
-    = f.label :zip, 'Adresse (PLZ oder Straße Nr, PLZ oder Straße Stadt ...)'
-    = f.text_field :zip, :size=>60
+    = f.label :address, 'Adresse (PLZ oder Straße Nr, PLZ oder Straße Stadt ...)'
+    = f.text_field :address, :size=>60
     %span{:id => 'addressDialogue', :style => 'display:none'} 
 
--#  = f.label :city, 'Ort'
--#  = f.text_field :city, :size=>50
-
-
 .indent
-  = f.label :location, 'Treffpunktbeschreibung (z.B. Adresse)'
+  = f.label :location, 'zus&auml;tzliche Treffpunktbeschreibung'
   = f.text_field :location, :size=>60
 
 .indent
-  = f.label :startdate, 'Begin'
+  = f.label :startdate, 'Termin'
   = datetime_select :event, :startdate 
 
 /

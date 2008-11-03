@@ -8,9 +8,11 @@
   %b= @event.startdate && @event.startdate.strftime('%A %d.%m.%Y')  
   um
   %b= @event.startdate && @event.startdate.strftime('%H:%M Uhr')  
-  in
+
+%p 
+  Treffpunkt ist
   %b
-    = "#{@event.zip} #{@event.city}"
+    = @event.address
   - if @event.location?
     = '(', @event.location,  ')'
   = '.'
