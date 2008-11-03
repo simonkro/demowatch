@@ -6,7 +6,8 @@
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
   
     -#%title= page_title
-    = javascript_include_tag 'prototype', 'effects', 'controls', 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAgrj58PbXr2YriiRDqbnL1RRdqDCIfn-akWLPXbZqJg-hQ6eHehSRJ1rozvQIj0_jjwfMfzxMVY23oQ', 'geocode', :cache => true
+    -#    = javascript_include_tag 'prototype', 'effects', 'controls', 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAV-gl-D0mGjXgP0Y1sjJZtxRsd5y7slG3sgh3wwo6slcSQpFEfxR8J7YprONuTf3tFhNOsJ1EdnHYdw', 'geocode', :cache => true
+    = javascript_include_tag 'prototype', 'effects', 'controls', 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAV-gl-D0mGjXgP0Y1sjJZtxSjPBiS_7Y-DxOB4kQXfnvB-YwYkxTWiU0TA-Uupx18X0aM4dugHMWUuQ&dummy=xxxx', 'geocode', :cache => true
     = stylesheet_link_tag :all
     
     - if @rss_title && @rss_url
@@ -46,5 +47,6 @@
         
     #footer
       =image_tag 'people.gif'
-      %center
-        %small &copy; 2008 Patrick Hoffmann
+
+      &copy; 2008 Patrick Hoffmann -
+      = link_to 'Haftungsausschluss', :disclaimer

@@ -70,6 +70,12 @@ small {
 	border: none;
 }
 
+#footer, #footer a {
+	text-align: center;
+	font-size: 0.7em;
+	color: #276cba;
+}
+
 #header ul {
 	text-align: center;
 	list-style-type: none;
@@ -118,6 +124,13 @@ small {
 	color: #276cba;
 	text-align: center;
 	padding: 0px 0px 0px 0px;
+}
+
+.disclaimer {
+	font-family: Arial, Helvetica;
+	font-size: 5px;
+	line-height: 9px;
+	text-align: justify;
 }
 
 .contextmenu {
