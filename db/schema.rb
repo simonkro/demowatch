@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081102144819) do
+ActiveRecord::Schema.define(:version => 20081103090612) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",             :limit => 50, :default => ""
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20081102144819) do
   add_index "bookmarks", ["user_id"], :name => "fk_bookmarks_user"
 
   create_table "events", :force => true do |t|
-    t.integer  "user_id",         :null => false
     t.integer  "organisation_id", :null => false
     t.text     "title"
     t.text     "description"

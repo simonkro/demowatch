@@ -6,10 +6,15 @@ class UsersController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
   def auto_complete_for_tag_name
-    @tags = Tag.find(:all, :conditions => [ 'LOWER(name) LIKE ?', params[:user][:tag_list] + '%' ])
+    @tags = Tag.all :conditions => [ 'LOWER(name) LIKE ?', params[:user][:tag_list] + '%' ]
     render :inline => "<%= auto_complete_result(@tags, 'name') %>"
   end
 
+  def show
+    @organisations = @user.organisations
+    @events = @user.events    
+  end
+  
   # render new.rhtml
   def new
   end

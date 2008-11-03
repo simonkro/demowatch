@@ -5,6 +5,5 @@ class Event < ActiveRecord::Base
   validates_presence_of  :title
   validates_length_of    :title, :within => 3..100
   
-  belongs_to :user
   belongs_to :organisation
 end

@@ -103,6 +103,10 @@ class User < ActiveRecord::Base
   def recently_activated?
     @activated
   end
+  
+  def events
+    Event.all :joins => {:organisation => :organizers}, :conditions => ['organizers.user_id = ?', id]
+  end
 
   protected
     # before filter 

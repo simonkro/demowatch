@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.find(:all, :order => 'startdate DESC')
+    @events = Event.all :order => 'startdate DESC'
 
     respond_to do |format|
       format.html # index.html.erb
