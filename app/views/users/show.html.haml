@@ -1,5 +1,10 @@
 %h1= @user.login
 
+%p 
+  Die von Dir hier angegebenen Daten werden von uns streng vertraulich 
+  behandelt und weder auf dieser Website ver&ouml;ffentlicht noch an 
+  Dritte weitergegeben.
+
 %h2 Deine Daten
 
 %p
@@ -11,7 +16,7 @@
   = @user.email 
 
 %p
-  %b Plz:
+  %b PLZ:
   = @user.zip 
 
 - if @user.organisations.size>0
