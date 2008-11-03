@@ -1,6 +1,6 @@
 %h1= @user.login
 
-%h2 Daten
+%h2 Deine Daten
 
 %p
   %b Name:
@@ -14,14 +14,21 @@
   %b Plz:
   = @user.zip 
 
-%h2 Abonnements
 
-%p
-  %b Themen:
-  = @user.tags.map{|tag| link_to tag.name, tag}.join(', ')
+- if @user.organisations.size>0
+  %h2 Von Dir verwaltete Initiatoren
+  %p= @user.organisations.map{|organisation| link_to organisation.title, organisation}.join(', ')
 
+%h2 Von Euch eingetragene Demonstrationen
+%p Diese Feature fehlt noch!    
+
+%h2 Deine Abonnements
+
+%h3 Themen
+%p= @user.tags.map{|tag| link_to tag.name, tag}.join(', ')
+
+%h3 Demos & Inititativen
 %p
-  %b Demos & Inititativen:
   %ul
     - @user.bookmarks.each do |bm|
       %li= link_to bm.title, bm.bookmarkable
