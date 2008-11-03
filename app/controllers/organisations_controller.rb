@@ -80,7 +80,6 @@ class OrganisationsController < ApplicationController
   # DELETE /organisations/1
   # DELETE /organisations/1.xml
   def destroy
-    @organisation = Organisation.find(params[:id])
     @organisation.destroy
 
     respond_to do |format|
