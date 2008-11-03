@@ -15,7 +15,7 @@
       %tr{:class => "#{'even' if index.even?}"}
         %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
         %td= link_to event.title, event
-        %td= event.city
+        %td= event.address
 
 %h2 Initiatoren
 
