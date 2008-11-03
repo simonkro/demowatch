@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
-    @event = Event.new(:user => current_user, :startdate => Time.now)
+    @event = Event.new(:startdate => Time.now)
     @organisations = current_user.organizers.map{|o| o.organisation}
     
     if @organisations.empty?
