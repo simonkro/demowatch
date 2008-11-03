@@ -148,6 +148,10 @@ form input {
 	margin-bottom: 5px;
 }
 
+.checkboxlabel {
+	float:right;
+}
+
 .tabletitle {
 	text-align: center;
 	padding: 0px 0px 20px
