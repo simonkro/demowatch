@@ -70,9 +70,13 @@ small {
 	border: none;
 }
 
-#footer, #footer a {
+#footer {
 	text-align: center;
 	font-size: 0.7em;
+	color: #276cba;
+}
+
+#footer a {
 	color: #276cba;
 }
 
@@ -128,7 +132,7 @@ small {
 
 .disclaimer {
 	font-family: Arial, Helvetica;
-	font-size: 5px;
+	font-size: .6em;
 	line-height: 9px;
 	text-align: justify;
 }
