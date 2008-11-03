@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   rescue_from Authorization::PermissionDenied, :with => :permission_denied
 
   def permission_denied(exception)
-    flash[:info] = "Du hast keine Berechtigung"
+    flash[:notice] = 'Du hast keine Berechtigung.'
     redirect_to :front
   end
 end
