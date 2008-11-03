@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   rescue_from Authorization::PermissionDenied, :with => :permission_denied
-
+protected
   def permission_denied(exception)
     flash[:notice] = 'Du hast keine Berechtigung.'
     redirect_to :front
