@@ -1,9 +1,9 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-    :address => "smtp.domain.de",
+    :address => "pop.demowatch.eu",
     :port => 25,
-    :domain => "www.domain.de",
+    :domain => "www.demowatch.eu",
     :authentication => :login,
-    :user_name => "benutzername",
-    :password => "passwort"
+    :user_name => "no-reply@demowatch.eu",
+    :password => "AwUKESNI"
 }
