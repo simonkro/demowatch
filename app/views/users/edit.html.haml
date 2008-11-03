@@ -10,7 +10,7 @@
 
   %h2 Daten
 
-  %div{:class => 'eingerueckt'}
+  .indent
     = f.label :login, 'Name'
     = f.text_field :login, :size=>60
 
@@ -22,7 +22,7 @@
 
   %h2 Abonnements
 
-  %div{:class => 'eingerueckt'}
+  .indent
     = f.label :tag_list, 'Themen <i>(mehrere durch Komma getrennt)</i>'
     = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
     #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
