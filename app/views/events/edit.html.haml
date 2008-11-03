@@ -1,6 +1,6 @@
 %h1 Demonstration bearbeiten
 
-- form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_zip);' }) do |f|
+- form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
   = f.submit "Speichern" 
 
