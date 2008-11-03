@@ -10,7 +10,7 @@
 
 - if logged_in? 
   .contextmenu
-    - if may_edit? @organisation
+    - allow :user => [:owns?, :is_admin?] do
       = link_to 'Bearbeiten', edit_organisation_path(@organisation) 
       |
       = link_to 'Löschen', @organisation, :confirm => 'Diese Initiator wirklich l&ouml;schen?', :method => :delete

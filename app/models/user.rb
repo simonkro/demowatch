@@ -108,6 +108,30 @@ class User < ActiveRecord::Base
     Event.all :joins => {:organisation => :organizers}, :conditions => ['organizers.user_id = ?', id]
   end
 
+  def is_admin?
+    role == RoleAdmin
+  end
+  
+  def has_organisation?
+    not organisations.empty?
+  end
+  
+  def owns? item
+    p item
+    return true if is_admin?
+    
+    case item 
+      when Organisation
+        organizer = organizers & item.organizers
+        !organizer.empty? && organizer.first.role == Organizer::RoleAdmin  
+      when Event
+        organizer = organizers & item.organisation.organizers
+        !organizer.empty? && organizer.first.role == Organizer::RoleAdmin  
+      when User
+        item == self 
+    end
+  end
+  
   protected
     # before filter 
     def encrypt_password

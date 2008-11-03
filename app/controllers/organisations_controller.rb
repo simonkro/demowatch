@@ -1,6 +1,7 @@
 class OrganisationsController < ApplicationController
-
-  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
+  before_filter :login_required, :except => [:index, :show]
+  before_filter :find_organisation, :only => [:show, :edit, :update, :destroy]
+  allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
@@ -23,8 +24,6 @@ class OrganisationsController < ApplicationController
   # GET /organisations/1
   # GET /organisations/1.xml
   def show
-    @organisation = Organisation.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @organisation }
@@ -44,7 +43,6 @@ class OrganisationsController < ApplicationController
 
   # GET /organisations/1/edit
   def edit
-    @organisation = Organisation.find(params[:id])
   end
 
   # POST /organisations
@@ -67,8 +65,6 @@ class OrganisationsController < ApplicationController
   # PUT /organisations/1
   # PUT /organisations/1.xml
   def update
-    @organisation = Organisation.find(params[:id])
-
     respond_to do |format|
       if @organisation.update_attributes(params[:organisation])
         flash[:notice] = 'Initiator wurde erfolgreich ge&auml;ndert.'
@@ -91,5 +87,10 @@ class OrganisationsController < ApplicationController
       format.html { redirect_to(organisations_url) }
       format.xml  { head :ok }
     end
+  end
+  
+protected  
+  def find_organisation
+    @organisation = Organisation.find(params[:id])
   end
 end

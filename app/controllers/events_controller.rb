@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
-
-  before_filter :login_required, :only => [ :new, :create, :edit, :update, :destroy ]
+  before_filter :login_required, :except => [:index, :show]
+  before_filter :find_event, :only => [:show, :edit, :update, :destroy]
+  allow :create, :user => [:has_organisation?, :is_admin?]
+  allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
@@ -23,8 +25,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @event }
@@ -51,7 +51,6 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = Event.find(params[:id])
     @organisations = Organisation.find(:all)
   end
 
@@ -76,8 +75,6 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = Event.find(params[:id])
-
     respond_to do |format|
       if @event.update_attributes(params[:event])
         flash[:notice] = 'Demonstration wurde erfolgreich ge&auml;ndert.'
@@ -102,4 +99,10 @@ class EventsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+protected
+  def find_event
+    @event = Event.find(params[:id])
+  end
+  
 end

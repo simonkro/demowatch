@@ -38,6 +38,5 @@
     - @user.bookmarks.each do |bm|
       %li= link_to bm.title, bm.bookmarkable
 
--if may_edit? @user
-  .contextmenu
-    =link_to 'Bearbeiten', edit_user_path(@user)
+.contextmenu
+  =link_to 'Bearbeiten', edit_user_path(@user)

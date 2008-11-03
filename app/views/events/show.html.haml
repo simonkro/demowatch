@@ -28,7 +28,7 @@
 
 - if logged_in?
   .contextmenu
-    - if may_edit? @event
+    - allow :user => [:owns?, :is_admin?] do
       = link_to 'Bearbeiten', edit_event_path(@event) 
       |
       = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
