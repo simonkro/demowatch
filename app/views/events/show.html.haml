@@ -15,7 +15,7 @@
   map.openInfoWindowHtml(map.getCenter(),"<strong>#{html_escape @event.title},</strong>"+
   "<br/><br/>#{@event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')},"+
   "um #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')},<br/>"+
-  "#{@event.address}<br/>#{'(' + @event.location + ')' if @event.location?}");}
+  "#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 
 %p
   Diese Demo beginnt am

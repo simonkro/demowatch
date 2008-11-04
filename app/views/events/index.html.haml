@@ -12,7 +12,7 @@
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= Time.now}"}
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
       %td= link_to event.title, event
-      %td= event.address
+      %td= event.city
 
 %br
 
