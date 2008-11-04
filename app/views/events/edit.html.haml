@@ -1,3 +1,6 @@
+- content_for :header do
+  = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAV-gl-D0mGjXgP0Y1sjJZtxSjPBiS_7Y-DxOB4kQXfnvB-YwYkxTWiU0TA-Uupx18X0aM4dugHMWUuQ&dummy=xxxx', 'geocode'
+
 %h1 Demonstration bearbeiten
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|

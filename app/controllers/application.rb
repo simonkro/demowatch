@@ -15,9 +15,15 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   rescue_from Authorization::PermissionDenied, :with => :permission_denied
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
 protected
   def permission_denied(exception)
     flash[:notice] = 'Du hast keine Berechtigung.'
+    redirect_to :front
+  end
+  
+  def not_found(exception)
+    flash[:notice] = 'Kein Eintrag vorhanden.'
     redirect_to :front
   end
 end

@@ -1,4 +1,6 @@
-
+- content_for :header do
+  = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAV-gl-D0mGjXgP0Y1sjJZtxSjPBiS_7Y-DxOB4kQXfnvB-YwYkxTWiU0TA-Uupx18X0aM4dugHMWUuQ&dummy=xxxx', 'geocode'
+  
 %h1= @event.title
 %h2 Themen
 %p= @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
@@ -11,38 +13,19 @@
 
 %p 
   Treffpunkt ist
-  %b
-    = @event.address
-  - if @event.location?
-    = '(', @event.location,  ')'
-  = '.'
+  %b== #{@event.address}#{' (' + @event.location + ')' if @event.location?}.
   
-%div{:id => 'map_canvas', :style=>"width: 500px; height: 300px", :class=>"indent"}
+#map_canvas.indent{:style=>"width: 500px; height: 300px"}
   
-%script{:type => "text/javascript", :charset => "utf-8"}
-  //<![CDATA[
+:javascript
   if (GBrowserIsCompatible()) {
   var map = new GMap2(document.getElementById("map_canvas"));
   map.addControl(new GLargeMapControl());
-  map.setCenter(new GLatLng(
-  = @event.latitude.to_f
-  , 
-  = @event.longitude.to_f
-  ), 15);
-  map.openInfoWindowHtml(map.getCenter(),
-  "<strong>\
-  = @event.title, '\\'
-  </strong><br/><br/>\
-  = @event.startdate && @event.startdate.strftime('%A, %d.%m.%Y'), '\\'  
-  um\
-  = @event.startdate && @event.startdate.strftime('%H:%M Uhr'), '<br/>\\'  
-  = @event.address, '<br/>\\'
-  - if @event.location?
-    = '(', @event.location,  ')\\'
-  ");
-  }
-  //]]>
-  
+  map.setCenter(new GLatLng(#{@event.latitude}, #{@event.longitude}), 15);
+  map.openInfoWindowHtml(map.getCenter(),"<strong>#{@event.title},</strong>"+
+  "<br/><br/>#{@event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')},"+
+  "um #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')},<br/>"+
+  "#{@event.address}<br/>#{'(' + @event.location + ')' if @event.location?}");}
   
 %h2 Beschreibung
 %p= @event.description
