@@ -21,7 +21,7 @@
   if (GBrowserIsCompatible()) {
   var map = new GMap2(document.getElementById("map_canvas"));
   map.addControl(new GLargeMapControl());
-  map.setCenter(new GLatLng(#{@event.latitude}, #{@event.longitude}), 15);
+  map.setCenter(new GLatLng(#{@event.latitude.to_f}, #{@event.longitude.to_f}), 15);
   map.openInfoWindowHtml(map.getCenter(),"<strong>#{@event.title},</strong>"+
   "<br/><br/>#{@event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')},"+
   "um #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')},<br/>"+
