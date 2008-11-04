@@ -5,9 +5,9 @@
 %h2 Treffpunkt
 %p
   Diese Demo beginnt am
-  %b= @event.startdate && @event.startdate.strftime('%A %d.%m.%Y')  
+  %strong= @event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')  
   um
-  %b= @event.startdate && @event.startdate.strftime('%H:%M Uhr')  
+  %strong= @event.startdate && @event.startdate.strftime('%H:%M Uhr')  
 
 %p 
   Treffpunkt ist
@@ -16,6 +16,34 @@
   - if @event.location?
     = '(', @event.location,  ')'
   = '.'
+  
+%div{:id => 'map_canvas', :style=>"width: 500px; height: 300px", :class=>"indent"}
+  
+%script{:type => "text/javascript", :charset => "utf-8"}
+  //<![CDATA[
+  if (GBrowserIsCompatible()) {
+  var map = new GMap2(document.getElementById("map_canvas"));
+  map.addControl(new GLargeMapControl());
+  map.setCenter(new GLatLng(
+  = @event.latitude.to_f
+  , 
+  = @event.longitude.to_f
+  ), 15);
+  map.openInfoWindowHtml(map.getCenter(),
+  "<strong>\
+  = @event.title, '\\'
+  </strong><br/><br/>\
+  = @event.startdate && @event.startdate.strftime('%A, %d.%m.%Y'), '\\'  
+  um\
+  = @event.startdate && @event.startdate.strftime('%H:%M Uhr'), '<br/>\\'  
+  = @event.address, '<br/>\\'
+  - if @event.location?
+    = '(', @event.location,  ')\\'
+  ");
+  }
+  //]]>
+  
+  
 %h2 Beschreibung
 %p= @event.description
 
