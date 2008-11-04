@@ -1,0 +1,1311 @@
+2008-11-04 01:30  marc
+
+	* app/models/event.rb, app/models/organisation.rb,
+	  app/views/events/_fields.html.haml, config/environment.rb:
+	  geocoding server side
+
+2008-11-04 01:29  marc
+
+	* vendor/plugins/geokit, vendor/plugins/geokit/MIT-LICENSE,
+	  vendor/plugins/geokit/README, vendor/plugins/geokit/Rakefile,
+	  vendor/plugins/geokit/VERSION_HISTORY.txt,
+	  vendor/plugins/geokit/about.yml, vendor/plugins/geokit/assets,
+	  vendor/plugins/geokit/assets/api_keys_template,
+	  vendor/plugins/geokit/init.rb, vendor/plugins/geokit/install.rb,
+	  vendor/plugins/geokit/lib, vendor/plugins/geokit/lib/geo_kit,
+	  vendor/plugins/geokit/lib/geo_kit/acts_as_mappable.rb,
+	  vendor/plugins/geokit/lib/geo_kit/defaults.rb,
+	  vendor/plugins/geokit/lib/geo_kit/geocoders.rb,
+	  vendor/plugins/geokit/lib/geo_kit/ip_geocode_lookup.rb,
+	  vendor/plugins/geokit/lib/geo_kit/mappable.rb,
+	  vendor/plugins/geokit/test,
+	  vendor/plugins/geokit/test/acts_as_mappable_test.rb,
+	  vendor/plugins/geokit/test/base_geocoder_test.rb,
+	  vendor/plugins/geokit/test/bounds_test.rb,
+	  vendor/plugins/geokit/test/ca_geocoder_test.rb,
+	  vendor/plugins/geokit/test/database.yml,
+	  vendor/plugins/geokit/test/fixtures,
+	  vendor/plugins/geokit/test/fixtures/companies.yml,
+	  vendor/plugins/geokit/test/fixtures/custom_locations.yml,
+	  vendor/plugins/geokit/test/fixtures/locations.yml,
+	  vendor/plugins/geokit/test/fixtures/stores.yml,
+	  vendor/plugins/geokit/test/geoloc_test.rb,
+	  vendor/plugins/geokit/test/google_geocoder_test.rb,
+	  vendor/plugins/geokit/test/ip_geocode_lookup_test.rb,
+	  vendor/plugins/geokit/test/ipgeocoder_test.rb,
+	  vendor/plugins/geokit/test/latlng_test.rb,
+	  vendor/plugins/geokit/test/multi_geocoder_test.rb,
+	  vendor/plugins/geokit/test/schema.rb,
+	  vendor/plugins/geokit/test/test_helper.rb,
+	  vendor/plugins/geokit/test/us_geocoder_test.rb,
+	  vendor/plugins/geokit/test/yahoo_geocoder_test.rb: geokit pi
+
+2008-11-04 00:50  pat
+
+	* public/images/linkbutton.gif:
+
+2008-11-04 00:47  pat
+
+	* public/images/linkbutton.gif: Issue: 490
+
+2008-11-03 22:02  simon
+
+	* app/views/front/impressum.html.haml,
+	  app/views/front/show.html.haml: impressum update
+
+2008-11-03 21:32  simon
+
+	* app/views/events/edit.html.haml: event address
+
+2008-11-03 21:24  simon
+
+	* app/models/event.rb, app/views/events/_fields.html.haml,
+	  app/views/events/index.html.haml,
+	  app/views/events/show.html.haml, db/schema.rb: event address
+
+2008-11-03 21:16  marc
+
+	* db/migrate/20081103205428_latitude_longitude.rb: migration
+
+2008-11-03 20:50  pat
+
+	* app/controllers/users_controller.rb:
+
+2008-11-03 20:46  pat
+
+	* config/initializers/mail.rb: Issue: 469
+
+2008-11-03 20:41  pat
+
+	* app/models/user_mailer.rb,
+	  app/views/user_mailer/activation.html.erb,
+	  app/views/user_mailer/signup_notification.html.erb: Issue: 469
+
+2008-11-03 20:29  simon
+
+	* public/stylesheets/application.css: disclaimer size
+
+2008-11-03 20:27  simon
+
+	* app/controllers/organisations_controller.rb: optimising
+
+2008-11-03 20:16  simon
+
+	* app/controllers/application.rb:
+
+2008-11-03 20:15  simon
+
+	* app/controllers/application.rb: Better handling of permission
+	  denied
+
+2008-11-03 20:13  simon
+
+	* app/controllers/application.rb: Better handling of permission
+	  denied
+
+2008-11-03 20:02  simon
+
+	* app/controllers/users_controller.rb: allow registration
+
+2008-11-03 19:58  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/controllers/users_controller.rb,
+	  app/helpers/application_helper.rb, app/models/user.rb,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/show.html.haml, vendor/plugins/base_auth,
+	  vendor/plugins/base_auth/README,
+	  vendor/plugins/base_auth/Rakefile,
+	  vendor/plugins/base_auth/init.rb,
+	  vendor/plugins/base_auth/install.rb,
+	  vendor/plugins/base_auth/lib,
+	  vendor/plugins/base_auth/lib/base_auth.rb,
+	  vendor/plugins/base_auth/tasks,
+	  vendor/plugins/base_auth/tasks/base_auth_tasks.rake,
+	  vendor/plugins/base_auth/test,
+	  vendor/plugins/base_auth/test/base_auth_test.rb,
+	  vendor/plugins/base_auth/uninstall.rb: authorization added to
+	  User, Event and Organisation
+	  Issue: 0000483
+
+2008-11-03 19:48  simon
+
+	* app/models/organisation.rb,
+	  app/views/organisations/_fields.html.haml,
+	  public/stylesheets/application.css: Confirmation
+
+2008-11-03 19:14  simon
+
+	* app/views/events/_fields.html.haml,
+	  app/views/events/new.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/organisations/new.html.haml: confirmation
+
+2008-11-03 18:16  pat
+
+	* app/views/events/_fields.html.haml,
+	  app/views/users/edit.html.haml,
+	  public/stylesheets/application.css: eingerueckt -> indent
+
+2008-11-03 18:08  simon
+
+	* app/views/front/impressum.html.haml: impressum
+
+2008-11-03 17:37  simon
+
+	* app/views/front/show.html.haml: wiki link verbessert
+
+2008-11-03 14:39  simon
+
+	* app/views/front/impressum.html.haml: Issue: 482
+
+2008-11-03 14:33  simon
+
+	* app/views/front/disclaimer.html.haml: disclaimer
+
+2008-11-03 14:25  simon
+
+	* app/views/layouts/application.html.haml: page title
+
+2008-11-03 13:59  pat
+
+	* app/views/events/show.html.haml,
+	  app/views/organisations/show.html.haml: Issue: 482
+
+2008-11-03 13:59  pat
+
+	* ., app, app/controllers, app/helpers, app/models, app/views,
+	  app/views/events, app/views/front, app/views/layouts,
+	  app/views/organisations, app/views/sessions,
+	  app/views/user_mailer, app/views/users, config,
+	  config/environments, config/initializers, db, db/migrate, doc,
+	  lib, lib/tasks, log, public, public/images, public/javascripts,
+	  public/stylesheets, script, script/performance, script/process,
+	  test, test/fixtures, test/functional, test/integration,
+	  test/unit, tmp, vendor, vendor/plugins,
+	  vendor/plugins/acts_as_bookmarkable,
+	  vendor/plugins/acts_as_bookmarkable/lib,
+	  vendor/plugins/acts_as_bookmarkable/tasks,
+	  vendor/plugins/acts_as_bookmarkable/test,
+	  vendor/plugins/acts_as_state_machine,
+	  vendor/plugins/acts_as_state_machine/lib,
+	  vendor/plugins/acts_as_state_machine/test,
+	  vendor/plugins/acts_as_state_machine/test/fixtures,
+	  vendor/plugins/acts_as_taggable_on_steroids,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration/templates,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib,
+	  vendor/plugins/acts_as_taggable_on_steroids/test,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures,
+	  vendor/plugins/auto_complete, vendor/plugins/auto_complete/lib,
+	  vendor/plugins/auto_complete/test, vendor/plugins/haml,
+	  vendor/plugins/l10n-simplified-0.9,
+	  vendor/plugins/l10n-simplified-0.9/lib,
+	  vendor/plugins/l10n-simplified-0.9/test,
+	  vendor/plugins/restful_authentication,
+	  vendor/plugins/restful_authentication/generators,
+	  vendor/plugins/restful_authentication/generators/authenticated,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates,
+	  vendor/plugins/restful_authentication/lib,
+	  vendor/plugins/restful_authentication/lib/restful_authentication,
+	  vendor/plugins/validates_date_time,
+	  vendor/plugins/validates_date_time/lib,
+	  vendor/plugins/validates_date_time/test,
+	  vendor/plugins/validates_date_time/test/fixtures: mantis link
+
+2008-11-03 13:55  pat
+
+	* ., app, app/controllers, app/helpers, app/models, app/views,
+	  app/views/events, app/views/front, app/views/layouts,
+	  app/views/organisations, app/views/sessions,
+	  app/views/user_mailer, app/views/users, config,
+	  config/environments, config/initializers, db, db/migrate, doc,
+	  lib, lib/tasks, log, public, public/images, public/javascripts,
+	  public/stylesheets, script, script/performance, script/process,
+	  test, test/fixtures, test/functional, test/integration,
+	  test/unit, tmp, vendor, vendor/plugins,
+	  vendor/plugins/acts_as_bookmarkable,
+	  vendor/plugins/acts_as_bookmarkable/lib,
+	  vendor/plugins/acts_as_bookmarkable/tasks,
+	  vendor/plugins/acts_as_bookmarkable/test,
+	  vendor/plugins/acts_as_state_machine,
+	  vendor/plugins/acts_as_state_machine/lib,
+	  vendor/plugins/acts_as_state_machine/test,
+	  vendor/plugins/acts_as_state_machine/test/fixtures,
+	  vendor/plugins/acts_as_taggable_on_steroids,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration/templates,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib,
+	  vendor/plugins/acts_as_taggable_on_steroids/test,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures,
+	  vendor/plugins/auto_complete, vendor/plugins/auto_complete/lib,
+	  vendor/plugins/auto_complete/test, vendor/plugins/haml,
+	  vendor/plugins/l10n-simplified-0.9,
+	  vendor/plugins/l10n-simplified-0.9/lib,
+	  vendor/plugins/l10n-simplified-0.9/test,
+	  vendor/plugins/restful_authentication,
+	  vendor/plugins/restful_authentication/generators,
+	  vendor/plugins/restful_authentication/generators/authenticated,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates,
+	  vendor/plugins/restful_authentication/lib,
+	  vendor/plugins/restful_authentication/lib/restful_authentication,
+	  vendor/plugins/validates_date_time,
+	  vendor/plugins/validates_date_time/lib,
+	  vendor/plugins/validates_date_time/test,
+	  vendor/plugins/validates_date_time/test/fixtures: mantis link
+
+2008-11-03 09:22  simon
+
+	* app/views/events/_fields.html.haml: bugfix
+
+2008-11-03 09:20  simon
+
+	* app/controllers/events_controller.rb: bugfix
+
+2008-11-03 09:18  simon
+
+	* app/controllers/organisations_controller.rb:
+
+2008-11-03 09:16  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/controllers/users_controller.rb, app/models/event.rb,
+	  app/models/user.rb, app/views/users/show.html.haml,
+	  db/migrate/20081103090612_remove_owner_from_event.rb,
+	  db/schema.rb: user.events
+	  removed event owner
+
+2008-11-03 02:14  simon
+
+	* app/views/front/impressum.html.haml,
+	  app/views/layouts/application.html.haml, config/routes.rb,
+	  public/stylesheets/application.css: Disclaimer
+
+2008-11-03 01:32  marc
+
+	* app/views/events/_fields.html.haml,
+	  app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/users/edit.html.haml: adressauswahl über google geocode
+
+2008-11-03 01:31  marc
+
+	* public/stylesheets/application.css: .eingerueckt
+
+2008-11-03 01:30  marc
+
+	* public/javascripts/geocode.js: adressauswahl über google geocode
+
+2008-11-03 01:15  simon
+
+	* app/views/users/edit.html.haml, app/views/users/show.html.haml:
+	  Datenschutzhinweis
+
+2008-11-03 01:08  simon
+
+	* app/views/users/show.html.haml:
+
+2008-11-03 00:36  simon
+
+	* app/views/front/show.html.haml: fix Ort auf Themenseite
+
+2008-11-03 00:31  simon
+
+	* app/views/layouts/application.html.haml,
+	  app/views/users/show.html.haml: eigene Initiatoren
+
+2008-11-02 23:42  simon
+
+	* app/views/events/index.html.haml, app/views/front/show.html.haml,
+	  app/views/organisations/index.html.haml,
+	  public/stylesheets/application.css: Tabellentitel
+
+2008-11-02 22:30  simon
+
+	* app/views/events/index.html.haml,
+	  public/stylesheets/application.css: vergangene demos
+
+2008-11-02 22:10  simon
+
+	* app/views/events/index.html.haml, app/views/front/show.html.haml:
+	  tables
+
+2008-11-02 21:58  simon
+
+	* app/views/front/show.html.haml: Thema ohne Demos bzw. ohne
+	  Initiator
+
+2008-11-02 21:53  simon
+
+	* app/views/front/show.html.haml,
+	  app/views/layouts/application.html.haml,
+	  public/stylesheets/application.css: message style and theme table
+
+2008-11-02 21:53  simon
+
+	* app/views/users/show.html.haml: only edit own userdata
+
+2008-11-02 21:37  pat
+
+	* app/views/organisations/new.html.haml: müss => muss
+
+2008-11-02 21:34  pat
+
+	* app/views/events/index.html.haml: Popularität gelöscht
+
+2008-11-02 21:34  simon
+
+	* app/controllers/events_controller.rb: no event without
+	  organisation
+
+2008-11-02 21:33  pat
+
+	* public/stylesheets/application.css: table layout
+
+2008-11-02 21:31  pat
+
+	* app/views/organisations/index.html.haml: "Letzte Demo, Nächste
+	  Demo" => "Themen"
+
+2008-11-02 21:30  pat
+
+	* app/views/organisations/index.html.haml: "Letzte Demo, Nächste
+	  Demo" => "Themen"
+
+2008-11-02 21:24  simon
+
+	* app/views/events/index.html.haml,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/show.html.haml: Hide context menu if not
+	  logged in
+
+2008-11-02 21:21  simon
+
+	* app/helpers/application_helper.rb:
+
+2008-11-02 21:19  simon
+
+	* app/helpers/application_helper.rb:
+
+2008-11-02 21:18  simon
+
+	* app/helpers/application_helper.rb:
+
+2008-11-02 21:17  simon
+
+	* app/helpers/application_helper.rb, app/models/organizer.rb,
+	  app/models/user.rb, app/views/events/show.html.haml,
+	  app/views/organisations/show.html.haml: is_admin?, may_edit?
+	  added
+
+2008-11-02 20:36  simon
+
+	* app/views/sessions/new.html.haml: indention on registration form
+
+2008-11-02 19:23  simon
+
+	* public/stylesheets/application.css: new error message layout
+
+2008-11-02 19:15  simon
+
+	* app/views/events/_fields.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/organisations/new.html.haml,
+	  public/stylesheets/application.css: new error message layout
+
+2008-11-02 18:50  pat
+
+	* public/images/balloon.gif: undo: balloon with shadow
+
+2008-11-02 18:48  pat
+
+	* public/images/balloon.gif: balloon with shadow
+
+2008-11-02 18:18  simon
+
+	* app/views/events/show.html.haml, app/views/front/show.html.haml,
+	  app/views/users/edit.html.haml, app/views/users/new.html.haml:
+	  infos in formularen und wikipedia link
+
+2008-11-02 17:15  marc
+
+	* app/views/layouts/application.html.haml: <strong> statt <b> tags
+
+2008-11-02 17:01  simon
+
+	* app/views/events/_fields.html.haml:
+
+2008-11-02 16:49  pat
+
+	* app/views/events/_fields.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/users/edit.html.haml: (mit Komma getrennt) -> (mehrere
+	  durch Komma getrennt)
+
+2008-11-02 16:44  simon
+
+	* app/views/events/_fields.html.haml,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/edit.html.haml,
+	  public/stylesheets/application.css: unified new, edit and show
+	  layout
+
+2008-11-02 15:31  simon
+
+	* app/controllers/events_controller.rb,
+	  app/views/sessions/new.html.haml:
+
+2008-11-02 14:52  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/models/organizer.rb, app/views/layouts/application.html.haml,
+	  app/views/sessions/new.html.haml,
+	  db/migrate/20081102144819_role_for_user.rb, db/schema.rb,
+	  public/stylesheets/application.css: new organisations have an
+	  organizer now (the creator)
+	  new 'role' field for user
+
+2008-11-02 14:00  simon
+
+	* app/views/events/index.html.haml: Oeffentliche Demonstrationen ->
+	  Demonstrationen
+
+2008-11-02 13:55  simon
+
+	* app/views/users/edit.html.haml: removed events and organisations
+	  from user edit
+
+2008-11-02 13:48  simon
+
+	* public/stylesheets/application.css: border for contextmenu
+
+2008-11-02 13:46  simon
+
+	* public/stylesheets/application.css:
+
+2008-11-02 13:41  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/views/events/index.html.haml,
+	  app/views/organisations/index.html.haml:
+
+2008-11-02 13:26  simon
+
+	* app/views/events/_fields.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/users/edit.html.haml: Themen (nach Komma getrennt)
+
+2008-11-02 13:17  simon
+
+	* app/views/organisations/index.html.haml: sorted organisations
+
+2008-11-02 13:14  simon
+
+	* app/views/events/index.html.haml: sorted demos
+
+2008-11-02 11:35  simon
+
+	* app/controllers/users_controller.rb,
+	  app/views/events/show.html.haml, app/views/front/index.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/show.html.haml, config/routes.rb: nice tag paths
+
+2008-11-02 01:51  simon
+
+	* app/views/organisations/_fields.html.haml,
+	  public/stylesheets/application.css:
+
+2008-11-02 01:44  pat
+
+	* public/images/demowatch_beta.gif:
+
+2008-11-02 00:21  pat
+
+	* app/views/layouts/application.html.haml,
+	  public/images/demowatch_beta.gif: Demowatch Beta
+
+2008-11-01 23:29  pat
+
+	* public/images/demowatch_beta.gif,
+	  public/stylesheets/application.css:
+
+2008-11-01 23:27  simon
+
+	* app/helpers/front_helper.rb: cosmetic changes
+
+2008-11-01 23:26  simon
+
+	* app/helpers/front_helper.rb: cosmetic changes
+
+2008-11-01 23:14  simon
+
+	* app/helpers/front_helper.rb, app/views/front/index.html.haml,
+	  public/stylesheets/application.css: usertags
+
+2008-11-01 22:58  pat
+
+	* app/views/front/show.html.haml: Texte
+
+2008-11-01 22:55  pat
+
+	* app/controllers/users_controller.rb: Texte
+
+2008-11-01 22:52  simon
+
+	* app/controllers/users_controller.rb: redirect :back fixed
+
+2008-11-01 22:17  simon
+
+	* app/controllers/users_controller.rb, app/models/organisation.rb,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/show.html.haml: Unbookmark
+
+2008-11-01 21:28  pat
+
+	* public/stylesheets/application.css:
+
+2008-11-01 21:24  pat
+
+	* public/stylesheets/application.css:
+
+2008-11-01 21:22  pat
+
+	* app/views/front/index.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  public/stylesheets/application.css:
+
+2008-11-01 21:18  simon
+
+	* app/helpers/front_helper.rb: wordcloud sorted
+
+2008-11-01 20:54  simon
+
+	* public/stylesheets/application.css:
+
+2008-11-01 20:53  simon
+
+	* app/models/organisation.rb, public/stylesheets/application.css:
+
+2008-11-01 20:53  pat
+
+	* app/controllers/organisations_controller.rb,
+	  app/views/events/_fields.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/edit.html.haml: Initiative -> Initiator
+
+2008-11-01 20:45  pat
+
+	* app/controllers/events_controller.rb:
+
+2008-11-01 20:19  simon
+
+	* app/views/events/_fields.html.haml:
+
+2008-11-01 20:14  simon
+
+	* app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml:
+
+2008-11-01 20:12  simon
+
+	* public/stylesheets/application.css:
+
+2008-11-01 20:10  simon
+
+	* public/stylesheets/application.css:
+
+2008-11-01 20:09  simon
+
+	* public/stylesheets/application.css:
+
+2008-11-01 20:07  simon
+
+	* app/views/users/edit.html.haml:
+
+2008-11-01 19:58  simon
+
+	* app/views/organisations/_fields.html.haml:
+
+2008-11-01 18:36  simon
+
+	* app/models/user.rb:
+
+2008-11-01 12:00  simon
+
+	* app/views/events/_fields.html.haml,
+	  app/views/events/index.html.haml,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/users/edit.html.haml, app/views/users/show.html.haml:
+
+2008-11-01 11:51  simon
+
+	* db/migrate/20081101113959_more_event_fields.rb,
+	  db/migrate/20081101114824_more_organisation_fields.rb,
+	  db/migrate/20081101115011_more_user_fields.rb, db/schema.rb: New
+	  DB fields
+
+2008-11-01 11:34  simon
+
+	* app/views/users/show.html.haml:
+
+2008-11-01 11:31  simon
+
+	* app/models/user.rb:
+
+2008-11-01 11:18  simon
+
+	* app/controllers/users_controller.rb, app/models/user.rb:
+
+2008-11-01 07:19  simon
+
+	* app/controllers/users_controller.rb:
+
+2008-10-31 23:54  simon
+
+	* app/views/organisations/index.html.haml:
+
+2008-10-31 23:43  simon
+
+	* app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/sessions/new.html.haml, app/views/users/edit.html.haml,
+	  app/views/users/new.html.haml, app/views/users/show.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 23:28  simon
+
+	* app/views/events/show.html.haml, app/views/front/show.html.haml,
+	  app/views/organisations/show.html.haml:
+
+2008-10-31 23:18  simon
+
+	* app/controllers/users_controller.rb,
+	  app/views/users/show.html.haml:
+
+2008-10-31 23:17  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 23:15  pat
+
+	* app/views/events/edit.html.haml,
+	  app/views/events/index.html.haml, app/views/events/new.html.haml,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/edit.html.haml, app/views/users/show.html.haml:
+
+2008-10-31 23:10  simon
+
+	* app/controllers/organisations_controller.rb,
+	  app/views/events/_fields.html.haml,
+	  app/views/events/show.html.haml, app/views/front/show.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/edit.html.haml:
+
+2008-10-31 23:08  simon
+
+	* app/controllers/users_controller.rb,
+	  app/views/events/show.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/edit.html.haml, app/views/users/show.html.haml:
+
+2008-10-31 22:47  simon
+
+	* app/views/events/show.html.haml, app/views/users/edit.html.haml:
+
+2008-10-31 22:14  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 22:11  simon
+
+	* app/controllers/users_controller.rb, app/models/user.rb,
+	  app/views/events/_fields.html.haml,
+	  app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  app/views/organisations/_fields.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/users/edit.html.haml:
+
+2008-10-31 22:00  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 21:07  simon
+
+	* app/views/layouts/application.html.haml,
+	  app/views/users/edit.html.haml:
+
+2008-10-31 20:51  simon
+
+	* app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/sessions/new.html.haml, app/views/users/new.html.erb,
+	  app/views/users/new.html.haml, app/views/users/show.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 18:42  simon
+
+	* app/views/front/about.html.haml,
+	  app/views/front/impressum.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 18:37  pat
+
+	* public/images/gradient.gif:
+
+2008-10-31 18:36  pat
+
+	* public/images/gradient.gif:
+
+2008-10-31 18:34  pat
+
+	* public/images/bottom.png, public/images/demowatch.png,
+	  public/images/gradient.png, public/images/mysql.gif,
+	  public/images/mysql.png, public/images/people.png,
+	  public/images/rails.gif, public/images/rails.png,
+	  public/images/top.png, public/images/ubuntu.gif,
+	  public/images/ubuntu.png:
+
+2008-10-31 18:03  simon
+
+	* app/controllers/sessions_controller.rb,
+	  app/views/layouts/application.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 17:31  simon
+
+	* app/views/front/show.html.haml,
+	  app/views/organisations/index.html.haml:
+
+2008-10-31 16:11  simon
+
+	* app/views/events/show.html.haml:
+
+2008-10-31 16:11  simon
+
+	* app/views/events/show.html.haml:
+
+2008-10-31 15:46  simon
+
+	* app/views/events/edit.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 15:18  simon
+
+	* app/views/organisations/index.html.haml:
+
+2008-10-31 15:17  simon
+
+	* app/views/events/index.html.haml:
+
+2008-10-31 14:01  simon
+
+	* config/database.yml:
+
+2008-10-31 13:52  simon
+
+	* app/views/events/index.html.haml:
+
+2008-10-31 13:11  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 13:00  simon
+
+	* app/controllers/events_controller.rb, app/models/event.rb,
+	  app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  config/environment.rb, public/javascripts/scal.js,
+	  public/stylesheets/application.css,
+	  vendor/plugins/l10n-simplified-0.9,
+	  vendor/plugins/l10n-simplified-0.9/MIT-LICENSE,
+	  vendor/plugins/l10n-simplified-0.9/README,
+	  vendor/plugins/l10n-simplified-0.9/Rakefile,
+	  vendor/plugins/l10n-simplified-0.9/changelog,
+	  vendor/plugins/l10n-simplified-0.9/init.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_ca.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_cf.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_chef.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_cs.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_da.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_de.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_en.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_es.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_es_ar.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_fi.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_fr.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_it.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_ko.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_nl.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_no.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_pirate.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_pt.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_pt_br.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_ru.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_se.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/lang_sr.rb,
+	  vendor/plugins/l10n-simplified-0.9/lib/localization_simplified.rb,
+	  vendor/plugins/l10n-simplified-0.9/test,
+	  vendor/plugins/l10n-simplified-0.9/test/test_the_hooks_test.rb,
+	  vendor/plugins/l10n-simplified-0.9/test/test_the_plugin_test.rb,
+	  vendor/plugins/l10n-simplified-0.9/version.rb:
+
+2008-10-31 11:48  simon
+
+	* app/views/events/index.html.haml,
+	  app/views/organisations/index.html.haml:
+
+2008-10-31 11:36  simon
+
+	* app/views/events/index.html.haml, app/views/events/new.html.haml,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/show.html.haml:
+
+2008-10-31 11:14  simon
+
+	* app/views/layouts/application.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 11:12  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 11:10  simon
+
+	* app/views/layouts/application.html.haml:
+
+2008-10-31 11:10  pat
+
+	* public/images/demowatch.gif:
+
+2008-10-31 11:08  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 11:08  simon
+
+	* app/views/layouts/application.html.haml:
+
+2008-10-31 11:07  simon
+
+	* public/images/ballon.gif, public/images/balloon.gif,
+	  public/javascripts/scal.js, public/stylesheets/application.css:
+
+2008-10-31 11:05  pat
+
+	* public/images/ballon.gif:
+
+2008-10-31 10:57  pat
+
+	* public/images/people.gif:
+
+2008-10-31 10:53  pat
+
+	* public/images/people.gif:
+
+2008-10-31 10:50  pat
+
+	* public/images/demowatch.gif, public/images/gradient.gif,
+	  public/images/people.gif:
+
+2008-10-31 10:34  simon
+
+	* app/views/users/new.html.erb:
+
+2008-10-31 10:30  simon
+
+	* app/views/sessions/new.html.haml, app/views/users/new.html.erb:
+
+2008-10-31 10:23  simon
+
+	* app/views/layouts/application.html.haml:
+
+2008-10-31 10:21  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 10:21  simon
+
+	* app/views/layouts/application.html.haml:
+
+2008-10-31 10:19  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 10:11  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 10:11  simon
+
+	* app/views/front/impressum.html.haml:
+
+2008-10-31 10:10  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 10:07  simon
+
+	* public/images/l_tab.png, public/images/lh_tab.png,
+	  public/images/r_tab.png, public/images/rh_tab.png:
+
+2008-10-31 10:07  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 09:59  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 09:57  simon
+
+	* public/stylesheets/application.css:
+
+2008-10-31 09:54  simon
+
+	* app/views/layouts/application.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-31 09:44  simon
+
+	* app/views/front/impressum.html.haml:
+
+2008-10-31 09:31  simon
+
+	* app/views/front/impressum.html.haml:
+
+2008-10-31 00:32  simon
+
+	* app/views/front/impressum.html.haml:
+
+2008-10-31 00:23  simon
+
+	* app/views/front/about.html.haml,
+	  app/views/front/impressum.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/sessions/new.html.haml, app/views/users/new.html.erb,
+	  public/stylesheets/application.css:
+
+2008-10-31 00:15  pat
+
+	* public/images/mysql.png:
+
+2008-10-31 00:09  pat
+
+	* public/images/rails.png, public/images/ubuntu.png:
+
+2008-10-30 23:31  pat
+
+	* public/images/l_tab.png, public/images/lh_tab.png,
+	  public/images/r_tab.png, public/images/rh_tab.png:
+
+2008-10-30 18:57  simon
+
+	* app/views/front/about.html.haml:
+
+2008-10-30 18:43  simon
+
+	* app/views/front/impressum.html.haml,
+	  app/views/layouts/application.html.haml,
+	  public/stylesheets/application.css:
+
+2008-10-30 17:30  simon
+
+	* app/views/front/about.html.haml,
+	  app/views/front/impressum.html.haml,
+	  app/views/front/index.html.haml, config/database.yml,
+	  config/environment.rb, public/stylesheets/application.css:
+
+2008-10-30 14:52  pat
+
+	* app/views/organisations/show.html.haml:
+
+2008-10-30 14:50  pat
+
+	* app/views/organisations/index.html.haml,
+	  app/views/organisations/show.html.haml:
+
+2008-10-30 14:48  simon
+
+	* app/views/events/edit.html.haml, app/views/events/new.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml:
+
+2008-10-30 14:36  pat
+
+	* public/favicon.ico:
+
+2008-10-30 11:24  simon
+
+	* app/controllers/front_controller.rb,
+	  app/views/front/about.html.haml, app/views/front/what.html.haml,
+	  app/views/layouts/application.html.haml, config/routes.rb,
+	  public/stylesheets/application.css:
+
+2008-10-30 11:05  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/helpers/front_helper.rb, app/views/events/edit.html.haml,
+	  app/views/events/index.html.haml, app/views/events/new.html.haml,
+	  app/views/front/index.html.haml,
+	  app/views/layouts/application.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml,
+	  public/stylesheets/application.css, vendor/plugins/auto_complete,
+	  vendor/plugins/auto_complete/README,
+	  vendor/plugins/auto_complete/Rakefile,
+	  vendor/plugins/auto_complete/init.rb,
+	  vendor/plugins/auto_complete/lib,
+	  vendor/plugins/auto_complete/lib/auto_complete.rb,
+	  vendor/plugins/auto_complete/lib/auto_complete_macros_helper.rb,
+	  vendor/plugins/auto_complete/test,
+	  vendor/plugins/auto_complete/test/auto_complete_test.rb:
+	  Autocomplete for tag fields
+
+2008-10-29 22:48  simon
+
+	* .: svn:ignore
+
+2008-10-29 22:43  simon
+
+	* app/views/events/index.html.haml: view fix
+
+2008-10-29 22:12  simon
+
+	* ., Rakefile, app, app/controllers,
+	  app/controllers/application.rb,
+	  app/controllers/events_controller.rb,
+	  app/controllers/front_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/controllers/sessions_controller.rb,
+	  app/controllers/users_controller.rb, app/helpers,
+	  app/helpers/application_helper.rb, app/helpers/events_helper.rb,
+	  app/helpers/front_helper.rb, app/helpers/organisations_helper.rb,
+	  app/helpers/sessions_helper.rb, app/helpers/users_helper.rb,
+	  app/models, app/models/event.rb, app/models/organisation.rb,
+	  app/models/organizer.rb, app/models/user.rb,
+	  app/models/user_mailer.rb, app/models/user_observer.rb,
+	  app/views, app/views/events, app/views/events/edit.html.haml,
+	  app/views/events/index.html.haml, app/views/events/new.html.haml,
+	  app/views/events/show.html.haml, app/views/front,
+	  app/views/front/impressum.html.haml,
+	  app/views/front/index.html.haml, app/views/front/show.html.haml,
+	  app/views/front/what.html.haml, app/views/layouts,
+	  app/views/layouts/application.html.haml, app/views/organisations,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml, app/views/sessions,
+	  app/views/sessions/new.html.haml, app/views/user_mailer,
+	  app/views/user_mailer/activation.html.erb,
+	  app/views/user_mailer/signup_notification.html.erb,
+	  app/views/users, app/views/users/new.html.erb, config,
+	  config/boot.rb, config/database.yml, config/environment.rb,
+	  config/environments, config/environments/development.rb,
+	  config/environments/production.rb, config/environments/test.rb,
+	  config/initializers, config/initializers/inflections.rb,
+	  config/initializers/mail.rb, config/initializers/mime_types.rb,
+	  config/initializers/new_rails_defaults.rb, config/routes.rb, db,
+	  db/migrate, db/migrate/20081029103307_create_users.rb,
+	  db/migrate/20081029152948_create_events.rb,
+	  db/migrate/20081029153528_acts_as_taggable_migration.rb,
+	  db/migrate/20081029160701_create_organisations.rb,
+	  db/migrate/20081029160708_create_organizers.rb,
+	  db/migrate/20081029162235_create_bookmarks.rb, db/schema.rb, doc,
+	  lib, lib/authenticated_system.rb,
+	  lib/authenticated_test_helper.rb, lib/tasks, log, public,
+	  public/404.html, public/422.html, public/500.html,
+	  public/dispatch.cgi, public/dispatch.fcgi, public/dispatch.rb,
+	  public/favicon.ico, public/images, public/images/bottom.png,
+	  public/images/demowatch.png, public/images/gradient.png,
+	  public/images/people.png, public/images/top.png,
+	  public/javascripts, public/javascripts/application.js,
+	  public/javascripts/controls.js, public/javascripts/dragdrop.js,
+	  public/javascripts/effects.js, public/javascripts/prototype.js,
+	  public/robots.txt, public/stylesheets,
+	  public/stylesheets/application.css, script, script/about,
+	  script/console, script/dbconsole, script/destroy,
+	  script/generate, script/performance,
+	  script/performance/benchmarker, script/performance/profiler,
+	  script/performance/request, script/plugin, script/process,
+	  script/process/inspector, script/process/reaper,
+	  script/process/spawner, script/runner, script/server, test,
+	  test/fixtures, test/fixtures/events.yml,
+	  test/fixtures/organisations.yml, test/fixtures/organizers.yml,
+	  test/fixtures/users.yml, test/functional,
+	  test/functional/events_controller_test.rb,
+	  test/functional/front_controller_test.rb,
+	  test/functional/organisations_controller_test.rb,
+	  test/functional/sessions_controller_test.rb,
+	  test/functional/users_controller_test.rb, test/integration,
+	  test/test_helper.rb, test/unit, test/unit/event_test.rb,
+	  test/unit/organisation_test.rb, test/unit/organizer_test.rb,
+	  test/unit/user_mailer_test.rb, test/unit/user_test.rb, tmp,
+	  vendor, vendor/plugins, vendor/plugins/acts_as_bookmarkable,
+	  vendor/plugins/acts_as_bookmarkable/MIT-LICENSE,
+	  vendor/plugins/acts_as_bookmarkable/README,
+	  vendor/plugins/acts_as_bookmarkable/init.rb,
+	  vendor/plugins/acts_as_bookmarkable/install.rb,
+	  vendor/plugins/acts_as_bookmarkable/lib,
+	  vendor/plugins/acts_as_bookmarkable/lib/acts_as_bookmarkable.rb,
+	  vendor/plugins/acts_as_bookmarkable/lib/bookmark.rb,
+	  vendor/plugins/acts_as_bookmarkable/tasks,
+	  vendor/plugins/acts_as_bookmarkable/tasks/acts_as_bookmarkable_tasks.rake,
+	  vendor/plugins/acts_as_bookmarkable/test,
+	  vendor/plugins/acts_as_bookmarkable/test/acts_as_bookmarkable_test.rb,
+	  vendor/plugins/acts_as_state_machine,
+	  vendor/plugins/acts_as_state_machine/CHANGELOG,
+	  vendor/plugins/acts_as_state_machine/MIT-LICENSE,
+	  vendor/plugins/acts_as_state_machine/README,
+	  vendor/plugins/acts_as_state_machine/Rakefile,
+	  vendor/plugins/acts_as_state_machine/TODO,
+	  vendor/plugins/acts_as_state_machine/init.rb,
+	  vendor/plugins/acts_as_state_machine/lib,
+	  vendor/plugins/acts_as_state_machine/lib/acts_as_state_machine.rb,
+	  vendor/plugins/acts_as_state_machine/test,
+	  vendor/plugins/acts_as_state_machine/test/acts_as_state_machine_test.rb,
+	  vendor/plugins/acts_as_state_machine/test/database.yml,
+	  vendor/plugins/acts_as_state_machine/test/fixtures,
+	  vendor/plugins/acts_as_state_machine/test/fixtures/conversation.rb,
+	  vendor/plugins/acts_as_state_machine/test/fixtures/conversations.yml,
+	  vendor/plugins/acts_as_state_machine/test/fixtures/person.rb,
+	  vendor/plugins/acts_as_state_machine/test/schema.rb,
+	  vendor/plugins/acts_as_state_machine/test/test_helper.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids,
+	  vendor/plugins/acts_as_taggable_on_steroids/CHANGELOG,
+	  vendor/plugins/acts_as_taggable_on_steroids/MIT-LICENSE,
+	  vendor/plugins/acts_as_taggable_on_steroids/README,
+	  vendor/plugins/acts_as_taggable_on_steroids/Rakefile,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration/acts_as_taggable_migration_generator.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration/templates,
+	  vendor/plugins/acts_as_taggable_on_steroids/generators/acts_as_taggable_migration/templates/migration.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/init.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib/acts_as_taggable.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib/tag.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib/tag_counts_extension.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib/tag_list.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib/tagging.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/lib/tags_helper.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/abstract_unit.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/acts_as_taggable_test.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/database.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/magazine.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/magazines.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/photo.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/photos.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/post.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/posts.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/special_post.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/subscription.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/subscriptions.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/taggings.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/tags.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/user.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/fixtures/users.yml,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/schema.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/tag_list_test.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/tag_test.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/tagging_test.rb,
+	  vendor/plugins/acts_as_taggable_on_steroids/test/tags_helper_test.rb,
+	  vendor/plugins/haml, vendor/plugins/haml/init.rb,
+	  vendor/plugins/restful_authentication,
+	  vendor/plugins/restful_authentication/README,
+	  vendor/plugins/restful_authentication/Rakefile,
+	  vendor/plugins/restful_authentication/generators,
+	  vendor/plugins/restful_authentication/generators/authenticated,
+	  vendor/plugins/restful_authentication/generators/authenticated/USAGE,
+	  vendor/plugins/restful_authentication/generators/authenticated/authenticated_generator.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/activation.html.erb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/authenticated_system.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/authenticated_test_helper.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/controller.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/fixtures.yml,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/functional_spec.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/functional_test.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/helper.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/login.html.erb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/mailer.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/mailer_test.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/migration.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/model.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/model_controller.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/model_functional_spec.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/model_functional_test.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/model_helper.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/observer.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/signup.html.erb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/signup_notification.html.erb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/unit_spec.rb,
+	  vendor/plugins/restful_authentication/generators/authenticated/templates/unit_test.rb,
+	  vendor/plugins/restful_authentication/install.rb,
+	  vendor/plugins/restful_authentication/lib,
+	  vendor/plugins/restful_authentication/lib/restful_authentication,
+	  vendor/plugins/restful_authentication/lib/restful_authentication/rails_commands.rb,
+	  vendor/plugins/validates_date_time,
+	  vendor/plugins/validates_date_time/CHANGELOG,
+	  vendor/plugins/validates_date_time/MIT-LICENSE,
+	  vendor/plugins/validates_date_time/README,
+	  vendor/plugins/validates_date_time/Rakefile,
+	  vendor/plugins/validates_date_time/init.rb,
+	  vendor/plugins/validates_date_time/lib,
+	  vendor/plugins/validates_date_time/lib/multiparameter_attributes.rb,
+	  vendor/plugins/validates_date_time/lib/parser.rb,
+	  vendor/plugins/validates_date_time/lib/validates_date_time.rb,
+	  vendor/plugins/validates_date_time/test,
+	  vendor/plugins/validates_date_time/test/abstract_unit.rb,
+	  vendor/plugins/validates_date_time/test/database.yml,
+	  vendor/plugins/validates_date_time/test/date_test.rb,
+	  vendor/plugins/validates_date_time/test/date_time_test.rb,
+	  vendor/plugins/validates_date_time/test/fixtures,
+	  vendor/plugins/validates_date_time/test/fixtures/people.yml,
+	  vendor/plugins/validates_date_time/test/fixtures/person.rb,
+	  vendor/plugins/validates_date_time/test/schema.rb,
+	  vendor/plugins/validates_date_time/test/time_test.rb: rails
+	  version
+
