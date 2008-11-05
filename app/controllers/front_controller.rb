@@ -10,7 +10,7 @@ class FrontController < ApplicationController
   end
 
   def other
-    @tags = Tag.counts :conditions => "taggable_type IN ('Organisation', 'Event')"
+    @tags = Tag.counts :conditions => "taggable_type IN ('Organisation', 'User')"
     render :action => 'index'
   end
     
