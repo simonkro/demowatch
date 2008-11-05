@@ -19,7 +19,22 @@
   = f.label :description, 'Beschreibung' 
   = f.text_area :description, :cols=>60
 
-%h2 Optionale Daten
+-# TINYMCE
+:javascript
+  tinyMCE.init({
+  mode : "textareas",
+  theme : "advanced",
+  theme_advanced_buttons1 : "bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo, link,unlink",
+  theme_advanced_buttons2 : "",
+  theme_advanced_buttons3 : "",
+  theme_advanced_toolbar_location : "top",
+  theme_advanced_toolbar_align : "left",
+  theme_advanced_statusbar_location : "bottom",  
+  content_css : "/stylesheets/application.css",
+  language : 'de',
+  });
+
+  %h2 Optionale Daten
 .indent
   = f.label :link, 'Webseite'
   = f.text_field :link, :size=>60
