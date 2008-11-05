@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   
   # zur hauptdomain umleiten
   def redirect_to_www_demowatch_de
-    if not request.host.include?('localhost') && request.host.match( /^www.demowatch.de/i).nil?
+    if not request.host.include?('localhost') && request.host.include?( 'www.demowatch.de')
       redirect_to "http://www.demowatch.de" + request.path, :status=>:moved_permanently
     end
   end  
