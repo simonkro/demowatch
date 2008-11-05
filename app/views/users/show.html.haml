@@ -19,12 +19,13 @@
   %b PLZ:
   = @user.zip 
 
+%h2 Von Dir verwaltete Inhalte
 - unless @organisations.empty?
-  %h2 Deine Initiatoren
+  %h3 Initiatoren
   .q= @organisations.map{|organisation| link_to organisation.title, organisation}.join(', ')
 
 - unless @events.empty?
-  %h2 Deine Demonstrationen
+  %h3 Demonstrationen
   .q= @events.map{|event| link_to event.title, event}.join(', ')
 
 %h2 Deine Abonnements
