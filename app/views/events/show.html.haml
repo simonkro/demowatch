@@ -5,6 +5,14 @@
 %h2 Themen
 %p= @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %h2 Treffpunkt
+%p
+  Diese Demo beginnt am
+  %strong= @event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')
+  um
+  %strong== #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')}.
+  Treffpunkt ist
+  %b== #{@event.address}#{' (' + @event.location + ')' if @event.location?}. 
+  
 #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
   
 :javascript
@@ -17,14 +25,6 @@
   "um #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')},<br/>"+
   "#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 
-%p
-  Diese Demo beginnt am
-  %strong= @event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')
-  um
-  %strong== #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')}.
-  Treffpunkt ist
-  %b== #{@event.address}#{' (' + @event.location + ')' if @event.location?}. 
-  
 %h2 Beschreibung
 %p= @event.description
 
