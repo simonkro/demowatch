@@ -4,6 +4,16 @@ class FrontController < ApplicationController
     @tags = Tag.counts
   end
   
+  def events
+    @tags = Event.tag_counts
+    render :action => 'index'
+  end
+
+  def other
+    @tags = Tag.counts :conditions => "taggable_type IN ('Organisation', 'Event')"
+    render :action => 'index'
+  end
+    
   def impressum
   end
 
