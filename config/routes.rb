@@ -50,13 +50,12 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
 
-  map.front '/', :controller => 'front', :action => 'index'
+  map.front '/', :controller => 'front', :action => 'events'
   map.tag '/tag/:id', :controller => 'front', :action => 'show'
   map.about '/about', :controller => 'front', :action => 'about'
   map.impressum '/impressum', :controller => 'front', :action => 'impressum'
   map.disclaimer '/disclaimer', :controller => 'front', :action => 'disclaimer'
-  map.event_cloud 'demos', :controller => 'front', :action => 'events'
-  map.other_cloud 'other', :controller => 'front', :action => 'other'
+  map.events_cloud 'all', :controller => 'front', :action => 'index'
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.signup '/signup', :controller => 'users', :action => 'new'
