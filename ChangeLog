@@ -1,3 +1,51 @@
+2008-11-05 13:45  pat
+
+	* app/views/events/edit.html.haml: google key
+
+2008-11-05 13:19  simon
+
+	* app/views/events/show.html.haml,
+	  app/views/front/impressum.html.haml: mails @demowatch.de
+
+2008-11-05 12:50  simon
+
+	* app/views/events/show.html.haml: google key for demowatch.de
+
+2008-11-04 17:04  marc
+
+	* app/views/events/index.html.haml,
+	  app/views/events/show.html.haml: city instead of address in list
+	  of demos
+
+2008-11-04 17:01  marc
+
+	* app/views/events/show.html.haml: html_escape
+
+2008-11-04 14:18  simon
+
+	* app/views/events/show.html.haml: layout google map
+
+2008-11-04 08:41  simon
+
+	* app/views/events/show.html.haml:
+
+2008-11-04 08:28  simon
+
+	* app/controllers/application.rb, app/views/events/edit.html.haml,
+	  app/views/events/show.html.haml,
+	  app/views/layouts/application.html.haml: cleaned up the event
+	  templates and restricted the google maps javascript to these
+	  views
+
+2008-11-04 03:07  marc
+
+	* ChangeLog: Changelog
+
+2008-11-04 03:06  marc
+
+	* app/views/events/show.html.haml,
+	  public/stylesheets/application.css: google map bei demos
+
 2008-11-04 01:30  marc
 
 	* app/models/event.rb, app/models/organisation.rb,

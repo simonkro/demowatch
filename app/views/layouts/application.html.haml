@@ -8,6 +8,9 @@
     = javascript_include_tag 'prototype', 'effects', 'controls', :cache => true
     = stylesheet_link_tag :all
     
+    %style	
+      body { background: #c8dbf1 url(/images/gradient.gif) repeat-x; }
+    
     - if @rss_title && @rss_url
       = auto_discovery_link_tag(:rss, @rss_url, {:title => @rss_title})
       
