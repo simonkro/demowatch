@@ -1,39 +1,39 @@
 %h1= @user.login
 
-%p 
+.q 
   Die von Dir hier angegebenen Daten werden von uns streng vertraulich 
   behandelt und weder auf dieser Website ver&ouml;ffentlicht noch an 
   Dritte weitergegeben.
 
 %h2 Deine Daten
 
-%p
+.q
   %b Name:
   = @user.login 
 
-%p
+.q
   %b Email:
   = @user.email 
 
-%p
+.q
   %b PLZ:
   = @user.zip 
 
 - unless @organisations.empty?
   %h2 Deine Initiatoren
-  %p= @organisations.map{|organisation| link_to organisation.title, organisation}.join(', ')
+  .q= @organisations.map{|organisation| link_to organisation.title, organisation}.join(', ')
 
 - unless @events.empty?
   %h2 Deine Demonstrationen
-  %p= @events.map{|event| link_to event.title, event}.join(', ')
+  .q= @events.map{|event| link_to event.title, event}.join(', ')
 
 %h2 Deine Abonnements
 
 %h3 Themen
-%p= @user.tags.map{|tag| link_to tag.name, tag}.join(', ')
+.q= @user.tags.map{|tag| link_to tag.name, tag}.join(', ')
 
 %h3 Demos & Inititativen
-%p
+.q
   %ul
     - @user.bookmarks.each do |bm|
       %li= link_to bm.title, bm.bookmarkable

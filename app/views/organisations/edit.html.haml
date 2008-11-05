@@ -2,7 +2,7 @@
 
 - form_for(@organisation) do |f| 
   %h2 Daten
-  %p
+  .q
     = render :partial => 'fields', :locals => {:f => f}
     .buttons= f.submit "Speichern"
 

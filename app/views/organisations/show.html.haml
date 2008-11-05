@@ -1,12 +1,12 @@
 ﻿
 %h1= @organisation.title
 %h2 Themen
-%p= @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
+.q= @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %h2 Beschreibung
-%p= @organisation.description
+.q= @organisation.description
 - if @organisation.link
   %h3 Weitere Informationen
-  %p= link_to @organisation.link, @organisation.link, { :target=>'_new'}
+  .q= link_to @organisation.link, @organisation.link, { :target=>'_new'}
 
 - if logged_in? 
   .contextmenu
