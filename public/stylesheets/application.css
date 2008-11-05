@@ -96,6 +96,10 @@ small {
 #header ul li.last {
 	border-right: none;
 }
+
+.buttons {
+  align: center;
+}
 	
 .balloon  {
 	width: 650px;
