@@ -1,10 +1,8 @@
 %h1 Initiator bearbeiten
 
 - form_for(@organisation) do |f| 
-  %h2 Daten
-  .q
-    = render :partial => 'fields', :locals => {:f => f}
-    .buttons= f.submit "Speichern"
+  = render :partial => 'fields', :locals => {:f => f}
+  .buttons= f.submit "Speichern"
 
 .contextmenu
   = link_to 'Anzeigen', @organisation  
