@@ -13,17 +13,18 @@
 
 - form_tag session_path do 
 
-  %p  
+  .indent  
     = label_tag :login, 'Login'
     = text_field_tag :login
 
-
+  .indent
     = label_tag :password, 'Passwort'
     = password_field_tag :password
 
-
+  .indent
     = label_tag :remember_me, 'Automatisch einloggen'
     = check_box_tag :remember_me
 
+  .buttons
     =submit_tag 'Anmelden'
 

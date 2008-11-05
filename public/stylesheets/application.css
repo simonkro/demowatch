@@ -4,9 +4,6 @@ body {
 	font-family: Georgia, Helvetica, sans-serif; 
 }
 
-form h1, form h2, form h3, form h4 {
-}
-
 p {
 /* das hier stört beim TinyMCE
 	margin-left:2em; 
@@ -99,10 +96,6 @@ small {
 	border-right: none;
 }
 
-.buttons {
-  text-align: center;
-}
-	
 .balloon  {
 	width: 650px;
 	background: transparent;
@@ -155,6 +148,11 @@ form label {
 form input {
 	display: block;
 	margin-bottom: 5px;
+}
+
+.buttons {
+	margin-top:1em;
+	margin-left:2em;
 }
 
 .checkboxlabel {

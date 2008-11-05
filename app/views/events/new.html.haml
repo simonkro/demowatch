@@ -5,8 +5,7 @@
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_zip);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
-
-  = f.submit "Erzeugen"
+  .buttons= f.submit "Erzeugen"
 
 .contextmenu
   = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path 

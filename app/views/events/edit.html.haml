@@ -5,7 +5,7 @@
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Speichern" 
+  .buttons= f.submit "Speichern"
 
 .contextmenu
   = link_to 'Show', @event 
