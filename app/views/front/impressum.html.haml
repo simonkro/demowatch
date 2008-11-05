@@ -1,39 +1,47 @@
 %h1 Impressum
 
 %h2 Kontakt
-.indent
+.q
   Wir m&ouml;chten auf <i>Demowatch.de</i> m&ouml;glichst viele demokratische Aktionen unterst&uuml;tzen. <u>Aufrufe zu verfassungs- oder gesetzeswidrige Aktionen werden von uns aus unserer Datenbank schnellstm&ouml;glich gel&ouml;scht</u>. Falls Euch Inhalte auffallen, die diesen Rahmen sprengen oder die falsche Informationen enthalten, gebt uns bitte bescheid. Gennerell sind uns Ideen, Fragen, Lob und Kritik immer willkommen. Bitte sendet Eure Nachrichten per E-Mail an folgende Adresse:
-  "info@demowatch.de":mailto:info@demowatch.de
+.q
+  = link_to 'info@demowatch.de','mailto:info@demowatch.de'
 
 %h2 Mitwirkende
-.indent
+.q
   Vielen Dank an alle, die ehrenamtlich aber dennoch mit viel Enthusiasmus an der Verwirklichung dieses Projekts teilhaben:
 
 %h3 Idee & Gestaltung
-.indent
-  "Patrick Hoffmann":mailto:p.hoffmann@demowatch.de
+.q
+  = link_to 'Patrick Hoffmann','mailto:p.hoffmann@demowatch.de'
 
 %h3 Medienarbeit
-.indent
-  "Wolfgang Eitel":mailto:w.eitel@demowatch.de
-  "Jasper Wied":mailto:j.wied@demowatch.de
+.q
+  = link_to 'Wolfgang Eitel','mailto:w.eitel@demowatch.de'
+  %br
+  = link_to 'Jasper Wied','mailto:j.wied@demowatch.de'
 
 %h3 Programmierung
-.indent
-  "Simon Kr&ouml;ger":mailto:s.kroeger@demowatch.de
-  "Marc Christenfeldt":mailto:m.christenfeldt@demowatch.de
+.q
+  = link_to 'Simon Kr&ouml;ger','mailto:s.kroeger@demowatch.de'
+  %br
+  = link_to 'Marc Christenfeldt','mailto:m.christenfeldt@demowatch.de'
 
 %h2 Verantwortlich laut Telemediengesetz
-.indent
+.q
   Patrick Hoffmann
+  %br
   Ruppiner Str. 5
+  %br
   10115 Berlin
-
-.indent
-  "p.hoffmann@demowatch.de":mailto:p.hoffmann@demowatch.de
+.q
+  = link_to 'p.hoffmann@demowatch.de','mailto:p.hoffmann@demowatch.de'
 
 %h2 Verwendete Techniken
 
-.indent
-  Diese Website wurde mit folgenden Techniken erstellt:  
-  = #{link_to image_tag('rails.gif'), 'http://rubyonrails.org', { :target=>'_new'}} #{link_to image_tag('ubuntu.gif'), 'http://ubuntu.com', { :target=>'_new'}} #{link_to image_tag('mysql.gif'), 'http://mysql.org', { :target=>'_new'}}
+.q
+  Diese Website wurde mit folgenden Techniken erstellt:
+
+.center
+  = link_to image_tag('rails.gif'), 'http://rubyonrails.org', { :target=>'_new'}
+  = link_to image_tag('ubuntu.gif'), 'http://ubuntu.com', { :target=>'_new'}
+  = link_to image_tag('mysql.gif'), 'http://mysql.org', { :target=>'_new'}

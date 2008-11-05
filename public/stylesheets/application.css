@@ -326,6 +326,18 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
   	padding-left: 3px;
 }
 
-.indent {
+.indent, .q {
 	margin-left:2em;
+}
+
+.q {
+	margin-bottom:.5em
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
 }
