@@ -6,8 +6,30 @@
 .q= @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %h2 Treffpunkt
 .q
-  Diese Demo beginnt am
-  %strong= @event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')
+  Diese Aktion
+  - if (@event.startdate-Time.now) <= -0.5*86400
+    hat bereits stattgefunden. Sie begann am
+  - elsif (@event.startdate-Time.now) <= 0.5*86400
+    .red
+      hat schon angefangen!
+    Sie begann am
+  - elsif (@event.startdate-Time.now) <= 1.0*86400
+    .red
+      findet in weniger als einem Tag statt!
+    Sie beginnt am
+  - elsif (@event.startdate-Time.now) <= 7.9*86400
+    .red
+      beginnt schon in
+      = ((@event.startdate-Time.now)/86400).floor
+      Tage(n)
+    , am
+  - else
+    beginnt in
+    %b 
+      =((@event.startdate-Time.now)/(24*3600)).floor
+      Tagen
+    , am
+  %strong= @event.startdate && @event.startdate.strftime('%A, den %d.%m.%Y')
   um
   %strong== #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')}.
   Treffpunkt ist
