@@ -32,7 +32,10 @@
   %strong= @event.startdate && @event.startdate.strftime('%A, den %d.%m.%Y')
   um
   %strong== #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')}.
-  Treffpunkt ist
+  - if (@event.startdate-Time.now) <= 0.5*86400
+    Treffpunkt war
+  - else
+    Treffpunkt ist
   %b== #{@event.address}#{' (' + @event.location + ')' if @event.location?}. 
   
 #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
