@@ -117,9 +117,6 @@ class User < ActiveRecord::Base
   end
   
   def owns? item
-    p item
-    return true if is_admin?
-    
     case item 
       when Organisation
         organizer = organizers & item.organizers
