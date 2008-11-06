@@ -8,7 +8,7 @@ login: &login
 
 development:
   <<: *login
-  database: demowatch
+  database: demo_dev
 
 test:
   <<: *login
