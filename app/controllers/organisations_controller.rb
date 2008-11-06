@@ -55,6 +55,7 @@ class OrganisationsController < ApplicationController
         flash[:notice] = 'Initiator wurde erfolgreich eingetragen.'
         format.html { redirect_to(@organisation) }
         format.xml  { render :xml => @organisation, :status => :created, :location => @organisation }
+        InitiatorMailer::deliver_mail(current_user, @organisation)
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @organisation.errors, :status => :unprocessable_entity }
