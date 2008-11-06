@@ -2,7 +2,12 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable
   acts_as_bookmarkable
-  acts_as_mappable
+  acts_as_mappable :default_units => :kms, 
+                   :default_formula => :sphere, 
+                   :distance_field_name => :distance,
+                   :lat_column_name => :latitude,
+                   :lng_column_name => :longitude
+
 
 #  before_validation_on_create :geocode_address
   
@@ -32,8 +37,9 @@ private
 #    errors.add_to_base "Bitte geben Sie eine Adresse ein." if address.blank?  
     geo=GeoKit::Geocoders::MultiGeocoder.geocode(address)
 #    puts( GeoKit::Geocoders::MultiGeocoder.methods());
-    errors.add(:address, "Could not Geocode address") if !geo.success
+    errors.add(:address, "Adresse wurde nicht gefunden") if !geo.success
     self.address,self.city,self.latitude,self.longitude = geo.full_address,geo.city,geo.lat,geo.lng if geo.success
+#    puts( geo.state + '##################');
   end
 
 

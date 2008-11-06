@@ -133,4 +133,3 @@ GeoKit::Geocoders::geocoder_ca = false
 GeoKit::Geocoders::provider_order = [:google,:us]
 
 
-

@@ -16,9 +16,11 @@
   = @user.email 
 
 .q
-  %b PLZ:
-  = @user.zip 
-
+  %strong PLZ:
+  - unless @user.zip.nil?
+    = @user.zip.zip
+    = @user.zip.name
+     
 %h2 Von Dir verwaltete Inhalte
 - unless @organisations.empty?
   %h3 Initiatoren

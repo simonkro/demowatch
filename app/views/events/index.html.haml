@@ -8,13 +8,19 @@
     %th Termin 
     %th Demo
     %th Ort
+    - if( @with_distance)
+      %th= 'Entfernung von ' + @zip
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= Time.now}"}
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
       %td= link_to event.title, event
       %td= event.city
-
-%br
+      -if @with_distance       
+        - if !event.distance.nil?
+          %td= sprintf( "%.0f km", event.distance)  
+        - else
+          %td
+  %br
 
 - if logged_in? 
   .contextmenu

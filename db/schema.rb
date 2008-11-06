@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081103205428) do
+ActiveRecord::Schema.define(:version => 20081103090612) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",             :limit => 50, :default => ""
@@ -29,12 +29,10 @@ ActiveRecord::Schema.define(:version => 20081103205428) do
     t.datetime "enddate"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "address"
+    t.string   "zip"
     t.string   "city"
     t.string   "location"
     t.string   "link"
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   create_table "organisations", :force => true do |t|

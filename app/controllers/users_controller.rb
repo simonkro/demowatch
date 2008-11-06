@@ -41,10 +41,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @str_zip = @user.zip.nil? ? '' : @user.zip.zip
   end
   
   def update
-    if @user.update_attributes(params[:user])
+    @user.zip = Zip.find_by_zip( params[:user][:zip])    
+    params[:user].delete('zip')
+    if @user.update_attributes( params[:user])
       flash[:notice] = 'Einstellungen wurden erfolgreich ge&auml;ndert.'
       redirect_to(@user) 
     else

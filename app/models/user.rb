@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
   has_many :organisations, :through => :organizers
   has_many :bookmarks, :dependent => :destroy
   
+  belongs_to :zip,
+             :class_name => "Zip",
+             :foreign_key => "zip_id"
+  
+  
   validates_presence_of     :login, :email
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
@@ -155,4 +160,17 @@ class User < ActiveRecord::Base
       self.activated_at = Time.now.utc
       self.deleted_at = self.activation_code = nil
     end
+    
+private
+
+#    def validate
+#    puts( 'xxxxxxxxxxxxxxxxxxxxxxxxxxx');
+#      dbZip = Zip.find_by_zip( zip )   
+#      if( dbZip.nil?)            
+#        errors.add 'ZIP', 'PLZ #{str_zip} konnte nicht gefunden werden.'      
+#      else
+#        self.zip = dbZip      
+#      end 
+#    end
+
 end
