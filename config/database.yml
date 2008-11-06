@@ -1,10 +1,10 @@
 login: &login
   adapter: mysql
-  username: root
-  password: 11111
+  username: demo
+  password: demo
   host: localhost
   encoding: utf8
-  socket: /var/lib/mysql/mysql.sock
+#  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *login
