@@ -22,7 +22,15 @@ class FrontController < ApplicationController
   
   def show
     @tag = Tag.find(params[:id])
-    @events = Event.find_tagged_with(@tag)
+    @with_distance = !current_user.nil? && !current_user.zip.nil?
+    if( @with_distance)	  
+      # mit entfernung
+  	  origin = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude);
+      @events = Event.find_tagged_with(@tag, :origin => origin, :order => 'startdate DESC')
+    else 
+      @events = Event.find_tagged_with(@tag, :order => 'startdate DESC')
+    end  
     @organisations = Organisation.find_tagged_with(@tag)
+    
   end
 end

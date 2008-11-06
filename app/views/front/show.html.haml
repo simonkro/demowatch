@@ -11,12 +11,19 @@
       %th Termin
       %th Demo
       %th Ort
+      - if( @with_distance)
+        %th Entfernung
+      
     - @events.each_with_index do |event, index|
       %tr{:class => "#{'even' if index.even?}"}
         %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
         %td= link_to event.title, event
         %td= event.address
-
+        -if @with_distance       
+          - if !event.distance.nil?
+            %td= sprintf( "%.0f km", event.distance)  
+          - else
+            %td
 %h2 Initiatoren
 
 - if @organisations.empty? 
