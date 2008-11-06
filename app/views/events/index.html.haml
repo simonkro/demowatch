@@ -9,7 +9,7 @@
     %th Demo
     %th Ort
     - if( @with_distance)
-      %th= 'Entfernung von ' + @zip
+      %th Entfernung
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= Time.now}"}
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
