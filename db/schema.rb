@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081103090612) do
+ActiveRecord::Schema.define(:version => 20081104161719) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",             :limit => 50, :default => ""
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20081103090612) do
 
   add_index "bookmarks", ["user_id"], :name => "fk_bookmarks_user"
 
+  create_table "demowatch_bak", :force => true do |t|
+    t.string "zip",       :limit => 5
+    t.string "name"
+    t.float  "latitude"
+    t.float  "longitude"
+  end
+
+  add_index "demowatch_bak", ["zip"], :name => "index_zips_on_zip", :unique => true
+
   create_table "events", :force => true do |t|
     t.integer  "organisation_id", :null => false
     t.text     "title"
@@ -29,10 +38,12 @@ ActiveRecord::Schema.define(:version => 20081103090612) do
     t.datetime "enddate"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "zip"
+    t.string   "address"
     t.string   "city"
     t.string   "location"
     t.string   "link"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "organisations", :force => true do |t|
@@ -81,5 +92,14 @@ ActiveRecord::Schema.define(:version => 20081103090612) do
     t.string   "zip"
     t.integer  "role",                                    :default => 0
   end
+
+  create_table "zips", :force => true do |t|
+    t.string "zip",       :limit => 5
+    t.string "name"
+    t.float  "latitude"
+    t.float  "longitude"
+  end
+
+  add_index "zips", ["zip"], :name => "index_zips_on_zip", :unique => true
 
 end
