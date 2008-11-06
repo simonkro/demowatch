@@ -17,5 +17,3 @@ module LocalizationSimplified
     }
   end
 end
-
-puts "LocalizationSimplified"
