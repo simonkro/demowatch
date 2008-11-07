@@ -24,8 +24,10 @@
   
   %h2 Optionale Daten
   .indent
+    Damit wir die Demos in Deiner Nähe finden können, kannst Du hier den ersten Teil Deiner Postleitzahl eingeben. Du musst es aber nicht!
+  .indent
     = f.label :zip, 'PLZ <i>(optional, eine oder mehrere Stellen)</i>'
-    = f.text_field :zip, :size=>60, :value=>@str_zip  
+    = f.text_field :zip, :size=>5, :value=>@str_zip  
 
   .buttons
     = submit_tag 'Registrieren'
