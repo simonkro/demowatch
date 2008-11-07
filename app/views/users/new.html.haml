@@ -22,8 +22,8 @@
     = f.label :password_confirmation, 'Passwort best&auml;tigen'
     = f.password_field :password_confirmation 
   
-%h2 Optionale Daten
-
+  %h2 Optionale Daten
+  .indent
     = f.label :zip, 'PLZ <i>(optional, eine oder mehrere Stellen)</i>'
     = f.text_field :zip, :size=>60, :value=>@str_zip  
 
