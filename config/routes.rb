@@ -57,7 +57,6 @@ ActionController::Routing::Routes.draw do |map|
   map.disclaimer '/disclaimer', :controller => 'front', :action => 'disclaimer'
   map.event_cloud 'demos', :controller => 'front', :action => 'events'
   map.other_cloud 'other', :controller => 'front', :action => 'other'
-  map.add_tag 'add', :controller => 'front', :action => 'add'
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.signup '/signup', :controller => 'users', :action => 'new'

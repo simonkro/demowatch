@@ -1,5 +1,7 @@
 
 %h1= @tag.name 
+- if current_user.tags.include? @tag
+  .center <i>(abonniert)</i>
 
 %h2 Demonstrationen
 - if @events.empty? 
