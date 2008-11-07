@@ -43,6 +43,6 @@
 
 .contextmenu
   - if logged_in?
-    = link_to 'Thema abonnieren', ''
+    = link_to 'Thema abonnieren', :add
   |
   = link_to 'Was bedeutet <i>"' + @tag.name + '"</i>?', 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', { :target=>'_new'}

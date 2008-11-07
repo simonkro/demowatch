@@ -13,7 +13,12 @@ class FrontController < ApplicationController
     @tags = Tag.counts :conditions => "taggable_type IN ('Organisation', 'User')"
     render :action => 'index'
   end
-    
+  
+  def add
+    current_user.tags << @tag
+    render :action => 'index'
+  end
+  
   def impressum
   end
 
