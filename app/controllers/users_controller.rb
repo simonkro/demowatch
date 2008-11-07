@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
 
-  before_filter :login_required, :except => [:new, :create, :activate]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :update, :show, :bookmark, :unbookmark]
+  before_filter :login_required, :except => [:new, :create, :activate, :bookmark, :unbookmark, :add_tag, :del_tag]
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :update, :show, :bookmark, :unbookmark, :add_tag, :del_tag]
   allow :suspend, :unsuspend, :destroy, :purge, :user => :is_admin?
-  allow :show, :edit, :update, :bookmark, :unbookmark, :user => [:owns?, :is_admin?]
+  allow :show, :edit, :update, :bookmark, :unbookmark, :add_tag, :del_tag, :user => [:owns?, :is_admin?]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
@@ -114,6 +114,20 @@ class UsersController < ApplicationController
     end
   end
   
+  def add_tag
+    tag = Tag.find(params[:tag])
+    @user.tags << tag
+    @user.save
+    redirect_to :back
+  end
+    
+ 
+  def del_tag
+    tag = Tag.find(params[:tag])
+    @user.tags.delete tag
+    @user.save
+    redirect_to :back
+  end    
     
 protected
   def find_user

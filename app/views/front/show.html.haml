@@ -43,6 +43,9 @@
 
 .contextmenu
   - if logged_in?
-    = link_to 'Thema abonnieren', :add
-  |
+    - if current_user.tags.include? @tag 
+      = link_to 'Thema abbestellen', :controller => :users, :action => :del_tag, :id => current_user, :tag => @tag
+    - else
+      = link_to 'Thema abonnieren', :controller => :users, :action => :add_tag, :id => current_user, :tag => @tag
+    |
   = link_to 'Was bedeutet <i>"' + @tag.name + '"</i>?', 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', { :target=>'_new'}
