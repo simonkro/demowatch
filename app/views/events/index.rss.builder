@@ -3,7 +3,7 @@ xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom" do
   xml.channel do
     xml.title "Demowatch"
     xml.description "alle Demos"
-    xml.tag! 'atom:link', {:href => events_url}, "Demowatch" 
+    xml.tag! 'atom:link', :href => events_url
     xml.link events_url
 
     for event in @events
