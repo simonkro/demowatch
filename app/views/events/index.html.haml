@@ -11,7 +11,7 @@
     - if( @with_distance)
       %th Entfernung
   - @events.each_with_index do |event, index|
-    %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= Time.now}"}
+    %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago} #{'red' if event.startdate <= Time.now && event.startdate > 6.hours.ago}"}
       %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
       %td= link_to event.title, event
       %td= event.city

@@ -345,5 +345,9 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 .red {
 	font-weight: bold;
 	color: red;	
-	display: inline;
+}
+
+.red  a{
+	font-weight: bold;
+	color: red;	
 }
