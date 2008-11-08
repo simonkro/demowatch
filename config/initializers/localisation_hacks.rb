@@ -17,3 +17,8 @@ module LocalizationSimplified
     }
   end
 end
+
+Time::DATE_FORMATS[:rfc822] = proc do |time|
+  time.strftime("#{Time::RFC2822_DAY_NAME[time.wday]}, %d #{Time::RFC2822_MONTH_NAME[time.mon]} %Y %H:%M:%S %z")
+end
+  
