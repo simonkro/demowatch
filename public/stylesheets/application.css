@@ -202,6 +202,17 @@ table tr.old td a {
 	color: gray;
 }
 
+table tr.cur td {
+  color: red;
+  border-left: solid 1px black;
+  font-weight: bold;
+}
+
+table tr.cur td a {
+	color: red;
+  font-weight: bold;
+}
+
 /* ***************** word cloud ***************** */
 
 .css0 { font-size: 0.8em; color: #888 }
