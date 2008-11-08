@@ -2,6 +2,7 @@
 body {
 	font-size: .9em;
 	font-family: Georgia, Helvetica, sans-serif; 
+  background: #c8dbf1 url(/images/gradient.gif) repeat-x; 	
 }
 
 p {
@@ -45,6 +46,10 @@ h3 {
 small {
 	font-size: 0.7em;
 	color: #276cba;
+}
+
+.rss {
+	float: right;
 }
 
 .views {

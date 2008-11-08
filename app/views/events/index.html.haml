@@ -1,3 +1,8 @@
+- content_for :header do
+  = auto_discovery_link_tag :rss, :format => 'rss'
+
+.rss= link_to image_tag('rss.gif'), :format => 'rss'
+
 %h1 Demonstrationen
 .tabletitle
   Folgende Aktionen wurden von registrierten Initiatoren bei 
