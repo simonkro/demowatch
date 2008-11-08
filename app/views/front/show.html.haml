@@ -43,6 +43,9 @@
 
 %br
 
+%h2 Verwandte Themen
+.q= @related_tags.map{|tag| link_to tag.name, tag}.join(', ')
+
 .contextmenu
   - if logged_in?
     - if current_user.tags.include? @tag 

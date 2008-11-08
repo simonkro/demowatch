@@ -13,12 +13,7 @@ class FrontController < ApplicationController
     @tags = Tag.counts :conditions => "taggable_type IN ('Organisation', 'User')"
     render :action => 'index'
   end
-  
-  def add
-    current_user.tags << @tag
-    render :action => 'index'
-  end
-  
+ 
   def impressum
   end
 
@@ -36,6 +31,6 @@ class FrontController < ApplicationController
       @events = Event.find_tagged_with(@tag, :order => 'startdate DESC')
     end  
     @organisations = Organisation.find_tagged_with(@tag)
-    
+    @related_tags = (@events.map{|e| e.tags} + @organisations.map{|o| o.tags}).flatten.uniq   
   end
 end
