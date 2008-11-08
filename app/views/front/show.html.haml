@@ -43,8 +43,9 @@
 
 %br
 
-%h2 Verwandte Themen
-.q= @related_tags.map{|tag| link_to tag.name, tag}.join(', ')
+- if !@related_tags.empty?
+  %h2 Verwandte Themen
+  .q= @related_tags.map{|tag| link_to tag.name, tag}.join(', ')
 
 .contextmenu
   - if logged_in?
