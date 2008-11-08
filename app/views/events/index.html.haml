@@ -17,7 +17,8 @@
       %td= event.city
       -if @with_distance       
         - if !event.distance.nil?
-          %td= sprintf( "%.0f km", event.distance)  
+          %td
+            .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
 %br
