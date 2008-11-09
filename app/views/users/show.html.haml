@@ -32,9 +32,11 @@
 
 %h2 Deine Abonnements
 
-.rss= link_to image_tag('rss.gif'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
 %h3 Themen
 .q= @user.tags.map{|tag| link_to tag.name, tag}.join(', ')
+.q
+  = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
+  = link_to 'Diese Themen als RSS Feed abonnieren', :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
 
 %h3 Demos & Inititativen
 .q
