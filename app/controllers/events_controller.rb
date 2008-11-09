@@ -17,18 +17,17 @@ class EventsController < ApplicationController
     @tags = params[:tags] 
     @with_distance = !current_user.nil? && !current_user.zip.nil?
     options = {:order => 'startdate DESC'}
-    if( @with_distance)	  
+    if @with_distance	  
   	  options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
   	  # options[:within] = distance_in_km # Fuer umkreissuche
       @zip = current_user.zip.zip
     end
     options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
-    @events = Event.paginate(options.merge :page => params[:page], :per_page => 10)
     
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 10) }
       format.xml  { render :xml => @events }
-      format.rss  { render :layout => false }
+      format.rss  { @events = Event.all(options); render :layout => false }
     end
   end
   
