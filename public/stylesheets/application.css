@@ -175,12 +175,15 @@ table  {
 	border-right-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
+  border-right-color: black;
+  border-bottom-color: black;
 }
 
 table tr th {
 	font-weight: normal;
 	border-left-style: solid;
 	border-left-width: 1px;
+  border-left-color: black;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	padding: 5px;
@@ -191,6 +194,7 @@ table tr td {
 	padding: 5px;
 	border-left-style: solid;
 	border-left-width: 1px;
+  border-left-color: black;
 	vertical-align: top;
 }
 
