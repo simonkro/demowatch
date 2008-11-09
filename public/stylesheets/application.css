@@ -387,7 +387,6 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 }
 .pagination span.disabled {
   color: #999;
-  border: 1px solid #DDD; 
 }
 .pagination span.current {
   font-weight: bold;
@@ -398,7 +397,6 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 .pagination a {
   text-decoration: none;
   color: #105CB6;
-  border: 1px solid #9AAFE5; 
 }
 .pagination a:hover, .pagination a:focus {
   color: #003;
