@@ -15,15 +15,21 @@ class EventsController < ApplicationController
   # GET /events.xml
   def index
     @with_distance = !current_user.nil? && !current_user.zip.nil?
+    options = {:order => 'startdate DESC'}
     if( @with_distance)	  
       # mit entfernung
   	  origin = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude);
-      @events = Event.find(:all, :origin => origin, :order => 'startdate DESC') # Fuer umkreissuche... :within => distance_in_km
+  	  options[:origin] = origin
+  	  # options[:within] = distance_in_km # Fuer umkreissuche
       @zip = current_user.zip.zip
-    else 
-      @events = Event.all :order => 'startdate DESC'
     end
-    
+  
+    if params[:tags]
+      @events = Event.find_tagged_with(params[:tags], options)
+    else
+      @events = Event.find(:all, options)
+    end
+        
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }

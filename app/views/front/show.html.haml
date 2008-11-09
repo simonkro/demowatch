@@ -3,6 +3,7 @@
 - if logged_in? && current_user.tags.include?(@tag)
   .center <i>(abonniert)</i>
 
+.rss= link_to image_tag('rss.gif'), :controller => 'events', :format => 'rss', :tags => @tag.name if !@events.empty? 
 %h2 Demonstrationen
 - if @events.empty? 
   .q Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen.
