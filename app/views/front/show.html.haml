@@ -1,3 +1,5 @@
+- content_for :header do
+  = auto_discovery_link_tag :rss, :controller => 'events', :format => 'rss', :tags => @tag.name
 
 %h1= @tag.name 
 - if logged_in? && current_user.tags.include?(@tag)

@@ -1,5 +1,5 @@
 xml.instruct! :xml, :version => "1.0"
-xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom" do
+xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom", 'xmlns:georss' => "http://www.georss.org/georss"  do
   xml.channel do
     xml.title "Demowatch"
     if @tags
@@ -17,6 +17,7 @@ xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom" do
         xml.pubDate event.created_at.to_s(:rfc822)
         xml.link event_url(event)
         xml.guid event_url(event)
+        xml.tag! 'georss:point', "#{event.latitude} #{event.longitude}"
       end
     end
   end
