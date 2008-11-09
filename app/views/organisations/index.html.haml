@@ -11,6 +11,7 @@
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to organisation.title, organisation 
       %td= organisation.tags.map{|tag| link_to tag.name, tag}.join(', ') 
+.pagination= will_paginate @organisations
 
 %br
 

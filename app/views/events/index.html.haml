@@ -31,6 +31,7 @@
             .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
+.pagination= will_paginate @events
 %br
 
 - if logged_in? 

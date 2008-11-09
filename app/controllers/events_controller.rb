@@ -18,19 +18,13 @@ class EventsController < ApplicationController
     @with_distance = !current_user.nil? && !current_user.zip.nil?
     options = {:order => 'startdate DESC'}
     if( @with_distance)	  
-      # mit entfernung
-  	  origin = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude);
-  	  options[:origin] = origin
+  	  options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
   	  # options[:within] = distance_in_km # Fuer umkreissuche
       @zip = current_user.zip.zip
     end
-  
-    if @tags
-      @events = Event.find_tagged_with(@tags, options)
-    else
-      @events = Event.find(:all, options)
-    end
-        
+    options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
+    @events = Event.paginate(options.merge :page => params[:page], :per_page => 5)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
