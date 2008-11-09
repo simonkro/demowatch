@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
+    @tags = params[:tags] 
     @with_distance = !current_user.nil? && !current_user.zip.nil?
     options = {:order => 'startdate DESC'}
     if( @with_distance)	  
@@ -24,8 +25,8 @@ class EventsController < ApplicationController
       @zip = current_user.zip.zip
     end
   
-    if params[:tags]
-      @events = Event.find_tagged_with(params[:tags], options)
+    if @tags
+      @events = Event.find_tagged_with(@tags, options)
     else
       @events = Event.find(:all, options)
     end

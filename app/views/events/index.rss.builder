@@ -2,7 +2,11 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0", 'xmlns:atom' => "http://www.w3.org/2005/Atom" do
   xml.channel do
     xml.title "Demowatch"
-    xml.description "alle Demos"
+    if @tags
+      xml.description "Themen: #{@tags}"
+    else
+      xml.description "alle Demos"
+    end 
     xml.tag! 'atom:link', :href => events_url + '.rss', :rel => 'self'
     xml.link events_url
 
