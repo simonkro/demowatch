@@ -13,7 +13,7 @@ class OrganisationsController < ApplicationController
   # GET /organisations
   # GET /organisations.xml
   def index
-    @organisations = Organisation.paginate :order => 'title', :page => params[:page], :per_page => 20
+    @organisations = Organisation.paginate :order => 'title', :page => params[:page], :per_page => 15
 
     respond_to do |format|
       format.html # index.html.erb

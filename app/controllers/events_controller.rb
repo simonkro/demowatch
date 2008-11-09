@@ -23,7 +23,7 @@ class EventsController < ApplicationController
       @zip = current_user.zip.zip
     end
     options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
-    @events = Event.paginate(options.merge :page => params[:page], :per_page => 20)
+    @events = Event.paginate(options.merge :page => params[:page], :per_page => 15)
     
     respond_to do |format|
       format.html # index.html.erb
