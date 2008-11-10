@@ -50,7 +50,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
 
   map.front '/', :controller => 'front', :action => 'index'
-  map.tag '/tag/:id', :controller => 'front', :action => 'show'
+  map.tag '/tag/:name', :controller => 'front', :action => 'show'
   map.about '/about', :controller => 'front', :action => 'about'
   map.impressum '/impressum', :controller => 'front', :action => 'impressum'
   map.disclaimer '/disclaimer', :controller => 'front', :action => 'disclaimer'

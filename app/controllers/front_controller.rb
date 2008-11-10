@@ -21,7 +21,7 @@ class FrontController < ApplicationController
   end
   
   def show
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find_by_name(params[:name])
     @with_distance = !current_user.nil? && !current_user.zip.nil?
     if( @with_distance)	  
       # mit entfernung
