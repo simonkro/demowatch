@@ -29,7 +29,7 @@
   %br
   .indent
     = f.label :zip, 'PLZ <i>(optional, eine oder mehrere Stellen)</i>'
-    = f.text_field :zip, :size=>5, :value=>@str_zip  
+    = f.text_field :zip, :size=>5, :value=>@zip_str  
 
   .buttons
     = submit_tag 'Registrieren'

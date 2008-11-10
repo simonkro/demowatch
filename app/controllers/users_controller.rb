@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     # request forgery protection.
     # uncomment at your own risk
     # reset_session
+    @zip_str = params[:user][:zip]
     @user = User.new(params[:user])
     @user.register! if @user.valid?
     if @user.errors.empty?
@@ -47,7 +48,9 @@ class UsersController < ApplicationController
   def update
     @user.zip = Zip.find_by_zip( params[:user][:zip])    
     params[:user].delete('zip')
-    if @user.update_attributes( params[:user])
+    @user.attributes = params[:user]
+    if( @user.save!)
+#    if @user.update_attributes( params[:user])
       flash[:notice] = 'Einstellungen wurden erfolgreich ge&auml;ndert.'
       redirect_to(@user) 
     else

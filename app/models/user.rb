@@ -160,17 +160,18 @@ class User < ActiveRecord::Base
       self.activated_at = Time.now.utc
       self.deleted_at = self.activation_code = nil
     end
+
+
+    def initialize( args)
+      zip = args.delete( :zip)
+      super( args)
+      self.zip = Zip.find_by_zip( zip)
+    end
     
 private
 
 #    def validate
-#    puts( 'xxxxxxxxxxxxxxxxxxxxxxxxxxx');
-#      dbZip = Zip.find_by_zip( zip )   
-#      if( dbZip.nil?)            
-#        errors.add 'ZIP', 'PLZ #{str_zip} konnte nicht gefunden werden.'      
-#      else
-#        self.zip = dbZip      
-#      end 
+#      errors.add 'ZIP', 'PLZ konnte nicht gefunden werden.' if self.zip.nil?       
 #    end
 
 end
