@@ -1,4 +1,8 @@
 %h1 Initiatoren
+- if logged_in? 
+  .contextmenu
+    = link_to 'Neuer Initiator', new_organisation_path
+%br
 .tabletitle
   Folgende Initiatoren tragen Ihre Aktionen bei
   %i Demowatch.de 
@@ -12,9 +16,3 @@
       %td= link_to organisation.title, organisation 
       %td= organisation.tags.map{|tag| link_to tag.name, tag}.join(', ') 
 .pagination= will_paginate @organisations
-
-%br
-
-- if logged_in? 
-  .contextmenu
-    = link_to 'Neuer Initiator', new_organisation_path

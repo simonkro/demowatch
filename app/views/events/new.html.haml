@@ -1,13 +1,13 @@
 %h1 Neue Demonstration
 
+.contextmenu
+  = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path 
+
 %p
   Wenn Du eine Demonstration eintr&auml;gst, dann achte bitte auf Vollst&auml;ndigkeit Korrektheit Deiner Angaben!
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_zip);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
   .buttons= f.submit "Erzeugen"
-
-.contextmenu
-  = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path 
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

@@ -1,5 +1,8 @@
 %h1 Einstellungen
 
+.contextmenu
+  = link_to 'Anzeigen', @user  
+%br
 .q
   Die von Dir hier angegebenen Daten werden von uns streng vertraulich
   behandelt und weder auf dieser Website ver&ouml;ffentlicht noch an
@@ -29,8 +32,5 @@
 
   .buttons
     = f.submit "Speichern"
-
-.contextmenu
-  = link_to 'Anzeigen', @user  
 
 = auto_complete_field 'user_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }

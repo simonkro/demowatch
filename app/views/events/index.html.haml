@@ -4,6 +4,11 @@
 .rss= link_to image_tag('rss.gif'), :format => 'rss'
 
 %h1 Demonstrationen
+
+- if logged_in? 
+  .contextmenu
+    = link_to 'Neue Demonstration', new_event_path
+%br
 .tabletitle
   Folgende Aktionen wurden von registrierten Initiatoren bei 
   %i Demowatch.de 
@@ -31,9 +36,5 @@
             .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
-.pagination= will_paginate @events
+= will_paginate @events
 %br
-
-- if logged_in? 
-  .contextmenu
-    = link_to 'Neue Demonstration', new_event_path

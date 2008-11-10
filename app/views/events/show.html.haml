@@ -5,6 +5,18 @@
 - if @event.bookmarked_by_user? current_user
   .center <i>(abonniert)</i>
 
+- if logged_in?
+  .contextmenu
+    - allow :user => [:owns?, :is_admin?] do
+      = link_to 'Bearbeiten', edit_event_path(@event) 
+      |
+      = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
+      |
+    - if @event.bookmarked_by_user? current_user
+      = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
+    - else
+      = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
+
 %h2 Themen
 .q= @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %h2 Treffpunkt
@@ -46,16 +58,4 @@
 - if @event.link
   %h3 Weitere Informationen
   .q= link_to @event.link, @event.link, { :target=>'_new'}
-
-- if logged_in?
-  .contextmenu
-    - allow :user => [:owns?, :is_admin?] do
-      = link_to 'Bearbeiten', edit_event_path(@event) 
-      |
-      = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
-      |
-    - if @event.bookmarked_by_user? current_user
-      = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
-    - else
-      = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
     

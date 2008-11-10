@@ -1,10 +1,10 @@
 %h1 Neuer Initiator
+.contextmenu
+  = link_to 'Zurück zur Liste der Initiatoren', organisations_path 
+%br
 .q Damit wir Eure Demonstrationen auf <i>Demowatch</i> listen k&ouml;nnen, muss ein Initiator eingetragen werden, der den Eintrag verantwortet. Die hier eingegebenen Daten werden von uns auf Korrektheit gepr&uuml;ft.
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
 
   .buttons=f.submit "Erzeugen" 
-
-.contextmenu
-  = link_to 'Zurück zur Liste der Initiatoren', organisations_path 

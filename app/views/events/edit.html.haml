@@ -3,13 +3,13 @@
 
 %h1 Demonstration bearbeiten
 
-- form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|
-  = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Speichern"
-
 .contextmenu
   = link_to 'Show', @event 
   |
   = link_to 'Back', events_path
+
+- form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|
+  = render :partial => 'fields', :locals => {:f => f}
+  .buttons= f.submit "Speichern"
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

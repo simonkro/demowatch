@@ -1,10 +1,11 @@
 %h1 Initiator bearbeiten
 
-- form_for(@organisation) do |f| 
-  = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Speichern"
-
 .contextmenu
   = link_to 'Anzeigen', @organisation  
   |
   = link_to 'Zurück zu den Initiatoren', organisations_path
+
+- form_for(@organisation) do |f| 
+  = render :partial => 'fields', :locals => {:f => f}
+  .buttons= f.submit "Speichern"
+

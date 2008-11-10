@@ -3,6 +3,9 @@
 
 %h1= @user.login
 
+.contextmenu
+  =link_to 'Bearbeiten', edit_user_path(@user)
+%br
 .q 
   Die von Dir hier angegebenen Daten werden von uns streng vertraulich 
   behandelt und weder auf dieser Website ver&ouml;ffentlicht noch an 
@@ -47,5 +50,3 @@
     - @user.bookmarks.each do |bm|
       %li= link_to bm.title, bm.bookmarkable
 
-.contextmenu
-  =link_to 'Bearbeiten', edit_user_path(@user)
