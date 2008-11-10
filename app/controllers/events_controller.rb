@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 10) }
-      format.xml  { render :xml => @events }
+      format.xml  { render :xml => Event.all(options) }
       format.rss  { @events = Event.all(options); render :layout => false }
     end
   end
