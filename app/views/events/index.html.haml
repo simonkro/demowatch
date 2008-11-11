@@ -28,8 +28,8 @@
             .red Jetzt!
       - else
         %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
-      %td= link_to event.title, event
-      %td= event.city
+      %td= link_to h( event.title), event
+      %td= h( event.city)
       -if @with_distance       
         - if !event.distance.nil?
           %td

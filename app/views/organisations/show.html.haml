@@ -1,5 +1,5 @@
 ﻿
-%h1= @organisation.title
+%h1= h @organisation.title
 
 - if logged_in? 
   .contextmenu
@@ -14,11 +14,11 @@
       = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)
 
 %h2 Themen
-.q= @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
+.q= @organisation.tags.map{|tag| link_to h(tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
 %h2 Beschreibung
-.q= @organisation.description
+.q= white_list @organisation.description
 - if @organisation.link
   %h3 Weitere Informationen
-  .q= link_to @organisation.link, @organisation.link, { :target=>'_new'}
+  .q= white_list(  link_to( h( @organisation.link), @organisation.link, { :target=>'_new'}))
 
       

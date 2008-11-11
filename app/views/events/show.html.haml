@@ -1,7 +1,7 @@
 - content_for :header do
   = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
   
-%h1= @event.title
+%h1= h @event.title
 
 - if logged_in?
   .contextmenu
@@ -16,7 +16,7 @@
       = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
 
 %h2 Themen
-.q= @event.tags.map{|tag| link_to tag.name, tag}.join(', ')
+.q= @event.tags.map{|tag| link_to h(tag.name), h(tag)}.join(', ')
 %h2 Treffpunkt
 .q
   Diese Aktion
@@ -31,7 +31,7 @@
     == beginnt in <b>#{time_ago_in_words @event.startdate}</b>, am
   %b== #{@event.startdate.strftime('%A, den %d.%m.%Y')} um #{@event.startdate.strftime('%H:%M Uhr')}.
   == Treffpunkt #{@event.startdate <= 6.hours.ago ? 'war' : 'ist'}
-  %b== #{@event.address}#{' (' + @event.location + ')' if @event.location?}. 
+  %b== #{h(@event.address)}#{' (' + h(@event.location) + ')' if @event.location?}. 
   
 #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
   
@@ -46,14 +46,14 @@
   "#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 
 %h2 Beschreibung
-.q= @event.description
+.q= white_list @event.description
 
 %h3 Initiator
 .q
   Diese Demo wurde eingetragen von
-  = link_to @event.organisation.title, @event.organisation 
+  = link_to h(@event.organisation.title), @event.organisation 
 
 - if @event.link
   %h3 Weitere Informationen
-  .q= link_to @event.link, @event.link, { :target=>'_new'}
+  .q= white_list( link_to h(@event.link), @event.link, { :target=>'_new'})
     
