@@ -13,8 +13,6 @@
     - else
       = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)
 
-- if @organisation.bookmarked_by_user? current_user
-  .center <i>(abonniert)</i>
 %h2 Themen
 .q= @organisation.tags.map{|tag| link_to tag.name, tag}.join(', ')
 %h2 Beschreibung

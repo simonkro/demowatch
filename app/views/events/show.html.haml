@@ -2,8 +2,6 @@
   = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
   
 %h1= @event.title
-- if @event.bookmarked_by_user? current_user
-  .center <i>(abonniert)</i>
 
 - if logged_in?
   .contextmenu
