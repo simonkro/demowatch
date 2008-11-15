@@ -1,6 +1,7 @@
 - content_for :header do
   = auto_discovery_link_tag :rss, :controller => 'events', :format => 'rss', :tags => @user.tags.join(',')
 
+
 %h1= @user.login
 
 .contextmenu
@@ -15,31 +16,31 @@
 
 .q
   %b Name:
-  = @user.login 
+  = h @user.login 
 
 .q
   %b Email:
-  = @user.email 
+  = h @user.email 
 
 .q
   %strong PLZ:
   - unless @user.zip.nil?
-    = @user.zip.zip
-    = @user.zip.name
+    = h @user.zip.zip
+    = h @user.zip.name
      
 %h2 Von Dir verwaltete Inhalte
 - unless @organisations.empty?
   %h3 Initiatoren
-  .q= @organisations.map{|organisation| link_to organisation.title, organisation}.join(', ')
+  .q= @organisations.map{|organisation| link_to h( organisation.title), organisation}.join(', ')
 
 - unless @events.empty?
   %h3 Demonstrationen
-  .q= @events.map{|event| link_to event.title, event}.join(', ')
+  .q= @events.map{|event| link_to h( event.title), event}.join(', ')
 
 %h2 Deine Abonnements
 
 %h3 Themen
-.q= @user.tags.map{|tag| link_to tag.name, tag}.join(', ')
+.q= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
 .q
   = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
   = link_to 'Diese Themen als RSS Feed abonnieren', :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
@@ -48,5 +49,5 @@
 .q
   %ul
     - @user.bookmarks.each do |bm|
-      %li= link_to bm.title, bm.bookmarkable
+      %li= link_to h( bm.title), bm.bookmarkable
 
