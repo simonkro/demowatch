@@ -40,4 +40,6 @@ protected
     flash[:notice] = 'Kein Eintrag vorhanden.'
     redirect_to :front
   end
+
+
 end

@@ -133,8 +133,29 @@ class User < ActiveRecord::Base
         item == self 
     end
   end
+
+
+    
+  def self.find_by_event( event)
+    tag_ids = []
+    event.tags.each { |t| tag_ids << t.id }
+    return self.find_by_sql( "SELECT * FROM `users`, `taggings`
+                              WHERE `users`.`id` = `taggings`.`taggable_id` 
+                                AND `taggings`.`taggable_type` = 'User' 
+                                AND `taggings`.`tag_id` IN ( #{tag_ids.join(',')} )
+                                AND `users`.`deleted_at` IS NULL
+                                AND `users`.`state` = 'active'
+                                GROUP BY `users`.`id` "
+                              );
+   
+  end
+
+
+
+
+
   
-  protected
+protected
     # before filter 
     def encrypt_password
       return if password.blank?
@@ -167,6 +188,9 @@ class User < ActiveRecord::Base
       super( args)
       self.zip = Zip.find_by_zip( zip)
     end
+    
+    
+
     
 private
 

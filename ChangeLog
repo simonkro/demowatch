@@ -1,3 +1,532 @@
+2008-11-16 01:50  marc
+
+	* config/environment.rb: haml for ActionMailer
+
+2008-11-15 21:49  marc
+
+	* app/views/users/show.html.haml: xss fix
+
+2008-11-12 10:45  simon
+
+	* config/environment.rb: fixed timezone
+
+2008-11-11 13:55  marc
+
+	* app/views/events/index.html.haml,
+	  app/views/events/show.html.haml, app/views/front/index.html.haml,
+	  app/views/front/show.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/show.html.haml, lib/white_list_README,
+	  lib/white_list_helper.rb: security (xss) ... h() and white_list()
+	  in views
+
+2008-11-11 02:20  pat
+
+	* app/views/events/show.html.haml, app/views/front/show.html.haml,
+	  app/views/organisations/show.html.haml: removed: "(abonniert)"
+
+2008-11-11 02:09  pat
+
+	* public/stylesheets/application.css: colors of pagination
+
+2008-11-10 19:12  marc
+
+	* app/controllers/users_controller.rb, app/models/user.rb,
+	  app/views/users/new.html.haml: zip bei anmeldung
+
+2008-11-10 19:11  marc
+
+	* app/controllers/front_controller.rb,
+	  app/views/front/index.html.haml, config/routes.rb: tags in uri
+
+2008-11-10 13:33  pat
+
+	* app/views/organisations/index.html.haml: FIX: .pagination removed
+
+2008-11-10 13:28  simon
+
+	* public/stylesheets/application.css:
+
+2008-11-10 13:24  simon
+
+	* app/controllers/events_controller.rb:
+
+2008-11-10 12:51  pat
+
+	* app/views/events/edit.html.haml,
+	  app/views/events/index.html.haml, app/views/events/new.html.haml,
+	  app/views/events/show.html.haml, app/views/front/index.html.haml,
+	  app/views/front/show.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/index.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/users/edit.html.haml, app/views/users/show.html.haml,
+	  public/stylesheets/application.css: layout: context menu at top
+
+2008-11-09 23:24  pat
+
+	* vendor/plugins/haml/init.rb:
+
+2008-11-09 23:18  pat
+
+	* public/stylesheets/application.css:
+
+2008-11-09 23:07  pat
+
+	* public/stylesheets/application.css:
+
+2008-11-09 21:53  simon
+
+	* app/controllers/events_controller.rb:
+
+2008-11-09 21:47  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb:
+
+2008-11-09 21:44  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb:
+
+2008-11-09 21:44  simon
+
+	* app/controllers/events_controller.rb:
+
+2008-11-09 21:41  simon
+
+	* app/controllers/events_controller.rb,
+	  app/controllers/organisations_controller.rb,
+	  app/views/events/index.html.haml,
+	  app/views/organisations/index.html.haml,
+	  config/initializers/will_paginate_hacks.rb,
+	  public/stylesheets/application.css, vendor/plugins/will_paginate,
+	  vendor/plugins/will_paginate/.gitignore,
+	  vendor/plugins/will_paginate/.manifest,
+	  vendor/plugins/will_paginate/CHANGELOG.rdoc,
+	  vendor/plugins/will_paginate/LICENSE,
+	  vendor/plugins/will_paginate/README.rdoc,
+	  vendor/plugins/will_paginate/Rakefile,
+	  vendor/plugins/will_paginate/examples,
+	  vendor/plugins/will_paginate/examples/apple-circle.gif,
+	  vendor/plugins/will_paginate/examples/index.haml,
+	  vendor/plugins/will_paginate/examples/index.html,
+	  vendor/plugins/will_paginate/examples/pagination.css,
+	  vendor/plugins/will_paginate/examples/pagination.sass,
+	  vendor/plugins/will_paginate/init.rb,
+	  vendor/plugins/will_paginate/lib,
+	  vendor/plugins/will_paginate/lib/will_paginate,
+	  vendor/plugins/will_paginate/lib/will_paginate.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/array.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/collection.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/core_ext.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/finder.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/named_scope.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/named_scope_patch.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/version.rb,
+	  vendor/plugins/will_paginate/lib/will_paginate/view_helpers.rb,
+	  vendor/plugins/will_paginate/test,
+	  vendor/plugins/will_paginate/test/boot.rb,
+	  vendor/plugins/will_paginate/test/collection_test.rb,
+	  vendor/plugins/will_paginate/test/console,
+	  vendor/plugins/will_paginate/test/database.yml,
+	  vendor/plugins/will_paginate/test/finder_test.rb,
+	  vendor/plugins/will_paginate/test/fixtures,
+	  vendor/plugins/will_paginate/test/fixtures/admin.rb,
+	  vendor/plugins/will_paginate/test/fixtures/developer.rb,
+	  vendor/plugins/will_paginate/test/fixtures/developers_projects.yml,
+	  vendor/plugins/will_paginate/test/fixtures/project.rb,
+	  vendor/plugins/will_paginate/test/fixtures/projects.yml,
+	  vendor/plugins/will_paginate/test/fixtures/replies.yml,
+	  vendor/plugins/will_paginate/test/fixtures/reply.rb,
+	  vendor/plugins/will_paginate/test/fixtures/schema.rb,
+	  vendor/plugins/will_paginate/test/fixtures/topic.rb,
+	  vendor/plugins/will_paginate/test/fixtures/topics.yml,
+	  vendor/plugins/will_paginate/test/fixtures/user.rb,
+	  vendor/plugins/will_paginate/test/fixtures/users.yml,
+	  vendor/plugins/will_paginate/test/helper.rb,
+	  vendor/plugins/will_paginate/test/lib,
+	  vendor/plugins/will_paginate/test/lib/activerecord_test_case.rb,
+	  vendor/plugins/will_paginate/test/lib/activerecord_test_connector.rb,
+	  vendor/plugins/will_paginate/test/lib/load_fixtures.rb,
+	  vendor/plugins/will_paginate/test/lib/view_test_process.rb,
+	  vendor/plugins/will_paginate/test/tasks.rake,
+	  vendor/plugins/will_paginate/test/view_test.rb,
+	  vendor/plugins/will_paginate/will_paginate.gemspec: pagination
+
+2008-11-09 18:56  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-09 16:59  simon
+
+	* app/views/layouts/application.html.haml,
+	  public/stylesheets/application.css: Issue: 0000507
+
+2008-11-09 14:46  pat
+
+	* public/stylesheets/application.css: FIX: problems with styles and
+	  Internet Explorer
+
+2008-11-09 12:08  simon
+
+	* app/views/events/index.rss.builder,
+	  app/views/front/show.html.haml, app/views/users/show.html.haml:
+	  geo rss
+
+2008-11-09 00:42  pat
+
+	* app/views/users/show.html.haml:
+
+2008-11-09 00:24  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-09 00:16  simon
+
+	* app/views/users/show.html.haml: user tag rss
+
+2008-11-09 00:12  simon
+
+	* app/controllers/events_controller.rb,
+	  app/views/events/index.rss.builder:
+
+2008-11-09 00:08  simon
+
+	* app/controllers/events_controller.rb,
+	  app/views/front/show.html.haml: rss for tags
+
+2008-11-08 23:41  simon
+
+	* config/initializers/localisation_hacks.rb:
+
+2008-11-08 23:33  simon
+
+	* config/initializers/localisation_hacks.rb: rss date format fixed
+
+2008-11-08 22:44  simon
+
+	* app/views/events/index.rss.builder:
+
+2008-11-08 22:36  simon
+
+	* app/views/events/index.rss.builder:
+
+2008-11-08 22:34  simon
+
+	* app/views/events/index.rss.builder:
+
+2008-11-08 22:34  simon
+
+	* app/views/events/index.rss.builder:
+
+2008-11-08 22:32  simon
+
+	* app/views/events/index.rss.builder: better rss feed
+
+2008-11-08 22:13  simon
+
+	* public/images/rss.gif: smaller rss icon
+
+2008-11-08 22:07  simon
+
+	* app/controllers/events_controller.rb,
+	  app/views/events/index.html.haml,
+	  app/views/events/index.rss.builder,
+	  app/views/layouts/application.html.haml, public/images/rss.gif,
+	  public/stylesheets/application.css: events rss feed
+
+2008-11-08 17:25  pat
+
+	* app/views/front/about.html.haml, log:
+
+2008-11-08 17:15  simon
+
+	* app/views/front/show.html.haml:
+
+2008-11-08 17:12  simon
+
+	* app/controllers/front_controller.rb,
+	  app/views/front/show.html.haml: related tags
+
+2008-11-08 16:40  simon
+
+	* config/routes.rb: route '/geo' is not used
+
+2008-11-08 14:33  pat
+
+	* public/images/demowatch_beta.gif:
+
+2008-11-08 14:12  pat
+
+	* app/views/events/index.html.haml: more colors in demo table
+
+2008-11-08 14:04  pat
+
+	* app/views/events/index.html.haml,
+	  public/stylesheets/application.css: more colors in demo table
+
+2008-11-08 14:01  pat
+
+	* app/views/events/index.html.haml,
+	  public/stylesheets/application.css: more colors in demo table
+
+2008-11-08 13:52  pat
+
+	* app/views/front/about.html.haml: new about
+
+2008-11-08 13:51  pat
+
+	* app/views/events/index.html.haml: right align distances
+
+2008-11-07 16:36  simon
+
+	* app/views/front/show.html.haml:
+
+2008-11-07 16:35  simon
+
+	* app/views/front/show.html.haml:
+
+2008-11-07 15:49  pat
+
+	* app/views/users/edit.html.haml:
+
+2008-11-07 15:49  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:48  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:48  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:46  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:45  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:43  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:42  pat
+
+	* app/views/users/new.html.haml:
+
+2008-11-07 15:23  simon
+
+	* app/controllers/users_controller.rb: code beautify
+
+2008-11-07 15:21  pat
+
+	* app/views/events/show.html.haml, app/views/front/show.html.haml,
+	  app/views/organisations/show.html.haml, config/routes.rb: "Thema
+	  abonnieren"
+	  Issue: 474
+
+2008-11-07 15:20  simon
+
+	* app/controllers/users_controller.rb:
+
+2008-11-07 15:19  simon
+
+	* app/controllers/users_controller.rb: Thema abonnieren
+
+2008-11-07 15:15  simon
+
+	* app/controllers/users_controller.rb,
+	  app/views/front/show.html.haml, vendor/plugins/haml/init.rb:
+	  Thema abonnieren
+	  Issue: 0000474
+
+2008-11-07 15:03  pat
+
+	* app/controllers/front_controller.rb,
+	  app/views/events/show.html.haml, app/views/front/show.html.haml,
+	  config/routes.rb, vendor/plugins/haml/init.rb: WRK. "Thema
+	  abonnieren"
+
+2008-11-07 13:48  pat
+
+	* app/views/events/index.html.haml: layout
+
+2008-11-07 13:46  pat
+
+	* app/views/front/disclaimer.html.haml: Neuer Disclaimer
+	  Launch Info Grafik
+
+2008-11-07 13:05  pat
+
+	* app/views/front/impressum.html.haml: edit impressum
+
+2008-11-06 21:48  simon
+
+	* test/fixtures/initiator_mailer,
+	  test/unit/initiator_mailer_test.rb:
+
+2008-11-06 19:06  marc
+
+	* app/controllers/front_controller.rb,
+	  app/views/front/show.html.haml: entfernung auf /tag/xxx
+
+2008-11-06 18:36  marc
+
+	* app/views/events/index.html.haml: von xxxx raus
+
+2008-11-06 18:12  marc
+
+	* app/models/zip.rb, db/schema.rb: zip model
+
+2008-11-06 18:09  marc
+
+	* config/database.yml: database.yml
+
+2008-11-06 18:09  marc
+
+	* config/database.yml: database.yml
+
+2008-11-06 18:07  marc
+
+	* db/migrate/20081104161719_zips.rb,
+	  db/migrate/20081106175908_zip_to_zip_id.rb: migration
+
+2008-11-06 17:44  marc
+
+	* ChangeLog, app/controllers/events_controller.rb,
+	  app/controllers/users_controller.rb, app/models/event.rb,
+	  app/models/user.rb, app/views/events/index.html.haml,
+	  app/views/users/edit.html.haml, app/views/users/show.html.haml,
+	  config/database.yml, config/environment.rb, config/routes.rb,
+	  db/schema.rb, vendor/plugins: tools fuer plz-geokoordinaten
+	  preprocessing
+
+2008-11-06 11:45  pat
+
+	* app/views/front/index.html.haml:
+
+2008-11-06 10:55  simon
+
+	* app/controllers/organisations_controller.rb,
+	  app/models/initiator_mailer.rb, app/views/initiator_mailer,
+	  app/views/initiator_mailer/mail.haml: Mail on new Organisation
+
+2008-11-06 09:34  simon
+
+	* config/initializers/localisation_hacks.rb:
+
+2008-11-06 09:24  simon
+
+	* app/models/user.rb, app/views/events/show.html.haml,
+	  config/initializers/localisation_hacks.rb: cleaned up date
+	  handling events/show
+
+2008-11-06 01:49  simon
+
+	* app/views/events/show.html.haml: X days left
+
+2008-11-06 01:45  simon
+
+	* app/views/events/show.html.haml,
+	  public/stylesheets/application.css: X days left
+
+2008-11-06 00:00  marc
+
+	* app/controllers/application.rb: redirect_to_www_demowatch_de
+
+2008-11-05 23:59  marc
+
+	* app/controllers/application.rb: redirect_to_www_demowatch_de
+
+2008-11-05 23:56  marc
+
+	* app/controllers/application.rb: redirect_to_www_demowatch_de
+
+2008-11-05 23:55  marc
+
+	* app/controllers/application.rb: redirect_to_www_demowatch_de
+
+2008-11-05 23:54  marc
+
+	* app/controllers/application.rb: redirect_to_www_demowatch_de
+
+2008-11-05 23:14  pat
+
+	* app/views/front/index.html.haml, config/routes.rb:
+
+2008-11-05 23:13  pat
+
+	* config/routes.rb:
+
+2008-11-05 23:12  pat
+
+	* app/views/front/index.html.haml, config/routes.rb:
+
+2008-11-05 23:04  marc
+
+	* app/views/organisations/_fields.html.haml: tinymce
+
+2008-11-05 22:59  simon
+
+	* app/controllers/front_controller.rb: Different word clouds
+
+2008-11-05 22:52  simon
+
+	* app/controllers/front_controller.rb,
+	  app/views/front/index.html.haml, config/routes.rb: Different word
+	  clouds
+	  Issue: 0000497
+
+2008-11-05 22:51  pat
+
+	* app/views/organisations/_fields.html.haml:
+
+2008-11-05 22:48  pat
+
+	* app/views/organisations/_fields.html.haml: WYSYWIG bei
+	  initiatoren
+
+2008-11-05 22:30  marc
+
+	* public/javascripts/tiny_mce/themes/advanced/link.htm: mantis
+	  0000499
+
+2008-11-05 19:14  simon
+
+	* app/views/organisations/edit.html.haml: layout
+
+2008-11-05 17:49  simon
+
+	* app/views/users/show.html.haml: layout
+
+2008-11-05 17:43  simon
+
+	* app/views/events/_fields.html.haml,
+	  app/views/organisations/_fields.html.haml: layout
+
+2008-11-05 16:49  pat
+
+	* app/views/events/show.html.haml,
+	  app/views/front/disclaimer.html.haml,
+	  app/views/front/show.html.haml,
+	  app/views/organisations/edit.html.haml,
+	  app/views/organisations/new.html.haml,
+	  app/views/organisations/show.html.haml,
+	  app/views/sessions/new.html.haml, app/views/users/edit.html.haml,
+	  app/views/users/show.html.haml: layout
+
+2008-11-05 16:47  simon
+
+	* app/views/front/about.html.haml,
+	  app/views/front/impressum.html.haml,
+	  public/stylesheets/application.css: layout
+
 2008-11-05 16:23  pat
 
 	* app/views/front/impressum.html.haml:

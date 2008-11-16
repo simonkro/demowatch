@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081104161719) do
+ActiveRecord::Schema.define(:version => 20081116024714) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",             :limit => 50, :default => ""
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20081104161719) do
   add_index "demowatch_bak", ["zip"], :name => "index_zips_on_zip", :unique => true
 
   create_table "events", :force => true do |t|
-    t.integer  "organisation_id", :null => false
+    t.integer  "organisation_id",      :null => false
     t.text     "title"
     t.text     "description"
     t.datetime "startdate"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20081104161719) do
     t.string   "link"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "new_delivered_at"
+    t.datetime "updated_delivered_at"
   end
 
   create_table "organisations", :force => true do |t|
@@ -89,8 +91,8 @@ ActiveRecord::Schema.define(:version => 20081104161719) do
     t.datetime "activated_at"
     t.string   "state",                                   :default => "passive"
     t.datetime "deleted_at"
-    t.string   "zip"
     t.integer  "role",                                    :default => 0
+    t.integer  "zip_id"
   end
 
   create_table "zips", :force => true do |t|

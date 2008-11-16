@@ -16,7 +16,8 @@
       = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
 
 %h2 Themen
-.q= @event.tags.map{|tag| link_to h(tag.name), h(tag)}.join(', ')
+.q= @event.tags.map{|tag| link_to h(tag.name), tag}.join(', ')
+
 %h2 Treffpunkt
 .q
   Diese Aktion
@@ -46,14 +47,27 @@
   "#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 
 %h2 Beschreibung
-.q= white_list @event.description
+.q= sanitize @event.description
 
 %h3 Initiator
 .q
   Diese Demo wurde eingetragen von
   = link_to h(@event.organisation.title), @event.organisation 
 
+- allow :user => [:owns?, :is_admin?] do
+  %h3 Initiator 
+  .q 
+  -# if @event.notification_sent_at.nil?
+  - if 1
+    Eine Email-Benachrichtigung an Interessenten wird um 2:00 Nachts versandt.
+  - else
+    Eine Email-Benachrichtigung an Interessenten wurde am xxx um yyy versandt.
+  
+  
+    
+  
+
 - if @event.link
   %h3 Weitere Informationen
-  .q= white_list( link_to h(@event.link), @event.link, { :target=>'_new'})
+  .q= sanitize( link_to h(@event.link), @event.link, { :target=>'_new'})
     
