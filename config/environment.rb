@@ -132,4 +132,6 @@ GeoKit::Geocoders::geocoder_ca = false
 # geocoder you are going to use.
 GeoKit::Geocoders::provider_order = [:google,:us]
 
+ActionMailer::Base.register_template_extension('haml')
+
 
