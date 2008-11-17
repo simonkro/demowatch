@@ -21,6 +21,13 @@ class FrontController < ApplicationController
   end
   
   def show
+  ## hack, um alte links ala /tag/:id nach /tag/:name umzuleiten
+    if params[:name].is_numeric?
+      tag = Tag.find_by_id(params[:name])
+      redirect_to '/tag/' + tag.name, :status=>:moved_permanently
+    end
+      
+      
     @tag = Tag.find_by_name(params[:name])
     @with_distance = !current_user.nil? && !current_user.zip.nil?
     if( @with_distance)	  

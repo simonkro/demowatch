@@ -1,3 +1,8 @@
+2008-11-17 01:47  marc
+
+	* ChangeLog, app/controllers/users_controller.rb: Nach Anmeldung
+	  wirft Thema abonnieren Exeption bugfix
+
 2008-11-17 01:04  marc
 
 	* ChangeLog, app/models/event.rb, app/models/event_mailer.rb,

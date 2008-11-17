@@ -107,3 +107,11 @@ end
 
 # All that for this:
 Rails.boot!
+
+# todo: find a better home for this buddy
+class String
+  def is_numeric?
+    Float self rescue false
+  end
+end
+
