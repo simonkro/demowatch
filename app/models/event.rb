@@ -30,6 +30,11 @@ class Event < ActiveRecord::Base
     gsub(/([^a-z0-9]+)/, ' ').strip().gsub(' ', '-')
   end
 
+# pagination parameters
+  def self.per_page
+    50
+  end
+
 private
 
   def validate

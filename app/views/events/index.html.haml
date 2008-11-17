@@ -22,7 +22,11 @@
       %th Entfernung
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
-      - if event.startdate <= Time.now && event.startdate > 6.hours.ago
+      - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
+        %td
+          .center
+            .red Heute!
+      - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
         %td
           .center
             .red Jetzt!
@@ -36,5 +40,5 @@
             .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
-= will_paginate @events
+= will_paginate @events, :per_page=>50
 %br
