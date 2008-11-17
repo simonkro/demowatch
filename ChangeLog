@@ -1,3 +1,8 @@
+2008-11-17 20:40  marc
+
+	* ChangeLog, app/controllers/front_controller.rb, config/boot.rb:
+	  SEO 301 von /tag/[id] /tag/name
+
 2008-11-17 01:47  marc
 
 	* ChangeLog, app/controllers/users_controller.rb: Nach Anmeldung
