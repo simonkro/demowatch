@@ -1,3 +1,18 @@
+2008-11-17 01:04  marc
+
+	* ChangeLog, app/models/event.rb, app/models/event_mailer.rb,
+	  app/views/event_mailer/new_event_of_interest.erb,
+	  app/views/event_mailer/new_event_of_interest.haml,
+	  app/views/events/show.html.haml,
+	  app/views/organisations/show.html.haml, lib/daemons/mailer.rb:
+	  mailer daemon .. versendet 2,3 stunden nach eintragung einer
+	  neuen demo mails an interessenten
+
+2008-11-17 01:03  simon
+
+	* app/controllers/organisations_controller.rb: 50 items per page in
+	  organisation view
+
 2008-11-17 01:01  simon
 
 	* app/controllers/events_controller.rb, app/models/event.rb,

@@ -121,7 +121,7 @@ class UsersController < ApplicationController
     tag = Tag.find(params[:tag])
     @user.tags << tag
     @user.save
-    redirect_to tag
+    redirect_to (:controller=>:tag, :action=>tag.name)
   end
     
  
@@ -129,7 +129,7 @@ class UsersController < ApplicationController
     tag = Tag.find(params[:tag])
     @user.tags.delete tag
     @user.save
-    redirect_to tag
+    redirect_to (:controller=>:tag, :action=>tag.name)
   end    
     
 protected
