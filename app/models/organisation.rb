@@ -6,7 +6,8 @@ class Organisation < ActiveRecord::Base
 
   has_many :organizers, :dependent => :destroy
   has_many :users, :through => :organizers
-
+  has_many :events, :dependent => :destroy
+  
   validates_presence_of   :title,   :message => 'Name fehlt'
   validates_length_of     :title,   :within => 3..100, :message => 'Name ist zu kurz'
   validates_acceptance_of :confirm, :message => 'Sie m&uuml;ssen die Bedingungen akzeptieren!'
