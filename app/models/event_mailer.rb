@@ -2,25 +2,31 @@
 
 class EventMailer < ActionMailer::Base
 
+  helper :application
+
+
   def new_event_of_interest( user, event)
-    setup_email(user)
-    @subject    += "Demo am #{event.startdate.strftime('%a, %d. %b %Y')}: #{event.title}"
-    @body[:event]  = event
+    setup_multipart_email( user, event, 'new_event_of_interest')
+    @subject      += "Demo am #{event.startdate.strftime('%a, %d. %b %Y')} in #{event.city}: #{event.title}"
   end
 
 
 
 
 protected
-  def setup_email(user)
+  def setup_multipart_email(user, event, template)
     @recipients  = user.email
-    @from        = "no-reply@demowatch.eu"
-    @subject     = "[www.demowatch.eu] "
+    @from        = "no-reply@demowatch.de"
+    @subject     = "[www.demowatch.de] "
     @sent_on     = Time.now
-    @body[:user] = user
-    @content_type = 'text/html'
+    @content_type = "text/plain"
+    @body[:user]  = user
+    @body[:event] = event
+    @body[:url]   = 'www.demowatch.de'
+ #   @body[:event_url] = url_for(:controller=>'event', :action=>'show', :id=>123, :only_path=>false)
+
   end
-  
+ 
 end
 
 

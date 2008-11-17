@@ -31,7 +31,7 @@
     == beginnt in <b>#{time_ago_in_words @event.startdate}</b>, am
   %b== #{@event.startdate.strftime('%A, den %d.%m.%Y')} um #{@event.startdate.strftime('%H:%M Uhr')}.
   == Treffpunkt #{@event.startdate <= 6.hours.ago ? 'war' : 'ist'}
-  %b== #{@event.address}#{' (' + @event.location + ')' if @event.location?}. 
+  %b== #{@event.address}#{' (' + h( @event.location) + ')' if @event.location?}. 
   
 #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
   
@@ -51,9 +51,9 @@
 %h3 Initiator
 .q
   Diese Demo wurde eingetragen von
-  = link_to @event.organisation.title, @event.organisation 
+  = link_to h( @event.organisation.title), @event.organisation 
 
 - if @event.link
   %h3 Weitere Informationen
-  .q= link_to @event.link, @event.link, { :target=>'_new'}
+  .q= link_to h( @event.link), @event.link, { :target=>'_new'}
     

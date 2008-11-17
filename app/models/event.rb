@@ -38,10 +38,11 @@ class Event < ActiveRecord::Base
 private
 
   def validate
-#    puts "##############################################"
-#    errors.add_to_base "Bitte geben Sie eine Adresse ein." if address.blank?  
+    ev = Event.find_by_id( id)
+    if( !(ev.nil? || ev.address != address))
+      return
+    end
     geo=GeoKit::Geocoders::MultiGeocoder.geocode(address)
-#    puts( GeoKit::Geocoders::MultiGeocoder.methods());
     errors.add(:address, "Adresse wurde nicht gefunden") if !geo.success
     self.address,self.city,self.latitude,self.longitude = geo.full_address,geo.city,geo.lat,geo.lng if geo.success
 #    puts( geo.state + '##################');

@@ -1,3 +1,42 @@
+2008-11-17 01:01  simon
+
+	* app/controllers/events_controller.rb, app/models/event.rb,
+	  app/views/events/index.html.haml, db/schema.rb: highlighting
+	  today and 50 items per page in event view
+
+2008-11-17 01:00  marc
+
+	* config, config/database.yml, config/database.yml.example,
+	  config/environment.rb, config/environments/development.rb:
+	  database.yml nach database.yml.example bewegt
+
+2008-11-16 03:29  marc
+
+	* app/views/events/show.html.haml: bugfix
+
+2008-11-16 02:43  marc
+
+	* ChangeLog, app/controllers/application.rb,
+	  app/models/event_mailer.rb, app/models/user.rb,
+	  app/views/event_mailer,
+	  app/views/event_mailer/new_event_of_interest.haml,
+	  app/views/events/show.html.haml, config/daemons.yml,
+	  db/migrate/20081116024714_new_fields_for_mail_notification.rb,
+	  db/schema.rb, lib/daemons, lib/daemons/mailer.rb,
+	  lib/daemons/mailer_ctl, script/daemons,
+	  vendor/plugins/daemon_generator,
+	  vendor/plugins/daemon_generator/README,
+	  vendor/plugins/daemon_generator/generators,
+	  vendor/plugins/daemon_generator/generators/daemon,
+	  vendor/plugins/daemon_generator/generators/daemon/daemon_generator.rb,
+	  vendor/plugins/daemon_generator/generators/daemon/templates,
+	  vendor/plugins/daemon_generator/generators/daemon/templates/daemons,
+	  vendor/plugins/daemon_generator/generators/daemon/templates/daemons.yml,
+	  vendor/plugins/daemon_generator/generators/daemon/templates/script.rb,
+	  vendor/plugins/daemon_generator/generators/daemon/templates/script_ctl,
+	  vendor/plugins/daemon_generator/install.rb,
+	  vendor/plugins/haml/init.rb: mailer on new events 1st test
+
 2008-11-16 01:50  marc
 
 	* config/environment.rb: haml for ActionMailer

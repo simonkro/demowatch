@@ -1,0 +1,13 @@
+Hallo <%= @user.login %>, 
+
+Der Initiator '<%= @event.organisation.title %>' hat eine neue Demo auf www.demowatch.de eingetragen:
+
+<%= @event.title %>
+am <%= @event.startdate %>
+in <%= @event.city %>
+
+Nähere Infos zur Demo findest Du hier: http://<%= @url + url_for( @event) %>
+
+
+
+  <%= @url %>

@@ -16,9 +16,9 @@
 %h2 Themen
 .q= @organisation.tags.map{|tag| link_to h(tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
 %h2 Beschreibung
-.q= white_list @organisation.description
+.q= sanitize @organisation.description
 - if @organisation.link
   %h3 Weitere Informationen
-  .q= white_list(  link_to( h( @organisation.link), @organisation.link, { :target=>'_new'}))
+  .q= sanitize(  link_to( h( @organisation.link), @organisation.link, { :target=>'_new'}))
 
       
