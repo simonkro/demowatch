@@ -69,7 +69,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 end
 
-Inflector.inflections do |inflect|
+ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'Fehler', 'Fehler'
 end
 
@@ -133,5 +133,6 @@ GeoKit::Geocoders::geocoder_ca = false
 GeoKit::Geocoders::provider_order = [:google,:us]
 
 ActionMailer::Base.register_template_extension('haml')
+ActionMailer::Base.default_charset = "UTF-8"
 
 
