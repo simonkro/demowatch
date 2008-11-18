@@ -1,0 +1,13 @@
+Hallo <%= @user.login %>, 
+
+Erinnerung an eine Demo:
+
+<%= @event.title %>
+am <%= @event.startdate %>
+in <%= @event.city %>
+
+Nähere Infos zur Demo findest Du hier: http://<%= @url + url_for( @event) %>
+
+
+
+  <%= @url %>

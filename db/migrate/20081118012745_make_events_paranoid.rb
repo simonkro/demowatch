@@ -1,6 +1,6 @@
 class MakeEventsParanoid < ActiveRecord::Migration
   def self.up 
-    add_column :events, :deleted_at, :datetime 
+    add_column :events, :deleted_at, :datetime, :null => true 
   end 
  
   def self.down 

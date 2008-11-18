@@ -1,3 +1,55 @@
+2008-11-18 01:03  marc
+
+	* lib/daemons/mailer.rb: mailer: sleep 60 instead of 3600
+
+2008-11-18 00:54  marc
+
+	* lib/daemons/mailer.rb: event acts_as_paranoid
+
+2008-11-18 00:53  marc
+
+	* app/controllers/application.rb, app/models/event.rb,
+	  db/migrate/20081118012745_make_events_paranoid.rb, db/schema.rb,
+	  lib/daemons/mailer.rb, vendor/plugins/acts_as_paranoid,
+	  vendor/plugins/acts_as_paranoid/CHANGELOG,
+	  vendor/plugins/acts_as_paranoid/MIT-LICENSE,
+	  vendor/plugins/acts_as_paranoid/README,
+	  vendor/plugins/acts_as_paranoid/RUNNING_UNIT_TESTS,
+	  vendor/plugins/acts_as_paranoid/Rakefile,
+	  vendor/plugins/acts_as_paranoid/init.rb,
+	  vendor/plugins/acts_as_paranoid/lib,
+	  vendor/plugins/acts_as_paranoid/lib/caboose,
+	  vendor/plugins/acts_as_paranoid/lib/caboose/acts,
+	  vendor/plugins/acts_as_paranoid/lib/caboose/acts/belongs_to_with_deleted_association.rb,
+	  vendor/plugins/acts_as_paranoid/lib/caboose/acts/has_many_through_without_deleted_association.rb,
+	  vendor/plugins/acts_as_paranoid/lib/caboose/acts/paranoid.rb,
+	  vendor/plugins/acts_as_paranoid/lib/caboose/acts/paranoid_find_wrapper.rb,
+	  vendor/plugins/acts_as_paranoid/test,
+	  vendor/plugins/acts_as_paranoid/test/database.yml,
+	  vendor/plugins/acts_as_paranoid/test/fixtures,
+	  vendor/plugins/acts_as_paranoid/test/fixtures/categories.yml,
+	  vendor/plugins/acts_as_paranoid/test/fixtures/categories_widgets.yml,
+	  vendor/plugins/acts_as_paranoid/test/fixtures/taggings.yml,
+	  vendor/plugins/acts_as_paranoid/test/fixtures/tags.yml,
+	  vendor/plugins/acts_as_paranoid/test/fixtures/widgets.yml,
+	  vendor/plugins/acts_as_paranoid/test/paranoid_test.rb,
+	  vendor/plugins/acts_as_paranoid/test/schema.rb,
+	  vendor/plugins/acts_as_paranoid/test/test_helper.rb: event
+	  acts_as_paranoid
+
+2008-11-17 23:17  marc
+
+	* app/models/organisation.rb: events werden mit organisation
+	  geloescht
+
+2008-11-17 22:43  marc
+
+	* app/views/events/show.html.haml: sec
+
+2008-11-17 21:09  marc
+
+	* ChangeLog: init.d script fuer mailer
+
 2008-11-17 20:40  marc
 
 	* ChangeLog, app/controllers/front_controller.rb, config/boot.rb:
