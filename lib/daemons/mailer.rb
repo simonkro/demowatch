@@ -11,7 +11,6 @@ def send_mails_on_new_events
       sleep 2 ## um nicht als spamversender eingestuft zu werden
     end
     event.update_attribute(:new_delivered_at, Time.now)
-    sleep 60
   end
 end
 
@@ -37,7 +36,7 @@ while($running) do
   send_mails_on_new_events
   
   ActiveRecord::Base.logger.info "#{Time.now}: MailerDaemon: Sleeping an hour.\n"
-  sleep 3600
+  sleep 60
 
 end
 
