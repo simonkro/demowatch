@@ -1,3 +1,11 @@
+2008-11-18 02:24  marc
+
+	* ChangeLog, app/models/event_mailer.rb,
+	  app/views/event_mailer/reminder.erb,
+	  db/migrate/20081118012745_make_events_paranoid.rb,
+	  db/migrate/20081118024110_reminders_for_events.rb, db/schema.rb,
+	  lib/daemons/mailer.rb: reminder mails
+
 2008-11-18 01:03  marc
 
 	* lib/daemons/mailer.rb: mailer: sleep 60 instead of 3600
