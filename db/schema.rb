@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081116024714) do
+ActiveRecord::Schema.define(:version => 20081118012745) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",             :limit => 50, :default => ""
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20081116024714) do
   end
 
   add_index "bookmarks", ["user_id"], :name => "fk_bookmarks_user"
+
+  create_table "demowatch_bak", :force => true do |t|
+    t.string "zip",       :limit => 5
+    t.string "name"
+    t.float  "latitude"
+    t.float  "longitude"
+  end
+
+  add_index "demowatch_bak", ["zip"], :name => "index_zips_on_zip", :unique => true
 
   create_table "events", :force => true do |t|
     t.integer  "organisation_id",      :null => false
@@ -37,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20081116024714) do
     t.float    "longitude"
     t.datetime "new_delivered_at"
     t.datetime "updated_delivered_at"
+    t.datetime "deleted_at"
   end
 
   create_table "organisations", :force => true do |t|

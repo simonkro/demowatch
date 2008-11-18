@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
                    :distance_field_name => :distance,
                    :lat_column_name => :latitude,
                    :lng_column_name => :longitude
+  acts_as_paranoid
 
 
 #  before_validation_on_create :geocode_address
@@ -47,7 +48,6 @@ private
     self.address,self.city,self.latitude,self.longitude = geo.full_address,geo.city,geo.lat,geo.lng if geo.success
 #    puts( geo.state + '##################');
   end
-
 
 #  def validate
 #    errors.add_to_base "Bitte geben Sie eine Adresse ein." if address.blank?

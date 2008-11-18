@@ -10,8 +10,7 @@ def send_mails_on_new_events
       EventMailer.deliver_new_event_of_interest( user, event)
       sleep 2 ## um nicht als spamversender eingestuft zu werden
     end
-    event.new_delivered_at = Time.now
-    event.save
+    event.update_attribute(:new_delivered_at, Time.now)
     sleep 60
   end
 end
