@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(:version => 20081120014751) do
 
   add_index "bookmarks", ["user_id"], :name => "fk_bookmarks_user"
 
-  create_table "demowatch_bak", :force => true do |t|
-    t.string "zip",       :limit => 5
-    t.string "name"
-    t.float  "latitude"
-    t.float  "longitude"
-  end
-
-  add_index "demowatch_bak", ["zip"], :name => "index_zips_on_zip", :unique => true
-
   create_table "events", :force => true do |t|
     t.integer  "organisation_id",      :null => false
     t.text     "title"

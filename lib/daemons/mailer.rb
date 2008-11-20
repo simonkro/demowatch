@@ -66,6 +66,7 @@ class MailerDaemon
     $running = true
     Signal.trap("TERM") do
       $running = false
+      shutdown()
     end
 
     while($running) do
