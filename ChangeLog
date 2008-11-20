@@ -1,3 +1,7 @@
+2008-11-18 03:10  marc
+
+	* ChangeLog, app/views/front/impressum.html.haml: typo
+
 2008-11-18 02:24  marc
 
 	* ChangeLog, app/models/event_mailer.rb,

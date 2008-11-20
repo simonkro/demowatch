@@ -9,14 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081118024110) do
+ActiveRecord::Schema.define(:version => 20081120014751) do
 
   create_table "bookmarks", :force => true do |t|
-    t.string   "title",             :limit => 50, :default => ""
-    t.datetime "created_at",                                      :null => false
-    t.string   "bookmarkable_type", :limit => 15, :default => "", :null => false
-    t.integer  "bookmarkable_id",                 :default => 0,  :null => false
-    t.integer  "user_id",                         :default => 0,  :null => false
+    t.string   "title",                   :limit => 50, :default => ""
+    t.datetime "created_at",                                            :null => false
+    t.string   "bookmarkable_type",       :limit => 15, :default => "", :null => false
+    t.integer  "bookmarkable_id",                       :default => 0,  :null => false
+    t.integer  "user_id",                               :default => 0,  :null => false
+    t.datetime "reminder_1_delivered_at"
+    t.datetime "reminder_2_delivered_at"
   end
 
   add_index "bookmarks", ["user_id"], :name => "fk_bookmarks_user"
@@ -31,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20081118024110) do
   add_index "demowatch_bak", ["zip"], :name => "index_zips_on_zip", :unique => true
 
   create_table "events", :force => true do |t|
-    t.integer  "organisation_id",         :null => false
+    t.integer  "organisation_id",      :null => false
     t.text     "title"
     t.text     "description"
     t.datetime "startdate"
@@ -47,8 +49,6 @@ ActiveRecord::Schema.define(:version => 20081118024110) do
     t.datetime "new_delivered_at"
     t.datetime "updated_delivered_at"
     t.datetime "deleted_at"
-    t.datetime "reminder_1_delivered_at"
-    t.datetime "reminder_2_delivered_at"
   end
 
   create_table "organisations", :force => true do |t|
