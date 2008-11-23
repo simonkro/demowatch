@@ -124,7 +124,7 @@ protected
         e.dtstart       event.startdate
         e.dtend         event.enddate || event.startdate + 4.hours
         e.summary       event.title
-        e.description   event.description
+        e.description   event.description.gsub(/<[^>]+>|/m, '').to_a.join(' ').gsub(/\s+/, ' ')
         e.categories    event.tags.map{|t| t.name}
         e.url           event.link || ''
         e.transparency  'OPAQUE'
