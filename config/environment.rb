@@ -26,6 +26,8 @@ Rails::Initializer.run do |config|
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
+  
+  config.gem 'vpim'
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -134,5 +136,4 @@ GeoKit::Geocoders::provider_order = [:google,:us]
 
 ActionMailer::Base.register_template_extension('haml')
 ActionMailer::Base.default_charset = "UTF-8"
-
 

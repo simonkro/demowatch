@@ -1,6 +1,7 @@
 - content_for :header do
   = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
   
+.ical= link_to image_tag('ical.gif'), :format => 'ics'
 %h1= h @event.title
 
 - if logged_in?

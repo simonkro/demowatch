@@ -18,8 +18,8 @@ class EventsController < ApplicationController
     @with_distance = !current_user.nil? && !current_user.zip.nil?
     options = {:order => 'startdate DESC'}
     if @with_distance	  
-  	  options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
-  	  # options[:within] = distance_in_km # Fuer umkreissuche
+      options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
+      # options[:within] = distance_in_km # Fuer umkreissuche
       @zip = current_user.zip.zip
     end
     options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
@@ -28,6 +28,7 @@ class EventsController < ApplicationController
       format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 50) }
       format.xml  { render :xml => Event.all(options) }
       format.rss  { @events = Event.all(options); render :layout => false }
+      format.ics  { render :inline => ical(Event.all(options)) }
     end
   end
   
@@ -37,6 +38,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @event }
+      format.ics  { render :inline => ical([@event]) }
     end
   end
 
@@ -114,4 +116,29 @@ protected
     @event = Event.find(params[:id])
   end
   
+  def ical events
+    cal = Vpim::Icalendar.create2
+    
+    events.each do |event|
+      cal.add_event do |e|
+        e.dtstart       event.startdate
+        e.dtend         event.enddate || event.startdate + 4.hours
+        e.summary       event.title
+        e.description   event.description
+        e.categories    event.tags.map{|t| t.name}
+        e.url           event.link || ''
+        e.transparency  'OPAQUE'
+        e.sequence      0
+        e.created       event.created_at
+        e.lastmod       event.updated_at
+        
+    #    e.organizer do |o|
+    #      o.cn = event.organisation.title
+    #      o.uri = event.organisation.link
+    #    end
+      end
+    end
+    
+    cal.encode  
+  end  
 end

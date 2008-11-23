@@ -48,7 +48,7 @@ small {
 	color: #276cba;
 }
 
-.rss {
+.rss, .ical {
 	float: right;
 }
 
