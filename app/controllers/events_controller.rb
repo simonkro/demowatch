@@ -139,6 +139,6 @@ protected
       end
     end
     
-    cal.encode  
+    cal.encode.gsub(/\s\s/m, ' ')
   end  
 end
