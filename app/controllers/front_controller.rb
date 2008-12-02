@@ -1,7 +1,11 @@
 class FrontController < ApplicationController
  
   def index
+  end
+  
+  def all
     @tags = Tag.counts
+    render :action => 'index'
   end
   
   def events
