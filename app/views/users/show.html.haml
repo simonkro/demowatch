@@ -30,7 +30,7 @@
      
 %h2 Von Dir verwaltete Inhalte
 - unless @organisations.empty?
-  %h3 Initiatoren
+  %h3 Initiativen
   .q= @organisations.map{|organisation| link_to h( organisation.title), organisation}.join(', ')
 
 - unless @events.empty?

@@ -6,7 +6,7 @@
     - allow :user => [:owns?, :is_admin?] do
       = link_to 'Bearbeiten', edit_organisation_path(@organisation) 
       |
-      = link_to 'Löschen', @organisation, :confirm => 'Diese Initiator wirklich l&ouml;schen?', :method => :delete
+      = link_to 'Löschen', @organisation, :confirm => 'Diese Initiative wirklich l&ouml;schen?', :method => :delete
       |
     - if @organisation.bookmarked_by_user? current_user
       = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :organisation => @organisation)
