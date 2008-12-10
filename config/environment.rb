@@ -69,6 +69,28 @@ Rails::Initializer.run do |config|
   
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
+  
+  # sanitize whitelist:
+  # from tinymce-config: bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo, link,unlink
+  
+  #  config.action_view.sanitized_allowed_tags = 
+  #  config.action_view.sanitized_allowed_attributes = 
+  #  config.action_view.sanitized_allowed_tags.delete 'pre'
+  config.after_initialize do
+    ActionView::Base.sanitized_allowed_tags.delete 'pre'
+    ActionView::Base.sanitized_allowed_tags.delete 'img'
+    ActionView::Base.sanitized_allowed_tags.delete 'h1'
+    ActionView::Base.sanitized_allowed_tags.delete 'h2'
+    ActionView::Base.sanitized_allowed_tags.delete 'h3'
+    ActionView::Base.sanitized_allowed_tags.delete 'h4'
+    ActionView::Base.sanitized_allowed_tags.delete 'h5'
+    ActionView::Base.sanitized_allowed_tags.delete 'h6'
+  end
+  
+
+  
+  
 end
 
 ActiveSupport::Inflector.inflections do |inflect|
