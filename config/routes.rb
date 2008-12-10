@@ -53,6 +53,7 @@ ActionController::Routing::Routes.draw do |map|
   map.tag '/tag/:name', :controller => 'front', :action => 'show'
   map.about '/about', :controller => 'front', :action => 'about'
   map.impressum '/impressum', :controller => 'front', :action => 'impressum'
+  map.presse '/presse', :controller => 'front', :action => 'presse'
   map.disclaimer '/disclaimer', :controller => 'front', :action => 'disclaimer'
   map.all_cloud 'all', :controller => 'front', :action => 'all'
   map.event_cloud 'demos', :controller => 'front', :action => 'events'
