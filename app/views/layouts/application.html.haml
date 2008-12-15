@@ -30,7 +30,7 @@
         - tabs = [['Themen', front_path], ['Demos', events_path], ['Initiativen', organisations_path]]
         - tabs.each do |label, link|
           %li
-            %a{:href=>link, :class=>"xmenu2 #{'selected' if link == request.request_uri}"}
+            %a{:href=>link, :class=>"xmenu2 #{'selected' if (link == front_path && (request.request_uri == front_path || link + "tag" == request.request_uri[0..link.length+2])) || (link != front_path && link == request.request_uri[0..link.length-1])}"}
               <strong class="xsnazzy"><strong class="xtop"><strong class="xb1"></strong><strong class="xb2"></strong><strong class="xb3"></strong><strong class="xb4"></strong></strong>
               %span.xboxcontent= label
               </strong>
