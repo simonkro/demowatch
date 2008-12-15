@@ -1,3 +1,4 @@
+﻿
 - content_for :header do
   = javascript_include_tag 'tiny_mce/tiny_mce' 
 
@@ -15,7 +16,12 @@
   #organisation_tag_list_auto_complete.auto_complete{:style=>'display:none'}
   = auto_complete_field 'organisation_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }
 .q
-  Bedenke, dass die Wahl der Themen, deren Popularit&auml;t auf <i>Demowatch.de</i> beeinflusst.
+  Für die Themen wähle bitte
+  %b kurze und eindeutige Begriffe. 
+  Die Wahl der Themen beeinflusst deren Popularit&auml;t auf 
+  %i Demowatch.de. 
+  Es ist also 
+  %b von Vorteil schon vorhandene Begriffe zu benutzen!
 
 
 .q
