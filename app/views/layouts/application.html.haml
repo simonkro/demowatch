@@ -14,11 +14,12 @@
       =link_to image_tag('demowatch_beta.gif'), :front
       %ul
         %li=link_to 'Was ist Demowatch?', :about
-        %li=link_to 'Demo eintragen', new_event_path
         -if logged_in?
+          %li=link_to 'Demo eintragen', new_event_path
           %li=link_to 'Abmelden', :logout
           %li=link_to 'Einstellungen', user_path(current_user)
         -else
+          %li=link_to 'Demo eintragen', tutorial_path
           %li=link_to 'Anmelden', :login
           %li=link_to 'Registrieren', :signup
         %li=link_to 'Presse', :presse
