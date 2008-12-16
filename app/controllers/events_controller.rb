@@ -25,7 +25,7 @@ class EventsController < ApplicationController
     options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
     
     respond_to do |format|
-      format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 50) }
+      format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 80) }
       format.xml  { render :xml => Event.all(options) }
       format.rss  { @events = Event.all(options); render :layout => false }
       format.ics  { render :inline => ical(Event.all(options)) }
