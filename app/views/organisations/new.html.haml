@@ -2,7 +2,7 @@
 .contextmenu
   = link_to 'Zurück zur Liste der Initiativen', organisations_path 
 %br
-.q Damit wir Eure Demonstrationen auf <i>Demowatch</i> listen k&ouml;nnen, muss ein Initiative eingetragen werden, der den Eintrag verantwortet. Die hier eingegebenen Daten werden von uns auf Korrektheit gepr&uuml;ft.
+.q Damit wir Eure Demonstrationen auf <i>Demowatch</i> listen k&ouml;nnen, muss die Initiative eingetragen werden, die zu der Demonstration aufruft. Die hier eingegebenen Daten werden von uns auf Korrektheit gepr&uuml;ft.
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
