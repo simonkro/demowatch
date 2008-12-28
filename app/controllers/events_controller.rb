@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :login_required, :except => [:index, :show]
+  before_filter :login_required, :except => [:index, :show, :archive]
   before_filter :find_event, :only => [:show, :edit, :update, :destroy]
   allow :create, :user => [:has_organisation?, :is_admin?]
   allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def index
     @tags = params[:tags] 
     @with_distance = !current_user.nil? && !current_user.zip.nil?
-    options = {:order => 'startdate DESC'}
+    options = {:order => 'startdate ASC', :conditions => "startdate > '#{1.day.ago}'"}
     if @with_distance	  
       options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
       # options[:within] = distance_in_km # Fuer umkreissuche
@@ -31,6 +31,25 @@ class EventsController < ApplicationController
       format.ics  { render :inline => ical(Event.all(options)) }
     end
   end
+  
+  def archive
+    @tags = params[:tags] 
+    @with_distance = !current_user.nil? && !current_user.zip.nil?
+    options = {:order => 'startdate DESC', :conditions => "startdate < '#{1.day.ago}'"}
+    if @with_distance   
+      options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
+      # options[:within] = distance_in_km # Fuer umkreissuche
+      @zip = current_user.zip.zip
+    end
+    options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
+    
+    respond_to do |format|
+      format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 80) }
+      format.xml  { render :xml => Event.all(options) }
+      format.rss  { @events = Event.all(options); render :layout => false }
+      format.ics  { render :inline => ical(Event.all(options)) }
+    end
+  end  
   
   # GET /events/1
   # GET /events/1.xml

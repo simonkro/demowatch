@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :events
+  map.resources :events, :collection => {:archive => :get}
 
   map.resources :organisations
 
