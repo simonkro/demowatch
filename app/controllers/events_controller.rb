@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def index
     @tags = params[:tags] 
     @with_distance = !current_user.nil? && !current_user.zip.nil?
-    options = {:order => 'startdate ASC', :conditions => "startdate > '#{1.day.ago}'"}
+    options = {:order => 'startdate ASC', :conditions => "startdate > '#{1.day.ago.to_formatted_s(:db)}'"}
     if @with_distance	  
       options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
       # options[:within] = distance_in_km # Fuer umkreissuche
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   def archive
     @tags = params[:tags] 
     @with_distance = !current_user.nil? && !current_user.zip.nil?
-    options = {:order => 'startdate DESC', :conditions => "startdate < '#{1.day.ago}'"}
+    options = {:order => 'startdate DESC', :conditions => "startdate < '#{1.day.ago.to_formatted_s(:db)}'"}
     if @with_distance   
       options[:origin] = GeoKit::LatLng.new(current_user.zip.latitude, current_user.zip.longitude)
       # options[:within] = distance_in_km # Fuer umkreissuche
