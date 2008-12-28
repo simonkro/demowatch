@@ -7,13 +7,13 @@
 %h1 Demonstrationen
 
 .contextmenu
-  = link_to 'Aktuelle Demonstrationen', events_path
+  = link_to 'Aktuelle Demos', events_path
   |
-  = link_to 'Vergangene Demonstrationen', archive_events_path
-
-- if logged_in? 
-  .contextmenu
-    = link_to 'Neue Demonstration', new_event_path
+  = link_to 'Vergangene Demos', archive_events_path
+  - if logged_in? 
+    |
+    = link_to 'Demo eintragen', new_event_path
+    
 %br
 .tabletitle
   Folgende Aktionen wurden von registrierten Initiativen bei 
