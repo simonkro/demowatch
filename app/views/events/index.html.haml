@@ -1,10 +1,11 @@
+﻿
 - content_for :header do
   = auto_discovery_link_tag :rss, :format => 'rss'
 
 .rss= link_to image_tag('rss.gif'), :format => 'rss'
 .ical= link_to image_tag('ical.gif'), :format => 'ics'
 
-%h1 Demonstrationen
+%h1 Aktuelle Demonstrationen
 
 .contextmenu
   = link_to 'Aktuelle Demos', events_path
@@ -16,9 +17,7 @@
     
 %br
 .tabletitle
-  Folgende Aktionen wurden von registrierten Initiativen bei 
-  %i Demowatch.de 
-  eingetragen:
+  Folgende Aktionen sind uns für die kommende Zeit bekannt:
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
     %th Termin 
