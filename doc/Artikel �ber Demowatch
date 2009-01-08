@@ -1,0 +1,33 @@
+Demowatch.de, zentrales Register für Demonstrationen
+
+Demo verpasst? Zu spät von gehört? Schade? Aber das ist ab jetzt Vergangenheit! Auf Demowatch.de kann jetzt jeder Demonstrationen zentral bekannt machen. Ein Terminkalender für alle Demos - zentral, neutral und seriös.
+
+<p>Vor ein paar Wochen habe ich an der Demo in Berlin gegen die Vorratsdatehnspeicherung teilgenommen. Einige meiner Freunde wollten auch dabei sein. Doch nur wenige haben's dann wirklich geschafft. Nach der Demo haben mir einige erzählt, dass sie's verpasst haben aber gerne gekommen wären.
+</p>
+<h3>Nie mehr eine Demo verpassen?</h3>
+<p>Nun, ich hab auch schon mal von der einen oder anderen interessanten Demo erst im Nachhinein aus den Nachrichten erfahren. Das mag wohl daran liegen, dass ich zwar engagiert genug wäre, an bestimmten Demos teilzunehmen, aber nicht engagiert genug bin, um alle relevanten Foren zu verfolgen. Was mir fehlt ist eine zentrale Anlaufstelle, die mich über Aktionen informiert, die mich persönlich bewegen.
+</p>
+<p>In Zeiten des Internet sollte das kein Problem mehr sein. Doch wer zur Zeit mit google & Co. im Internet nach politischen Demonstrationen sucht, findet zwar allerhand, aber wenig über anstehende Demonstrationen. Demowatch.de hat sich des Problems angenommen und bietet nun für jedermann die Möglichkeit, sich an einer zentralen Stelle über politische Demonstrationen zu informieren oder zu solchen aufzurufen und gezielt interessierte Bürger zur Teilnahme zu bewegen.
+</p>
+<h3>Zentrales Demoregister</h3>
+<p>Um das zu bewerkstelligen, müssen alle Aufrufe bei Demowatch.de mit Informationen angereichert werden, aus denen beruteilt werden kann, ob eine Demonstration für einen bestimmten Benutzer interessant ist. Dazu gehören sowohl Ort und Termin der Demonstration, als auch eine Liste von Themen. Die Benutzer von Demowatch.de können freiwillig ihren Wohnort und ihre Interessen angeben. Anhand dieser Informationen stellt Demowatch.de für jeden einzelnen Benutzer die relevanten Informationen zusammen.
+</p>
+<p>Demowatch.de erhält seine Inhalte einzig und allein durch seine Benutzer. Es entsteht ein Netz von Interessengruppen und potentiellen Demonstranten. Um den Benutzern nicht mehr Daten abzuschwatzen als nötig, sind fast alle Angaben freiwillig. Benutzer können die Seite anonym mit dem Browser oder via RSS-Feed nutzen. Sie können sich aber auch registrieren und ein individuelles Interessenprofil erstellen, um zum Beispiel den E-Mail-Erinnerungsservice zu beanspruchen.
+</p>
+<h3>Individuell informieren</h3>
+<p>Registrierte Nutzer können bestehende Themen abonnieren oder eigene Themen hinzufügen. Wurde eine neue Demonstration eingetragen, werden alle Benutzer mit passenden Interessen darüber informiert. Wer mag, bekommt eine E-Mail, in der auf die neue Demonstration aufmerksam gemacht wird. Andere bevorzugen es vielleicht, einen RSS-Feed zur eignene Themenliste zu abonnieren. Wird man auf diese Weise auf eine interessante Aktion aufmerksam, kann man mit einem Mausklick alle weiteren Infos darüber abonnieren und sich via E-Mail rechtzeitig an den Termin erinnern lassen.
+</p>
+<p>Um von irrelevanten Mailings verschont zu bleiben, kann er zusätzlich zu seinen Interessen auch einen Teil seiner Postleitzahl eingeben. Schon mit den ersten beiden Stellen kann Demowatch.de alle Aktionen, die nicht in der Nähe des Benutzers stattfinden, auf Wunsch von vornherein ausblenden.
+</p>
+<h3>Der Einstieg</h3>
+<p>Zur Orientierung findet man auf der Startseite eine sogenannte "tag cloud" mit einer Liste aller Themen. Oft benutzte Begriffe werden hervorgehoben. Die persönlichen Themen eines registrierten Benutzers werden für ihn blau dargestellt. Von hier aus ist es ein Leichtes, interessante Themen zu finden und sein Themenrepertoire anzupassen. Themen, die noch nicht auf demowatch.de vertreten sind, kann jeder Benutzer in seinen Einstellungen hinzufügen. So bietet die "tag cloud" eine grobe Übersicht über die zur Zeit relevanten Themen.
+</p>
+<p>Da auf Demowatch.de möglichst alle Themen vertreten sein sollen, ist für die Plattform selber Neutralität das höchste Gebot. Demowatch.de ist unabhängig und versucht ausschließlich seriöse Informationen anzubieten. Um Spammern oder gar gesetzes- oder verfassungswidrigen Inhalten keine Chance zu geben, muß zu jeder eingetragenen Demonstration auch ein Initiator eingegeben werden. Die dort getätigten Angaben werden vom Demowatch-Team soweit möglich überprüft. So wird sichergestellt, dass ein Benutzer auch authorisiert ist, neue Demos im Namen einer Initiative einzutragen.
+</p>
+<p>Demowatch.de wird von einer handvoll Menschen entwickelt, die allesamt ehrenamtlich für das Projekt arbeiten. Die entstehnden Serverkosten werden momentan vom Team selber gedeckt. Sollte das Projekt an Fahrt gewinnen und mehr in Zukunft Kosten produzieren, so sollen diese durch Spenden finanziert werden, um unabhängig zu bleiben.
+</p>
+<h3>Die Technik</h3>
+<p>Momentan beansprucht Demowatch.de einen kleinen virtuellen Server auf dem eine schlanke "Ruby on Rails"-Anwendung läuft. Eine MySQL Datenbank speichert alle Daten und das Ganze läuft auf Ubuntu-Linux. Alles Open Source Software, die kostenlos zur Verfügung steht und einwandfrei funktioniert.
+</p>
+<h3>Fazit</h3>
+<p>Die Arbeit der verschiedensten Webseiten, die sich mit politischen Themen auseinandersetzen und zu Demonstrationen aufrufen kann und will Demowatch.de nicht ersetzen. Es geht vielmehr darum auch Menschen, die nicht politisch organisiert sind und nicht die Zeit oder Lust haben, sich in den vielen verschiedenen Foren zu informieren, für mehr Demokratie zu mobilisieren. Demowatch.de führt als erste zentrale Plattform demokratische Bürger in zeitgemäßer Weise zu gemeinschaftlichen Aktionen zusammen und verleiht so der Stimme des Volkes ein wenig mehr Kraft.</p>

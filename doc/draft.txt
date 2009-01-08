@@ -1,0 +1,92 @@
+Problem: Mir geht es oft so, dass ich von politischen Demonstrationen zu für mich interessanten Themen erst in den Nachrichten höre, wenn Sie schon vorbei sind.
+
+These: Die Demonstrationen der verschiedensten Orgranisationen werden im Internet bisher nur dezentral announciert. Dadurch fällt es extrem schwer dem aktuellen Angebot an öffentlichen Demonstrationen zu folgen.
+
+Lösung: Ein unabhängiges, zentrales Register für Demonstrationen einführen.
+
+Ziel: Demonstrationen zugänglicher für jederman machen.
+
+Idee: Eine Website bauen und betreiben, auf der Demonstrationen announciert werden können. Interessierte Bürger können Themengebiete abonnieren und werden über anstehende Veranstaltungen in der Nähe automatisch informiert.
+
+Vision: Ich habe mir im Zuge der Finanzkrise, viel über unsere Demokratie nachgedacht. Teilweise spricht man in der Öffentlichkeit über die "Demokratiegefährdung" durch die Finanzkrise. Eine funktionierende und starke Demokratie braucht meines Erachtens ein Volk, das seine Möglichkeiten zur Teinahme maximal ausnutzt. Ich sehe darum hier eine Chance im digitalen Zeitalter im Internet eine Plattform zu etablieren, die einen Beitrag zur besseren Bürgerbeteiligung liefern kann. 
+
+Neutralität: Da das Projekt als Instrument der Demokratie zu sehen ist, muß sich eine derartig Plattform der Neutralität im Rahmen der Rechtsstaatlichkeit verschreiben, um allgemeine Anerkennung finden zu können.
+
+Sicherheit: Da die vom Projekt gesammelten Daten sehr sensibel sein können, müssen alle gespeicherten Datensätze unbedingt vor unberechtigten Zugriffen gesichert sein. Auch Kommunikation zwischen Benutzer und der Website ist abzusichern. Die Daten der Bürger sind gegenüber den restlichen Nutzern 100% anonym zu behandeln.
+
+Seriösität: Um neutral und annerkannt zu werden, muss die Seite einen seriösen Eindruck machen. Captchas zur Benutzervalidierung, sowie Spamblocker oder Post-Quotas sind sinnvoll.
+
+Skizze:
+
+- Ein Webserver auf dem eine sichere Plattform läuft (https,...)
+- Datenbank mit folgenden Tabellen:
+  - Benutzer (Bürger + Organisatoren)
+    - E-Mailadresse
+    - E-Mail-Adresse validiert (j/n)
+    - Geo-Info (z.B. PLZ, optional)
+    - 1 -> n Organisation (optional)
+    - Adminrechte
+    - Einstellungen
+  - Interessen (Benutzer 1 -> n Interessen)
+    - Benutzer
+    - Suchbergiff
+    - Wichtigkeit (Auswirkung auf Lokalitätsbewertung)
+    - Benachrichtigungstyp (bei neuen/aktuellen Demos zu diesem Thema)
+  - Organisationen (deren Mitglieder dürfen Demonstrationen announcieren)
+  - Organisatoren (Organsiation <-> Benutzer)
+    - Organisation
+    - Benutzer
+    - Rechte innerhalb der Organisation (Admin, neue Demos einstellen, ändern, löschen)
+  - Monitor (Demonstrationen <-> Benutzer)
+    - Benachrichtigungstyp (E-Mail, bei jeder Änderung)
+  - Demonstrationen 
+    - Thema
+    - Termin(e)
+    - Hinweise
+    - Suchbegriffe
+    - Verweis auf Organisatoren
+- Website:
+  - Allgemeine Information zum Projekt, Satzung
+  - Disclaimer
+  - Benutzerregistrierung
+  - Registrierung einer Organisation
+  - Benutzer zu Organisation einladen
+  - Anmeldung einer Demonstration
+  - Benutzereinstellungen
+    - Interessen eingeben (Suchbegriffe)
+    - Abonnierte Demos
+    - Benutzerdaten löschen
+    - PLZ
+  - Word-Cloud mit den Themenbegriffen in folgenden Sortierungen: 
+    - Relevanz (für angemeldete Benutzer)
+    - Beliebtheit (Anzahl Besucher/Interessenten)
+    - Aktualität (aktuelle Termine)
+    - lokalität (Entfernung des Veranstaltungsortes von Benutzer-PLZ)
+    - jüngste Neueinträge von Demos
+  - Suche nach Suchbegriff, Organisation und Volltext
+  - Liste der aller Demos nach Termin sortiert
+  - Demonstration:
+    - Ausführliche Info
+    - "Abonnieren"-Button (E-Mail-Benachrichtigung)
+    - Amazon-Funktion: "Bürger, die sich für diese Demo 
+      interessiert haben, interessieren sich auch für..."
+  - Liste aller Organisationen nach Themen oder nach Name
+
+Design: Stilistische Schlichtheit ist mit Hinsicht auf Geschwindigkeit und empfundener Seriösität sinnvoll. Nach einer Intro-artigen Erklärung des Sinns der Website wird eine Word-Cloud mit allen aktiven Themengebieten angezeigt, die letztlich zu jeder einzelnen angemeldeten Demo führt. Über/unter der Cloud kann man die verfügbaren Ansichten wählen: 1) Die verschiedenen Sortierungen der aktuellen Ansicht und 2) die verscheidenen Ansichtstypen. Restliche Funktionen in einem Hauptmenü am Rand der Oberen Kante der Seite.
+
+Erweiterungen:
+- Eingabe von Treffpunkten und Demonstrationerouten mit Google-Maps
+- Foren zu den Demos
+- Demo-Kalender
+- Berichte, Fotos
+- Aktuelle Änderungen, Demo-News
+- Livebericht per SMS und MMS
+- Handytaugliche Website
+- Demo der Woche, zufällige Demo
+
+So, soweit erstmal. Ich hoffe, ihr habt nen Eindruck was ich mit Euch vorhab  ;) 
+
+Am Freitag habe ich mich um 10:30 bei mir zum Brainstorming verabredet. Marc kann natürlich gerne auch kommen!
+
+Ansonten hatte ich noch daran gedacht demnächst den Anwalt Björn Zirzlaff als Rechtsbreater und Simon Kröger als Entwickler (Erfahrungen mit Google-Maps - siehe meinsportplatz.de) anzusprechen.
+
