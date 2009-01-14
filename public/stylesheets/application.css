@@ -50,6 +50,7 @@ small {
 
 .rss, .ical {
 	float: right;
+  margin-top: 2px;
 }
 
 .views {

@@ -1,8 +1,6 @@
 - content_for :header do
   = auto_discovery_link_tag :rss, :controller => 'events', :format => 'rss', :tags => @tag.name
 
-.rss= link_to image_tag('rss.gif'), :controller => 'events', :format => 'rss', :tags => @tag.name if !@events.empty? 
-
 %h1= h @tag.name 
 
 .contextmenu
@@ -13,6 +11,7 @@
       = link_to 'Thema abonnieren', :controller => :users, :action => :add_tag, :id => current_user, :tag => @tag
     |
   = link_to 'Was bedeutet <i>"' + h( @tag.name)+ '"</i>?', 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', { :target=>'_new'}
+  .rss= link_to image_tag('rss.gif'), :controller => 'events', :format => 'rss', :tags => @tag.name if !@events.empty? 
 
 %h2 Demonstrationen
 - if @events.empty? 
