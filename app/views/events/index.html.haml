@@ -11,6 +11,8 @@
   - if logged_in? 
     |
     = link_to 'Demo eintragen', new_event_path
+  |
+  = link_to h("Karte"), "http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=http://www.demowatch.de/events.rss&g=%2B52%C2%B0+28'+58.22&ie=UTF8&z=7", { :target=>'_new'}
   .rss= link_to image_tag('rss.gif'), :format => 'rss'
   .ical= link_to image_tag('ical.gif'), :format => 'ical'
     
