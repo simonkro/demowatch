@@ -28,7 +28,7 @@
     %span.red hat schon angefangen!
     Sie begann am
   - elsif @event.startdate <= 7.9.days.from_now
-    == <span class="red">beginnt schon in #{time_ago_in_words @event.startdate}</span>, am
+    == <span class="red">beginnt in #{time_ago_in_words @event.startdate}</span>, am
   - else
     == beginnt in <b>#{time_ago_in_words @event.startdate}</b>, am
   %b== #{@event.startdate.strftime('%A, den %d.%m.%Y')} um #{@event.startdate.strftime('%H:%M Uhr')}.
