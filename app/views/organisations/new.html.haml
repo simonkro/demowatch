@@ -4,6 +4,12 @@
 %br
 .q Damit wir Eure Demonstrationen auf <i>Demowatch</i> listen k&ouml;nnen, muss die Initiative eingetragen werden, die zu der Demonstration aufruft. Die hier eingegebenen Daten werden von uns auf Korrektheit gepr&uuml;ft.
 
+.q
+  %b
+    Bitte trage hier
+    %u nicht
+    die Daten der Demonstration ein, sondern die Daten der Initiative bzw. Organisation, die zu der Demo aufruft!
+
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
 
