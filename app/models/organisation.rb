@@ -22,5 +22,15 @@ class Organisation < ActiveRecord::Base
     gsub('ß', 'ss').
     gsub(/([^a-z0-9]+)/, ' ').strip().gsub(' ', '-')
   end
-  
+
+  def link= value
+    if value =~ /@/
+      self [:link]='mailto:'+value unless value =~ /^mailto:/
+    elsif value =~ /^http:\/\//
+      self [:link]=value
+    else
+      self [:link]='http://'+value
+    end
+  end
+    
 end

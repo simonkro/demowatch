@@ -36,6 +36,16 @@ class Event < ActiveRecord::Base
     50
   end
 
+  def link= value
+    if value =~ /@/
+      self [:link]='mailto:'+value unless value =~ /^mailto:/
+    elsif value =~ /^http:\/\//
+      self [:link]=value
+    else
+      self [:link]='http://'+value
+    end
+  end
+  
 private
 
   def validate
