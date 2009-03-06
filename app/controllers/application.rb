@@ -19,9 +19,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   
   
-  
   before_filter :redirect_to_www_demowatch_de
-  
+
   # zur hauptdomain umleiten
   def redirect_to_www_demowatch_de
     if !request.host.include?('localhost') && request.host.match( /^www\.demowatch\.de/i).nil?

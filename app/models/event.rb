@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
   validates_presence_of  :address
   validates_presence_of  :title
   validates_length_of    :title, :within => 3..100
+  validates_presence_of  :link,    :message => 'Link fehlt'
   validates_presence_of  :tag_list
 
 
@@ -37,12 +38,16 @@ class Event < ActiveRecord::Base
   end
 
   def link= value
-    if value =~ /@/
-      self [:link]='mailto:'+value unless value =~ /^mailto:/
-    elsif value =~ /^http:\/\//
+    if value == ''
       self [:link]=value
     else
-      self [:link]='http://'+value
+      if value =~ /@/
+        self [:link]='mailto:'+value unless value =~ /^mailto:/
+      elsif value =~ /^http:\/\//
+        self [:link]=value
+      else
+        self [:link]='http://'+value
+      end
     end
   end
   

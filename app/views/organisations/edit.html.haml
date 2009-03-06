@@ -1,9 +1,9 @@
-%h1 Initiative bearbeiten
+%h1 Initiator bearbeiten
 
 .contextmenu
   = link_to 'Anzeigen', @organisation  
   |
-  = link_to 'Zurück zu den Initiativen', organisations_path
+  = link_to 'Zurück zu den Initiatoren', organisations_path
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}

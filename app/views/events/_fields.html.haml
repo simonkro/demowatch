@@ -68,11 +68,11 @@
   });
 
 .q
-  = f.label :link, 'Webseite'
+  = f.label :link, 'Webseite (oder ggf. E-Mailadresse)'
   = f.text_field :link, :size=>60
 
 .q
-  = f.label :organisation, 'Initiative'
+  = f.label :organisation, 'Initiator'
   = select_tag 'event[organisation_id]', options_from_collection_for_select(@organisations, "id", "title", @event.organisation_id)
 
 %h2 Hinweis

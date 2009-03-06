@@ -1,15 +1,15 @@
-%h1 Initiativen
+%h1 Initiatoren
 - if logged_in? 
   .contextmenu
-    = link_to 'Neue Initiative', new_organisation_path
+    = link_to 'Neuer Initiator', new_organisation_path
 %br
 .tabletitle
-  Folgende Initiativen tragen Ihre Aktionen bei
+  Folgende Initiatoren sind bei
   %i Demowatch.de 
-  ein:
+  eingetragen:
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Initiative
+    %th Initiatoren
     %th Themen
   - @organisations.each_with_index do |organisation, index|
     %tr{:class => "#{'even' if index.even?}"}

@@ -43,18 +43,11 @@
   language : 'de',
   });
 
-%h2 Optionale Daten
 .indent
-  = f.label :link, 'Webseite'
+  = f.label :link, 'Webseite (oder ggf. E-Mailadresse)'
   = f.text_field :link, :size=>60
 
 %h2 Hinweis
 
 .q
   Wir wollen unseren Besuchern stets m&ouml;glichst korrekte und seri&ouml;se Informationen zu stattfindenden Demonstrationen bieten. <u>Alle verfassungs- oder gesetzeswidrigen Inhalte werden von uns umgehend gel&ouml;scht</u> und deren Verfasser ggf. auf <i>Demowatch.de</i> gesperrt!
-
-%h2 Bedingungen
-
-.q
-  = f.check_box :confirm, {:style=>'display:block; float: left;margin-right: 10px;'}
-  %b Ich best&auml;tige hiermit, dass ich von der eingegebenen Organisation dazu berechtigt bin, auf <i>Demowatch.de</i> Veranstaltungen einzutragen.

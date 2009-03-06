@@ -45,15 +45,15 @@
             %td= sprintf( "%.0f km", event.distance)  
           - else
             %td
-%h2 Initiativen
+%h2 Initiatoren
 
 - if @organisations.empty? 
-  .q Zur Zeit sind keine Initiativen eingetragen, die sich mit diesem Thema besch&auml;ftigen..
+  .q Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema besch&auml;ftigen..
 - else
   .tabletitle Die folgenden Organisationen setzen sich f&uuml;r dieses Thema ein:
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
-      %th Initiative
+      %th Initiator
       %th Themen
     - @organisations.each_with_index do |organisation, index|
       %tr{:class => "#{'even' if index.even?}"}
